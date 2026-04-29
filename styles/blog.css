@@ -1,0 +1,42 @@
+@import 'swiper/css';
+@import 'swiper/css/pagination';
+
+.swiper-pagination {
+  @apply mt-12;
+}
+
+.blog-details {
+  @apply mx-auto max-w-[850px];
+}
+
+.blog-details h2 {
+  @apply mb-3 max-w-[650px] leading-[1.33] font-semibold;
+}
+
+.blog-details-body {
+  @apply mx-auto max-w-[850px];
+}
+
+.blog-details-body h3 {
+  @apply mt-12 mb-5;
+}
+
+.blog-details-body p {
+  @apply mb-12;
+}
+
+.blog-details-body ul {
+  @apply mb-12;
+}
+
+.blog-details-body ul li {
+  @apply font-jakarta before:text-paragraph dark:before:text-primary relative pl-10 font-semibold before:absolute before:left-0 before:h-7 before:w-7 before:content-[url('/images/checkmark.svg')] max-md:before:top-0 md:before:top-1/2 md:before:-translate-y-1/2 dark:text-white dark:before:content-[url('/images/checkmark-dark.svg')];
+}
+
+.blog-details-body ul li:not(:last-child) {
+  @apply mb-6;
+}
+
+.blog-details-body div {
+  @apply my-16;
+}

@@ -1,0 +1,20 @@
+@layer components {
+  .btn {
+    @apply font-Inter dark:text-paragraph dark:hover:text-paragraph before:bg-borderColour-dark dark:before:bg-primary-200 after:bg-paragraph dark:after:bg-primary relative z-0 overflow-hidden rounded-[30px] px-[30px] py-[13px] text-base leading-6 font-medium -tracking-[0.3px] text-white before:absolute before:bottom-0 before:left-0 before:-z-10 before:h-full before:w-full before:origin-right before:scale-x-0 before:rounded-[30px] before:transition-transform before:duration-500 before:content-[''] after:absolute after:top-0 after:left-0 after:-z-20 after:h-full after:w-full after:rounded-[30px] hover:text-white hover:before:origin-left hover:before:scale-x-100;
+  }
+  .btn-navbar {
+    @apply: dark: after: bg-dark-200 dark: text-white;
+  }
+  .btn-outline {
+    @apply font-Inter text-paragraph border-borderColour dark:hover:text-paragraph before:bg-paragraph dark:before:bg-primary relative z-10 overflow-hidden rounded-[30px] border bg-white px-[30px] py-[13px] text-base leading-6 font-medium -tracking-[0.3px] transition-all duration-500 before:absolute before:bottom-0 before:left-0 before:-z-10 before:h-full before:w-full before:origin-right before:scale-x-0 before:rounded-[30px] before:transition-transform before:duration-500 before:content-[''] hover:text-white hover:transition-all hover:duration-500 hover:before:origin-left hover:before:scale-x-100 dark:border-[#313330] dark:bg-transparent dark:text-white;
+  }
+  .btn-sm {
+    @apply px-6 py-2;
+  }
+  .theme-toggle-dark-icon {
+    @apply -mt-[1px] ml-1 h-5 w-5 dark:hidden;
+  }
+  .theme-toggle-light-icon {
+    @apply hidden h-5 w-5 dark:block;
+  }
+}

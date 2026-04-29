@@ -1,0 +1,116 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Playfair+Display:wght@600&family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700;800&display=swap");
+@import "tailwindcss";
+
+@theme {
+  --container-center: true;
+  /* Fonts */
+  --font-Inter: "Inter", sans-serif;
+  --font-jakarta: "Plus Jakarta Sans", sans-serif;
+  --font-playfair: "Playfair Display", serif;
+
+  /* Primary colors */
+  --color-primary: #b1e346;
+  --color-primary-100: #f3f8e8;
+  --color-primary-200: #c4f241;
+  --color-test: #c4f275;
+
+  --color-stroke-1: #eceff4;
+  --color-stroke-2: #1b232f;
+
+  /* Dark colors */
+  --color-dark: #131410;
+  --color-dark-100: #141410;
+  --color-dark-200: #212220;
+  --color-dark-300: #191a17;
+  --color-dark-gradient: #191917;
+
+  /* Gray colors */
+  --color-gray: #f6f8f1;
+  --color-gray-50: #f7f7f7;
+  --color-gray-100: #dce0d3;
+  --color-gray-200: #d9e0c5;
+  --color-gray-darkGradient: rgba(217, 224, 197, 0.07);
+
+  /* Border colors */
+  --color-borderColour: #edf0e6;
+  --color-borderColour-dark: #373935;
+
+  /* Paragraph colors */
+  --color-paragraph: #18181b;
+  --color-paragraph-light: #5d6167;
+
+  /* Rating */
+  --color-rating: #ffc107;
+
+  /* Shadows */
+  --drop-shadow-nav: 0px 0px 30px rgba(0, 0, 0, 0.05);
+  --drop-drop-shadow: 0px 0px 20px rgba(0, 0, 0, 0.07);
+  --shadow-nav: 0px 0px 30px rgba(0, 0, 0, 0.05);
+  --shadow-box: 0px 5px 50px rgba(0, 0, 0, 0.07);
+
+  /* Border radius */
+  --radius-large: 40px;
+  --radius-medium: 20px;
+  --radius: 12px;
+
+  /* Spacing */
+  --spacing-15: 60px;
+  --spacing-25: 100px;
+  --spacing-150: 150px;
+
+  /* Background sizes */
+  --bg-full: 100%;
+  --bg-80: 80%;
+
+  /* Cursor */
+  --cursor-fancy: url(/images/cursor.png), default;
+
+  /* Screen Size */
+  --breakpoint-xs: 475px;
+  --breakpoint-1xl: 1400px;
+
+  /* Animations */
+  --animate-floating: floating 5000ms ease-in-out infinite;
+  --animate-floatingDown: floatingDown 5000ms ease-in-out infinite;
+
+  /* Keyframes */
+  @keyframes floating {
+    0%,
+    100% {
+      transform: translate(0, 0px);
+    }
+    50% {
+      transform: translate(0, -50px);
+    }
+  }
+  @keyframes floatingDown {
+    0%,
+    100% {
+      transform: translate(0, 0px);
+    }
+    50% {
+      transform: translate(0, 50px);
+    }
+  }
+
+  /* =============== TYPOGRAPHY =============== */
+  --text-heading-1: 4.25rem;
+  --text-heading-1--line-height: 110%;
+  --text-heading-2: 3.25rem;
+  --text-heading-2--line-height: 120%;
+  --text-heading-3: 2.5rem;
+  --text-heading-3--line-height: 120%;
+  --text-heading-4: 2rem;
+  --text-heading-4--line-height: 130%;
+  --text-heading-5: 1.5rem;
+  --text-heading-5--line-height: 140%;
+  --text-heading-6: 1.25rem;
+  --text-heading-6--line-height: 140%;
+  --text-tagline-1: 1rem;
+  --text-tagline-1--line-height: 150%;
+  --text-tagline-2: 0.875rem;
+  --text-tagline-2--line-height: 150%;
+  --text-tagline-3: 0.75rem;
+  --text-tagline-3--line-height: 150%;
+}
+@custom-variant dark (&:where(.dark, .dark *));

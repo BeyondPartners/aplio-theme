@@ -1,0 +1,74 @@
+import PaymentImageDark from '@/public/images/payment/payment-hero-dark.png'
+import PaymentImageDeviceDark from '@/public/images/payment/payment-hero-device-dark.png'
+import PaymentImageDevice from '@/public/images/payment/payment-hero-device.png'
+import PaymentImage from '@/public/images/payment/payment-hero.png'
+import Image from 'next/image'
+import Link from 'next/link'
+import FadeUpAnimation from '../animations/FadeUpAnimation'
+
+const Hero = () => {
+  return (
+    <section className="hero relative overflow-hidden pb-[140px] max-lg:pt-[160px] lg:overflow-visible lg:pt-[260px]">
+      <div className="container">
+        <div className="relative z-10 grid grid-cols-12 items-end gap-5">
+          <FadeUpAnimation className="max-md:col-span-full max-md:mb-[350px] md:col-span-7">
+            <p className="mb-4 font-medium uppercase">Digital Payment Solution</p>
+            <h1 className="mb-10">
+              Smart
+              <span className="font-playfair inline-block px-5 pt-0.5 pb-2.5 leading-none italic"> Payment </span>
+              solution for your Business
+            </h1>
+            <p className="mb-12 max-w-[590px]">
+              Until recently, the prevailing view assumed lorem ipsum was born as a nonsense text. It&rsquo;s not Latin,
+              though it looks like it
+            </p>
+            <div className="flex items-center gap-4">
+              <Link href="/contact" className="btn">
+                Get Started
+              </Link>
+              <Link href="/request-demo" className="btn-outline">
+                Get a Demo
+              </Link>
+            </div>
+          </FadeUpAnimation>
+          <FadeUpAnimation className="relative max-md:col-span-full md:z-10 md:col-span-5">
+            <div className="absolute top-1/2 left-1/2 -z-10 flex -translate-x-1/2 -translate-y-1/2 max-md:hidden">
+              <div className="bg-primary-200/20 max-1xl:h-[335px] max-1xl:w-[335px] 1xl:h-[442px] 1xl:w-[442px] rounded-full blur-[145px] max-lg:hidden"></div>
+              <div className="bg-primary-200/25 max-1xl:h-[335px] max-1xl:blur-[80px] 1xl:h-[442px] 1xl:w-[442px] -mt-150 -ml-[170px] rounded-full blur-[145px] max-lg:w-[335px] max-md:ml-0"></div>
+              <div className="bg-primary-200/20 max-1xl:h-[335px] max-1xl:w-[335px] 1xl:h-[442px] 1xl:w-[442px] -ml-[170px] rounded-full blur-[145px] max-lg:hidden"></div>
+            </div>
+            <div className="absolute -bottom-150 left-1/2 -z-10 h-full w-full -translate-x-1/2 bg-[url('/images/hero-gradient.png')] bg-contain bg-center bg-no-repeat p-[350px] opacity-70 md:hidden"></div>
+            <div className="h-full w-full">
+              <div className="relative">
+                <Image
+                  src={PaymentImage}
+                  alt="hero Image"
+                  className="rounded-medium shadow-nav inline-block w-full dark:hidden"
+                />
+                <Image
+                  src={PaymentImageDark}
+                  alt="hero Image"
+                  className="rounded-medium shadow-nav hidden w-full dark:inline-block"
+                />
+                <div className="absolute bottom-2.5 left-1/2 -translate-x-1/2 max-lg:w-4/5 max-md:w-[285px] lg:aspect-video lg:w-[285px]">
+                  <Image
+                    src={PaymentImageDevice}
+                    alt="hero Image"
+                    className="rounded-t-medium inline-block w-full dark:hidden"
+                  />
+                  <Image
+                    src={PaymentImageDeviceDark}
+                    alt="hero Image"
+                    className="rounded-t-medium hidden w-full dark:inline-block"
+                  />
+                </div>
+              </div>
+            </div>
+          </FadeUpAnimation>
+        </div>
+      </div>
+    </section>
+  )
+}
+
+export default Hero
