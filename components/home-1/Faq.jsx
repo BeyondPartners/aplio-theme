@@ -2,9 +2,9 @@ import Questions from './Questions'
 
 const Faq = () => {
   return (
-    <section className=" relative overflow-hidden bg-gray pb-[130px] pt-150 dark:bg-dark max-md:py-20">
-      <div className="container relative z-10">
-        <div className="grid grid-cols-2 gap-10 max-lg:grid-cols-1 1xl:gap-x-24 ">
+    <section className="bg-gray dark:bg-dark relative overflow-hidden pt-150 pb-[130px] max-md:py-20">
+      <div className="relative z-10 container">
+        <div className="1xl:gap-x-24 grid grid-cols-2 gap-10 max-lg:grid-cols-1">
           <div>
             <p className="section-tagline">Faq&rsquo;s</p>
             <h2 className="mb-8">

@@ -2,20 +2,20 @@ import CoreValueAnimation from './CoreValueAnimation'
 
 const AboutCoreValue = () => {
   return (
-    <section className=" relative overflow-hidden pb-150  max-md:pb-25 ">
-      <div className="container relative z-10">
-        <div className="grid grid-cols-2 items-center gap-10 max-md:grid-cols-1 1xl:gap-x-24">
+    <section className="relative overflow-hidden pb-150 max-md:pb-25">
+      <div className="relative z-10 container">
+        <div className="1xl:gap-x-24 grid grid-cols-2 items-center gap-10 max-md:grid-cols-1">
           <CoreValueAnimation />
           <div>
             <p className="section-tagline">Core Value</p>
-            <h2 className=" mb-8 max-md:mb-4">The philosophy that underpins our organization.</h2>
-            <p className="mb-11  max-md:mb-6">
+            <h2 className="mb-8 max-md:mb-4">The philosophy that underpins our organization.</h2>
+            <p className="mb-11 max-md:mb-6">
               Until recently, the prevailing view assumed lorem ipsum was born as a nonsense text nothing Before & After
               magazine.
             </p>
             <ul className="mb-14 [&>*:not(:last-child)]:mb-6 max-md:[&>*:not(:last-child)]:mb-4">
-              <li className="flex items-center gap-x-2 ">
-                <span className=" shadow-icon  item-center relative flex justify-center gap-6 rounded-full bg-white dark:bg-dark-200">
+              <li className="flex items-center gap-x-2">
+                <span className="shadow-icon item-center dark:bg-dark-200 relative flex justify-center gap-6 rounded-full bg-white">
                   <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" fill="none">
                     <circle cx="15" cy="15" r="14" fill="" className="fill-[#E6FFB1] dark:fill-[#3B3C39]" />
                     <path
@@ -28,7 +28,7 @@ const AboutCoreValue = () => {
                 <span className="dark:text-white"> Income and expenses tracker </span>
               </li>
               <li className="flex items-center gap-x-2">
-                <span className=" shadow-icon  item-center relative flex justify-center rounded-full bg-white dark:bg-dark-200">
+                <span className="shadow-icon item-center dark:bg-dark-200 relative flex justify-center rounded-full bg-white">
                   <svg xmlns="http://www.w3.org/2000/svg" width="28" height="30" viewBox="0 0 28 30" fill="none">
                     <path
                       d="M11 1.5C12.2 0.7 13.5 0.5 14 0.5C14.8 0.5 15.6667 0.833333 16 1C18 2.16667 22.5 4.8 24.5 6C26.5 7.2 27.3333 9.16667 27.5 10V19C27.5 21.4 26.1667 23 25.5 23.5C23.5 24.6667 19 27.3 17 28.5C15 29.7 12.8333 29.3333 12 29C9.33333 27.5 3.7 24.3 2.5 23.5C1.3 22.7 0.666667 20.5 0.5 19.5V10.5C0.5 8.9 1.83333 7.16667 2.5 6.5C4.83333 5.16667 9.8 2.3 11 1.5Z"
@@ -44,8 +44,8 @@ const AboutCoreValue = () => {
                 </span>
                 <span className="dark:text-white"> Automated invoicing </span>
               </li>
-              <li className="flex items-center gap-x-2 ">
-                <span className=" shadow-icon  item-center relative flex justify-center rounded-full bg-white dark:bg-dark-200">
+              <li className="flex items-center gap-x-2">
+                <span className="shadow-icon item-center dark:bg-dark-200 relative flex justify-center rounded-full bg-white">
                   <svg xmlns="http://www.w3.org/2000/svg" width="28" height="30" viewBox="0 0 28 30" fill="none">
                     <path
                       d="M9.99965 3C11.5997 1 13.333 0.5 13.9997 0.5C15.5996 0.5 16.9997 1.83333 17.4998 2.5C19.8331 5 24.8998 10.6 26.4998 13C28.0998 15.4 27.1664 17.6667 26.4998 18.5C23.9998 21.1667 18.4998 26.9 16.4998 28.5C14.4998 30.1 12.6664 29.5 11.9998 29C9.16639 26.5 3.09965 20.9 1.49965 18.5C-0.100346 16.1 0.832987 13.8333 1.49965 13C3.66632 10.5 8.39965 5 9.99965 3Z"

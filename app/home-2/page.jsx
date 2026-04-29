@@ -30,11 +30,11 @@ const HomePage2 = () => {
           features={PaymentFeaturesData}
           sectionTag="MORE FEATURES"
           sectionTitle="Managing your money has never been easier"
-          className="relative bg-white pb-150 pt-150 dark:bg-dark-300 max-md:overflow-hidden max-md:py-25"
+          className="dark:bg-dark-300 relative bg-white pt-150 pb-150 max-md:overflow-hidden max-md:py-25"
         />
         <MembersCounter />
         <Pricing />
-        <Clients sectionTitle={false} sectionDetails={false} className={'pb-0 pt-0'} />
+        <Clients sectionTitle={false} sectionDetails={false} className={'pt-0 pb-0'} />
         <Blog />
         <CallToAction title="Start your best payment experience now!" />
       </main>

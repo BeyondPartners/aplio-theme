@@ -3,9 +3,9 @@ import React from 'react'
 
 const CallToActionV2 = () => {
   return (
-    <section className="relative overflow-hidden pb-25 pt-150 max-md:pb-25 max-md:pt-25">
-      <div className="container relative ">
-        <div className="absolute left-1/2 top-1/2 -z-10 -translate-x-1/2 -translate-y-1/2 rounded-medium">
+    <section className="relative overflow-hidden pt-150 pb-25 max-md:pt-25 max-md:pb-25">
+      <div className="relative container">
+        <div className="rounded-medium absolute top-1/2 left-1/2 -z-10 -translate-x-1/2 -translate-y-1/2">
           <svg
             width="1388"
             height="580"
@@ -14,7 +14,7 @@ const CallToActionV2 = () => {
             xmlns="http://www.w3.org/2000/svg"
             className="">
             <g filter="url(#filter0_d_1098_5159)">
-              <rect x="50" y="45" width="1288" height="480" rx="20" fill="" className=" fill-white dark:fill-dark" />
+              <rect x="50" y="45" width="1288" height="480" rx="20" fill="" className="dark:fill-dark fill-white" />
             </g>
             <mask
               id="mask0_1098_5159"
@@ -42,7 +42,7 @@ const CallToActionV2 = () => {
                   ry="221"
                   fill=""
                   fillOpacity="0.1"
-                  className="fill-primary-200 dark:fill-primary-200 "
+                  className="fill-primary-200 dark:fill-primary-200"
                 />
               </g>
             </g>
@@ -95,8 +95,8 @@ const CallToActionV2 = () => {
           </svg>
         </div>
 
-        <div className=" mx-auto text-center ">
-          <h2 className="mb-5 text-[48px] font-semibold max-lg:text-[32px] ">
+        <div className="mx-auto text-center">
+          <h2 className="mb-5 text-[48px] font-semibold max-lg:text-[32px]">
             Try it free today and see your business expand.
           </h2>
           <p className="mx-auto mb-12 max-w-[400px] max-lg:mt-6">
@@ -105,7 +105,7 @@ const CallToActionV2 = () => {
           <Link href="/contact" className="btn">
             7 Days Free Trial
           </Link>
-          <ul className=" mx-auto mt-20 flex  max-w-[815px] items-center justify-between max-lg:mt-5 max-lg:flex-col max-lg:gap-5">
+          <ul className="mx-auto mt-20 flex max-w-[815px] items-center justify-between max-lg:mt-5 max-lg:flex-col max-lg:gap-5">
             <li className="flex items-center">
               <svg
                 width="20"

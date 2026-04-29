@@ -14,9 +14,9 @@ const HostingFeature = () => {
   const controlAnimation = useWhileInView(ref)
 
   return (
-    <section className=" relative overflow-hidden pb-20 pt-150 max-md:pb-20">
-      <div className="container relative z-10">
-        <div className="grid grid-cols-2 items-center gap-10 max-md:grid-cols-1 1xl:gap-x-24">
+    <section className="relative overflow-hidden pt-150 pb-20 max-md:pb-20">
+      <div className="relative z-10 container">
+        <div className="1xl:gap-x-24 grid grid-cols-2 items-center gap-10 max-md:grid-cols-1">
           <div className="relative flex aspect-square items-center justify-end max-md:justify-center">
             <motion.figure ref={ref} initial="initial" animate={controlAnimation} variants={fadeUpAnimation}>
               <Image src={hostingCompany} alt="company image" className="aos-init aos-animate dark:hidden" />
@@ -28,11 +28,11 @@ const HostingFeature = () => {
                 className="aos-init aos-animate hidden dark:inline-block"
               />
             </motion.figure>
-            <div className="absolute  left-1/2 top-1/2 -z-10  inline-block -translate-x-1/2 -translate-y-1/2  after:absolute after:left-1/2 after:top-1/2  after:h-[400px] after:w-[400px] after:-translate-x-1/2  after:-translate-y-1/2 after:rounded-full after:bg-primary-200/30 after:blur-[60px] dark:hidden">
+            <div className="after:bg-primary-200/30 absolute top-1/2 left-1/2 -z-10 inline-block -translate-x-1/2 -translate-y-1/2 after:absolute after:top-1/2 after:left-1/2 after:h-[400px] after:w-[400px] after:-translate-x-1/2 after:-translate-y-1/2 after:rounded-full after:blur-[60px] dark:hidden">
               <HomeFiveHeroBgSvg />
             </div>
 
-            <div className="absolute left-1/2 top-1/2 -z-10 hidden -translate-x-1/2 -translate-y-1/2 after:absolute after:left-1/2 after:top-1/2 after:h-[465px] after:w-[465px] after:-translate-x-1/2  after:-translate-y-1/2 after:rounded-full after:bg-primary-200/30 after:blur-[60px] dark:inline-block"></div>
+            <div className="after:bg-primary-200/30 absolute top-1/2 left-1/2 -z-10 hidden -translate-x-1/2 -translate-y-1/2 after:absolute after:top-1/2 after:left-1/2 after:h-[465px] after:w-[465px] after:-translate-x-1/2 after:-translate-y-1/2 after:rounded-full after:blur-[60px] dark:inline-block"></div>
           </div>
 
           <div id="company_bar">

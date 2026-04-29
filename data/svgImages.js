@@ -85,8 +85,8 @@ export const HeroLightShapeSVG = () => {
       />
       <defs>
         <linearGradient id="paint0_linear_101_805" x1="806" y1="-1" x2="806" y2="519" gradientUnits="userSpaceOnUse">
-          <stop stopColor="" className="stop-color  dark:stop-color-dark" />
-          <stop stopColor="" offset="0.582692" className="stop-color  dark:stop-color-dark" stopOpacity="0" />
+          <stop stopColor="" className="stop-color dark:stop-color-dark" />
+          <stop stopColor="" offset="0.582692" className="stop-color dark:stop-color-dark" stopOpacity="0" />
         </linearGradient>
       </defs>
     </svg>
@@ -110,8 +110,8 @@ export const HeroDarkShapeSVG = () => {
           x2="219.55"
           y2="1.19998"
           gradientUnits="userSpaceOnUse">
-          <stop stopColor="" className="stop-color  dark:stop-color-dark" />
-          <stop offset="0.694321" stopColor="" className="stop-color  dark:stop-color-dark" stopOpacity="0" />
+          <stop stopColor="" className="stop-color dark:stop-color-dark" />
+          <stop offset="0.694321" stopColor="" className="stop-color dark:stop-color-dark" stopOpacity="0" />
         </linearGradient>
       </defs>
     </svg>

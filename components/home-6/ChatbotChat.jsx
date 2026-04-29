@@ -23,9 +23,9 @@ const ChatbotChat = () => {
   const controlAnimation = useWhileInView(ref)
   return (
     <section className="relative overflow-x-hidden pt-[200px] max-md:pt-15">
-      <div className="container relative z-10">
-        <div className="grid grid-cols-2 gap-25 max-md:grid-cols-1 1xl:gap-x-24">
-          <div className="relative  py-10 ">
+      <div className="relative z-10 container">
+        <div className="1xl:gap-x-24 grid grid-cols-2 gap-25 max-md:grid-cols-1">
+          <div className="relative py-10">
             <p className="section-tagline">Live chat</p>
 
             <h2 className="mb-8">Instant chat for outstanding customer experiences.</h2>
@@ -46,20 +46,20 @@ const ChatbotChat = () => {
               variants={fadeUpAnimation}
               className="max-lg:w-full lg:h-[500px] lg:w-[420px]">
               <Image src={chatbotChatImage} alt="explore" className="rounded-medium dark:hidden" />
-              <Image src={chatbotChatImageDark} alt="explore" className="hidden rounded-medium dark:inline-block" />
+              <Image src={chatbotChatImageDark} alt="explore" className="rounded-medium hidden dark:inline-block" />
             </motion.div>
 
             <motion.div
-              className="absolute rounded-medium max-lg:-right-12 max-lg:-top-20 max-lg:max-w-[275px] lg:-top-[170px] lg:right-0"
+              className="rounded-medium absolute max-lg:-top-20 max-lg:-right-12 max-lg:max-w-[275px] lg:-top-[170px] lg:right-0"
               initial="initial"
               ref={ref}
               animate={controlAnimation}
               variants={fadeFromLeftAnimation}>
-              <Image src={chatbotChatImageSummery} alt="summery" className=" dark:hidden " />
-              <Image src={chatbotChatImageSummeryDark} alt="summery" className="hidden dark:inline-block " />
+              <Image src={chatbotChatImageSummery} alt="summery" className="dark:hidden" />
+              <Image src={chatbotChatImageSummeryDark} alt="summery" className="hidden dark:inline-block" />
             </motion.div>
             <motion.div
-              className="absolute rounded-medium max-lg:-right-12 max-lg:top-[220px] max-lg:max-w-[275px] max-xs:top-[220px] lg:right-0 lg:top-[75px]"
+              className="rounded-medium max-xs:top-[220px] absolute max-lg:top-[220px] max-lg:-right-12 max-lg:max-w-[275px] lg:top-[75px] lg:right-0"
               initial="initial"
               ref={ref}
               animate={controlAnimation}
@@ -68,12 +68,12 @@ const ChatbotChat = () => {
               <Image src={chatbotChatImageExpenseDark} alt="summery" className="hidden dark:inline-block" />
             </motion.div>
             <motion.div
-              className="absolute rounded-medium max-lg:-right-12 max-lg:top-[80px] max-lg:max-w-[275px] max-xs:top-[110px] lg:right-0 lg:top-[280px] "
+              className="rounded-medium max-xs:top-[110px] absolute max-lg:top-[80px] max-lg:-right-12 max-lg:max-w-[275px] lg:top-[280px] lg:right-0"
               initial="initial"
               ref={ref}
               animate={controlAnimation}
               variants={fadeFromLeftAnimation3}>
-              <Image src={chatbotChatImagePayment} alt="summery" className="dark:hidden " />
+              <Image src={chatbotChatImagePayment} alt="summery" className="dark:hidden" />
               <Image src={chatbotChatImagePaymentDark} alt="summery" className="hidden dark:inline-block" />
             </motion.div>
           </div>

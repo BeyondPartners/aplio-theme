@@ -15,7 +15,7 @@ const AboutBankingAnimation = () => {
       <motion.img
         src="/images/about/onlinePayment.png"
         alt="banking image"
-        className="max-w-[250px] dark:hidden lg:max-w-[320px] xl:max-w-[420px]"
+        className="max-w-[250px] lg:max-w-[320px] xl:max-w-[420px] dark:hidden"
         ref={ref}
         initial="initial"
         animate={controlAnimation}
@@ -24,13 +24,13 @@ const AboutBankingAnimation = () => {
       <motion.img
         src="/images/about/onlinePayment-dark.png"
         alt="banking image"
-        className="hidden max-w-[250px]  dark:inline-block lg:max-w-[320px] xl:max-w-[420px]"
+        className="hidden max-w-[250px] lg:max-w-[320px] xl:max-w-[420px] dark:inline-block"
         ref={ref}
         initial="initial"
         animate={controlAnimation}
         variants={fadeUpAnimation}
       />
-      <div className="absolute bottom-8 left-0 right-auto top-auto max-w-[180px] md:max-w-[250px] xl:max-w-[344px] ">
+      <div className="absolute top-auto right-auto bottom-8 left-0 max-w-[180px] md:max-w-[250px] xl:max-w-[344px]">
         <motion.img
           src="/images/about/onlinePayment-shape.png"
           alt="banking image"
@@ -43,7 +43,7 @@ const AboutBankingAnimation = () => {
         <motion.img
           src="/images/about/onlinePayment-shape-dark.png"
           alt="banking image"
-          className="hidden dark:inline-block "
+          className="hidden dark:inline-block"
           ref={ref2}
           initial="initial"
           animate={controlAnimation2}

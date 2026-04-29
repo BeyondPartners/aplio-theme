@@ -22,17 +22,17 @@ const VisionAnimation = () => {
   return (
     <div className="relative max-md:mt-150">
       <motion.div ref={ref1} variants={fadeFromRightAnimation} initial="initial" animate={controlAnimation1}>
-        <Image src={visionImageOneLight} alt="vision image" className="w-[260px] dark:hidden xl:w-[310px]" />
+        <Image src={visionImageOneLight} alt="vision image" className="w-[260px] xl:w-[310px] dark:hidden" />
       </motion.div>
       <motion.div variants={fadeUpAnimation} initial="initial" ref={ref2} animate={controlAnimation2}>
         <Image
           src={visionImageOneDark}
           alt="vision image"
-          className="hidden w-[260px] dark:inline-block xl:w-[310px]"
+          className="hidden w-[260px] xl:w-[310px] dark:inline-block"
         />
       </motion.div>
       <motion.div
-        className="absolute -top-25 left-40 w-[200px] md:-top-12  md:w-[200px] xl:-top-[150px]  xl:left-[290px] xl:w-[310px]"
+        className="absolute -top-25 left-40 w-[200px] md:-top-12 md:w-[200px] xl:-top-[150px] xl:left-[290px] xl:w-[310px]"
         initial="initial"
         ref={ref3}
         animate={controlAnimation3}
@@ -50,7 +50,7 @@ const VisionAnimation = () => {
         <Image
           src={visionImage3Dark}
           alt="vision image shape"
-          className="left-0 top-0 hidden h-full w-full dark:inline-block"
+          className="top-0 left-0 hidden h-full w-full dark:inline-block"
         />
       </motion.div>
     </div>

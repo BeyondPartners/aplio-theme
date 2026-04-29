@@ -16,26 +16,26 @@ export default function FAQWithLeftText() {
   const controlAnimation = useWhileInView(ref)
 
   return (
-    <div className="container relative z-10 pb-[150px] ">
+    <div className="relative z-10 container pb-[150px]">
       <div className="grid grid-cols-2 items-start gap-8 max-lg:grid-cols-1">
         <div className="relative flex items-center justify-end max-lg:mb-25 max-lg:justify-center md:mt-12">
           <motion.figure ref={ref} initial="initial" animate={controlAnimation} variants={fadeUpAnimation}>
             <Image
               src={analyticsFaq}
               alt="banking image"
-              className=" max-w-[350px] dark:hidden sm:max-w-[420px] lg:max-w-[320px] xl:max-w-[420px]"
+              className="max-w-[350px] sm:max-w-[420px] lg:max-w-[320px] xl:max-w-[420px] dark:hidden"
               placeholder="blur"
             />
             <Image
               src={analyticsDarkFaq}
               alt="banking image"
-              className="hidden max-w-[350px] dark:inline-block sm:max-w-[420px] lg:max-w-[320px] xl:max-w-[420px] "
+              className="hidden max-w-[350px] sm:max-w-[420px] lg:max-w-[320px] xl:max-w-[420px] dark:inline-block"
               placeholder="blur"
             />
           </motion.figure>
 
           <motion.div
-            className=" absolute -bottom-20 -right-5 left-auto top-auto max-w-[250px] md:right-15 lg:-bottom-25 lg:-right-15 xl:-bottom-150 xl:-right-25 xl:max-w-[344px]"
+            className="absolute top-auto -right-5 -bottom-20 left-auto max-w-[250px] md:right-15 lg:-right-15 lg:-bottom-25 xl:-right-25 xl:-bottom-150 xl:max-w-[344px]"
             ref={ref}
             initial="initial"
             animate={controlAnimation}

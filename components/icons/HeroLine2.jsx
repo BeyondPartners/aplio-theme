@@ -16,7 +16,7 @@ const HeroLine2 = () => {
           y2="1.19998"
           gradientUnits="userSpaceOnUse">
           <stop stopColor="" className="stop-color dark:stop-color-dark" />
-          <stop offset="0.694321" stopOpacity="0" stopColor="" className="stop-color  dark:stop-color-dark" />
+          <stop offset="0.694321" stopOpacity="0" stopColor="" className="stop-color dark:stop-color-dark" />
         </linearGradient>
       </defs>
     </svg>

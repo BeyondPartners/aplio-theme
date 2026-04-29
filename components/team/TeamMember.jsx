@@ -10,12 +10,12 @@ const TeamMember = ({ image }) => {
   const controlAnimation = useWhileInView(ref)
   return (
     <motion.div
-      className="self-start rounded-medium bg-white p-2.5  shadow-box dark:bg-dark-200"
+      className="rounded-medium shadow-box dark:bg-dark-200 self-start bg-white p-2.5"
       ref={ref}
       initial="initial"
       animate={controlAnimation}
       variants={fadeUpAnimation}>
-      <div className=" rounded bg-gray-100 dark:bg-[#30302F]">
+      <div className="rounded bg-gray-100 dark:bg-[#30302F]">
         <Image
           src={image}
           alt="team member image"

@@ -11,10 +11,10 @@ const CareerDetails = () => {
   const controlAnimation = useWhileInView(ref)
   return (
     <section className="relative">
-      <div className="absolute -top-[300px] left-1/2 -z-10 h-[550px] w-full -translate-x-1/2  bg-[url('/images/hero-gradient.png')] bg-cover bg-center bg-no-repeat opacity-70 md:hidden"></div>
+      <div className="absolute -top-[300px] left-1/2 -z-10 h-[550px] w-full -translate-x-1/2 bg-[url('/images/hero-gradient.png')] bg-cover bg-center bg-no-repeat opacity-70 md:hidden"></div>
       <div className="container">
         <motion.div
-          className="mb-12 rounded-medium bg-white p-2.5 shadow-nav dark:bg-dark-200 max-md:h-[400px]"
+          className="rounded-medium shadow-nav dark:bg-dark-200 mb-12 bg-white p-2.5 max-md:h-[400px]"
           ref={ref}
           initial="initial"
           animate={controlAnimation}
@@ -22,7 +22,7 @@ const CareerDetails = () => {
           <Image
             src={CareerImage}
             alt="career banner"
-            className="w-full  rounded max-md:h-full max-md:w-auto max-md:object-cover  max-md:object-center"
+            className="w-full rounded max-md:h-full max-md:w-auto max-md:object-cover max-md:object-center"
           />
         </motion.div>
         <div className="mx-auto max-w-[850px]">

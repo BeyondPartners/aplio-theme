@@ -54,7 +54,7 @@ export default function ServiceCardWithLeftText() {
   ]
 
   return (
-    <section className="container pt-12 ">
+    <section className="container pt-12">
       <div className="grid grid-cols-12 max-md:gap-y-8 md:gap-8">
         {/* text content---------- */}
         <div className="col-span-12 md:col-span-4">
@@ -78,18 +78,18 @@ export default function ServiceCardWithLeftText() {
 
         {/* Card Content------ */}
 
-        <div className="col-span-12 md:col-span-8 1xl:pl-[120px]">
+        <div className="1xl:pl-[120px] col-span-12 md:col-span-8">
           <div className="relative z-10">
-            <div className="absolute left-1/2 top-1/2 -z-10 flex -translate-x-1/2 -translate-y-1/2 max-sm:hidden">
-              <div className="h-[330px] w-[330px] rounded-full bg-primary-200/20 blur-[145px] xl:h-[350px] xl:w-[350px] "></div>
-              <div className="lg-ml-[170px] h-[330px] w-[330px] rounded-full bg-primary-200/20 blur-[145px] xl:h-[350px] xl:w-[350px]"></div>
+            <div className="absolute top-1/2 left-1/2 -z-10 flex -translate-x-1/2 -translate-y-1/2 max-sm:hidden">
+              <div className="bg-primary-200/20 h-[330px] w-[330px] rounded-full blur-[145px] xl:h-[350px] xl:w-[350px]"></div>
+              <div className="lg-ml-[170px] bg-primary-200/20 h-[330px] w-[330px] rounded-full blur-[145px] xl:h-[350px] xl:w-[350px]"></div>
             </div>
             <div className="grid grid-cols-2 gap-8 max-md:grid-cols-1">
               {servicesCard.map((service) => (
                 <div
-                  className="relative scale-100 rounded-medium bg-white p-2.5 shadow-nav transition-transform duration-500 hover:scale-105 hover:transition-transform hover:duration-500 dark:bg-dark-200"
+                  className="rounded-medium shadow-nav dark:bg-dark-200 relative scale-100 bg-white p-2.5 transition-transform duration-500 hover:scale-105 hover:transition-transform hover:duration-500"
                   key={service.id}>
-                  <div className="dark:border-borderColour-dark rounded border border-dashed border-gray-100  p-10 dark:border-opacity-15 max-lg:p-5">
+                  <div className="dark:border-borderColour-dark dark:border-opacity-15 rounded border border-dashed border-gray-100 p-10 max-lg:p-5">
                     <Image src={service.svg} alt="service logo" className="mb-6 inline-block dark:hidden" />
                     <Image src={service.darkSvg} alt="service logo" className="mb-6 hidden dark:inline-block" />
 

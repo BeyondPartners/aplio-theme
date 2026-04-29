@@ -1,7 +1,7 @@
 const NewsLetterV2 = () => {
   return (
-    <section className="relative overflow-hidden pb-[75px] pt-[75px]">
-      <div className="absolute left-1/2 top-0 -z-10 -translate-x-1/2">
+    <section className="relative overflow-hidden pt-[75px] pb-[75px]">
+      <div className="absolute top-0 left-1/2 -z-10 -translate-x-1/2">
         <svg width="1920" height="1082" viewBox="0 0 1920 1082" fill="none" xmlns="http://www.w3.org/2000/svg">
           <mask
             id="mask0_115_3234"
@@ -59,30 +59,30 @@ const NewsLetterV2 = () => {
           </defs>
         </svg>
       </div>
-      <div className="container relative max-md:text-center ">
+      <div className="relative container max-md:text-center">
         <div>
           <div>
             <p className="section-tagline">Start Today</p>
           </div>
           <div className="grid-y-10 grid grid-cols-12 items-start">
             <div className="max-md:col-span-full md:col-span-6 lg:col-span-7">
-              <h2 className="mb-5 text-[48px] font-semibold max-lg:text-[32px] ">
+              <h2 className="mb-5 text-[48px] font-semibold max-lg:text-[32px]">
                 Create a full website with the help of an AI Assistant.
               </h2>
               <p>By creating a custom Web design for your business, we can bring your vision to life.</p>
             </div>
-            <div className="max-md:col-span-full max-md:mt-5 md:col-span-6 lg:col-span-5 ">
+            <div className="max-md:col-span-full max-md:mt-5 md:col-span-6 lg:col-span-5">
               <form>
-                <div className="grid grid-cols-12 items-center max-lg:gap-y-5 lg:gap-x-6 ">
+                <div className="grid grid-cols-12 items-center max-lg:gap-y-5 lg:gap-x-6">
                   <input
                     type="text"
                     placeholder="Enter your email"
-                    className="placeholder:text-light text-light border-borderColour h-full rounded-[60px] border  bg-transparent bg-white ps-5 leading-[1.5] text-[#A1A49D] outline-none transition-all duration-300 focus:border-primary focus:outline-none dark:border-[#31332F] dark:bg-dark-200 dark:placeholder:text-[#A1A49D] dark:focus:border-primary  max-lg:col-span-full max-lg:py-3.5 lg:col-span-8"
+                    className="placeholder:text-light text-light border-borderColour focus:border-primary dark:bg-dark-200 dark:focus:border-primary h-full rounded-[60px] border bg-transparent bg-white ps-5 leading-[1.5] text-[#A1A49D] transition-all duration-300 outline-none focus:outline-none max-lg:col-span-full max-lg:py-3.5 lg:col-span-8 dark:border-[#31332F] dark:placeholder:text-[#A1A49D]"
                   />
                   <button className="btn max-lg:col-span-full lg:col-span-4">Get Started</button>
                 </div>
               </form>
-              <ul className=" mt-6 flex items-center max-lg:justify-between max-lg:gap-y-2.5 max-md:flex-col lg:gap-5 ">
+              <ul className="mt-6 flex items-center max-lg:justify-between max-lg:gap-y-2.5 max-md:flex-col lg:gap-5">
                 <li className="flex items-center">
                   <svg
                     width="20"

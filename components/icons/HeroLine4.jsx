@@ -15,8 +15,8 @@ const HeroLine4 = () => {
           x2="219.55"
           y2="1.19998"
           gradientUnits="userSpaceOnUse">
-          <stop stopColor="" className="stop-color  dark:stop-color-dark" />
-          <stop offset="0.694321" stopColor="" className="stop-color  dark:stop-color-dark" stopOpacity="0" />
+          <stop stopColor="" className="stop-color dark:stop-color-dark" />
+          <stop offset="0.694321" stopColor="" className="stop-color dark:stop-color-dark" stopOpacity="0" />
         </linearGradient>
       </defs>
     </svg>

@@ -7,23 +7,23 @@ import TabContent from './TabContent'
 
 const AboutCrypto = () => {
   return (
-    <section className=" relative overflow-hidden bg-white pb-150 dark:bg-dark-300 max-md:pb-20">
-      <div className="container relative z-10">
-        <div className="grid grid-cols-2 items-center gap-10 max-md:grid-cols-1 1xl:gap-x-24">
+    <section className="dark:bg-dark-300 relative overflow-hidden bg-white pb-150 max-md:pb-20">
+      <div className="relative z-10 container">
+        <div className="1xl:gap-x-24 grid grid-cols-2 items-center gap-10 max-md:grid-cols-1">
           <div className="relative flex items-center justify-end max-md:justify-center">
             <Image
               src={aboutImage}
               alt="crypto image"
-              className="max-w-[250px] dark:hidden lg:max-w-[320px] xl:max-w-[420px]"
+              className="max-w-[250px] lg:max-w-[320px] xl:max-w-[420px] dark:hidden"
             />
             <Image
               src={aboutImageDark}
               alt="crypto image"
-              className="hidden max-w-[250px]  dark:inline-block lg:max-w-[320px] xl:max-w-[420px]"
+              className="hidden max-w-[250px] lg:max-w-[320px] xl:max-w-[420px] dark:inline-block"
             />
-            <div className="absolute bottom-8 left-0 right-auto top-auto max-w-[180px] md:max-w-[250px] xl:max-w-[344px] ">
+            <div className="absolute top-auto right-auto bottom-8 left-0 max-w-[180px] md:max-w-[250px] xl:max-w-[344px]">
               <Image src={aboutImageShape} alt="crypto image" className="dark:hidden" />
-              <Image src={aboutImageShapeDark} alt="crypto image" className="hidden dark:inline-block " />
+              <Image src={aboutImageShapeDark} alt="crypto image" className="hidden dark:inline-block" />
             </div>
           </div>
           <div>

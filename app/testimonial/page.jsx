@@ -20,7 +20,7 @@ const Testimonial = () => {
           paragraph="Until recently, the prevailing view assumed lorem ipsum was born as a nonsense text. It's not Latin, though it looks like it"
         />
         <TestimonialSingle />
-        <Clients sectionTitle={false} sectionDetails={false} className={'pb-0 pt-0'} />
+        <Clients sectionTitle={false} sectionDetails={false} className={'pt-0 pb-0'} />
         <Pricing className={'pt-150 max-md:pt-20'} />
         <NewsLetter />
       </main>

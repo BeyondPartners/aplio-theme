@@ -25,7 +25,7 @@ export default function HomePage5() {
         <ServiceCardWithLeftText />
         <Testimonial />
         <EasyStepFeature />
-        <FinancialBlog className="pt-150 dark:bg-dark-300" />
+        <FinancialBlog className="dark:bg-dark-300 pt-150" />
         <div className="pt-150">
           <NewsLetter />
         </div>

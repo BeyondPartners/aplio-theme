@@ -26,8 +26,8 @@ const SolutionAnimation = () => {
         initial="initial"
         animate={controlAnimation1}
         variants={fadeFromLeftAnimation}
-        className="absolute -top-[130px] bottom-auto left-10 right-auto h-[150px] w-[250px] lg:-top-[185px] lg:left-15 lg:h-[180px] lg:w-[280px] xl:h-[230px] xl:w-[320px]">
-        <Image src={solutionImage1} alt="vision image" className="w-full  dark:hidden" />
+        className="absolute -top-[130px] right-auto bottom-auto left-10 h-[150px] w-[250px] lg:-top-[185px] lg:left-15 lg:h-[180px] lg:w-[280px] xl:h-[230px] xl:w-[320px]">
+        <Image src={solutionImage1} alt="vision image" className="w-full dark:hidden" />
         <Image src={solutionImage1Dark} alt="vision image" className="hidden w-full dark:inline-block" />
       </motion.div>
       <motion.div
@@ -35,8 +35,8 @@ const SolutionAnimation = () => {
         initial="initial"
         animate={controlAnimation2}
         variants={fadeFromRightAnimation}
-        className="absolute bottom-auto left-auto right-12 top-12 h-[190px] w-[280px] lg:right-20 lg:h-[230px] lg:w-[320px] xl:h-[280px] xl:w-[368px]">
-        <Image src={solutionImage2} alt="vision image" className="w-full  dark:hidden" />
+        className="absolute top-12 right-12 bottom-auto left-auto h-[190px] w-[280px] lg:right-20 lg:h-[230px] lg:w-[320px] xl:h-[280px] xl:w-[368px]">
+        <Image src={solutionImage2} alt="vision image" className="w-full dark:hidden" />
         <Image src={solutionImage2Dark} alt="vision image" className="hidden w-full dark:inline-block" />
       </motion.div>
       <motion.div
@@ -44,7 +44,7 @@ const SolutionAnimation = () => {
         initial="initial"
         animate={controlAnimation3}
         variants={fadeUpAnimation}
-        className="absolute -bottom-[70px] left-[175px] right-auto top-auto aspect-video w-[150px] lg:-bottom-[86px] lg:left-[200px] lg:w-[170px]">
+        className="absolute top-auto right-auto -bottom-[70px] left-[175px] aspect-video w-[150px] lg:-bottom-[86px] lg:left-[200px] lg:w-[170px]">
         <Image src={solution3Image} alt="vision image" className="w-full dark:hidden" />
         <Image src={solutionImage3Dark} alt="vision image" className="hidden w-full dark:inline-block" />
       </motion.div>

@@ -29,7 +29,7 @@ const About = () => {
           features={AboutFeaturesData}
           sectionTag={'OUR VALUE'}
           sectionTitle={'Our business is steered by our core values'}
-          className={'relative bg-white py-150 dark:bg-dark-300 max-md:overflow-hidden max-md:py-25'}
+          className={'dark:bg-dark-300 relative bg-white py-150 max-md:overflow-hidden max-md:py-25'}
         />
         <AboutCoreValue />
         <TestimonialSlider />

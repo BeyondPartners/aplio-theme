@@ -65,15 +65,15 @@ const ProcessInstallation = () => {
         variants={fadeUpAnimation}>
         {processItems?.map((process) => (
           <div key={process.id} className="flex items-center gap-5">
-            <figure className="relative flex h-[110px] w-[110px] shrink-0 scale-100 items-center justify-center rounded-full bg-white p-2.5 shadow-nav  transition-transform duration-500 hover:scale-105 hover:transition-transform hover:duration-500 dark:bg-dark-200 max-lg:p-2 ">
-              <div className="h-full rounded-full border border-dashed border-gray-100 p-6 dark:border-gray-100 dark:border-opacity-15 max-lg:p-5">
+            <figure className="shadow-nav dark:bg-dark-200 relative flex h-[110px] w-[110px] shrink-0 scale-100 items-center justify-center rounded-full bg-white p-2.5 transition-transform duration-500 hover:scale-105 hover:transition-transform hover:duration-500 max-lg:p-2">
+              <div className="dark:border-opacity-15 h-full rounded-full border border-dashed border-gray-100 p-6 max-lg:p-5 dark:border-gray-100">
                 <Image
                   src={process.lightImg}
                   width={40}
                   height={40}
                   placeholder="blur"
                   alt="account Light"
-                  className="inline-block  dark:hidden"
+                  className="inline-block dark:hidden"
                 />
                 <Image
                   src={process.darkImg}
@@ -81,7 +81,7 @@ const ProcessInstallation = () => {
                   height={40}
                   placeholder="blur"
                   alt="account Dark"
-                  className="hidden  dark:inline-block"
+                  className="hidden dark:inline-block"
                 />
               </div>
             </figure>
@@ -103,7 +103,7 @@ const ProcessInstallation = () => {
                     width={100}
                     height={100}
                     quality={60}
-                    className="hidden h-full w-full dark:inline-block "
+                    className="hidden h-full w-full dark:inline-block"
                   />
                 </>
               )}

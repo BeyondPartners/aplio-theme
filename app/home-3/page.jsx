@@ -34,10 +34,10 @@ const HomePage3 = () => {
           features={BankingServicesData}
           sectionTag={'Our Services'}
           sectionTitle={"The world's best companies trust aplio."}
-          className={'relative bg-white py-150 dark:bg-dark-300 max-md:overflow-hidden max-md:py-25'}
+          className={'dark:bg-dark-300 relative bg-white py-150 max-md:overflow-hidden max-md:py-25'}
         />
         <AboutBanking />
-        <Clients sectionTitle={false} sectionDetails={false} className={'pb-0 pt-0'} />
+        <Clients sectionTitle={false} sectionDetails={false} className={'pt-0 pb-0'} />
         <TeamMembers />
         <Counter />
         <Pricing />

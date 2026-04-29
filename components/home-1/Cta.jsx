@@ -5,17 +5,17 @@ import HeroLine3 from '../icons/HeroLine3'
 
 const Cta = () => {
   return (
-    <section className="relative overflow-hidden bg-gray pb-[145px] pt-[135px] dark:bg-dark max-md:py-20">
-      <div className="absolute left-1/2 top-0 max-w-[1612px] -translate-x-1/2 max-md:hidden">
+    <section className="bg-gray dark:bg-dark relative overflow-hidden pt-[135px] pb-[145px] max-md:py-20">
+      <div className="absolute top-0 left-1/2 max-w-[1612px] -translate-x-1/2 max-md:hidden">
         <HeroLine1 />
       </div>
       <div className="absolute bottom-0 left-0 w-full max-md:hidden">
         <HeroLine2 />
       </div>
-      <div className="absolute left-1/2 top-0 -translate-x-1/2 md:hidden">
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 md:hidden">
         <HeroLine3 />
       </div>
-      <div className="container relative z-10">
+      <div className="relative z-10 container">
         <div className="mx-auto text-center">
           <h2 className="mb-5 text-[48px] font-semibold max-lg:text-[32px]">
             Start Your Free <br />

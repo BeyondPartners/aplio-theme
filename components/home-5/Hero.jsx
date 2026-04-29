@@ -16,15 +16,15 @@ export default function Hero() {
       ref={ref}
       animate={controlAnimation}
       variants={fadeUpAnimation}
-      className="hero max-mb:pb-[70px] relative -z-0 overflow-hidden bg-white pb-[280px] pt-[230px] dark:bg-dark-300 max-lg:pt-[160px]"
+      className="hero max-mb:pb-[70px] dark:bg-dark-300 relative -z-0 overflow-hidden bg-white pt-[230px] pb-[280px] max-lg:pt-[160px]"
       id="scene">
       <div className="container">
-        <div className=" relative z-[100] mb-[165px] grid grid-cols-12 items-center max-lg:gap-y-10">
-          <div className="col-span-12 md:col-span-7 ">
+        <div className="relative z-[100] mb-[165px] grid grid-cols-12 items-center max-lg:gap-y-10">
+          <div className="col-span-12 md:col-span-7">
             <p className="mb-8 font-medium uppercase max-lg:mb-4">BRING YOUR IDEAS TO LIFE</p>
             <h1 className="mb-12 max-md:mb-8">
               Fastest
-              <span className="inline-block rounded-[88px] border-2 border-paragraph bg-[#D9D9D900] px-5 pb-2.5 pt-0.5 font-playfair italic leading-none dark:border-[#F0F3EA]">
+              <span className="border-paragraph font-playfair inline-block rounded-[88px] border-2 bg-[#D9D9D900] px-5 pt-0.5 pb-2.5 leading-none italic dark:border-[#F0F3EA]">
                 Web Hosting
               </span>
               performance
@@ -34,17 +34,17 @@ export default function Hero() {
               aperiam inventore.
             </p>
             <form>
-              <div className="border-borderColour grid w-full max-w-[520px] grid-cols-12 items-center rounded-[60px] border bg-white pb-1 pe-1 pl-4 pt-1 transition-all duration-300 focus-within:border-primary dark:border-[#31332F] dark:bg-dark-200  dark:focus-within:border-primary sm:pl-5">
+              <div className="border-borderColour focus-within:border-primary dark:bg-dark-200 dark:focus-within:border-primary grid w-full max-w-[520px] grid-cols-12 items-center rounded-[60px] border bg-white pe-1 pt-1 pb-1 pl-4 transition-all duration-300 sm:pl-5 dark:border-[#31332F]">
                 <input
                   type="text"
                   placeholder="Enter your email"
-                  className=" placeholder:text-light text-light col-span-8 bg-transparent leading-[1.75] text-[#A1A49D] outline-none focus:outline-none dark:placeholder:text-[#A1A49D]  xs:col-span-8"
+                  className="placeholder:text-light text-light xs:col-span-8 col-span-8 bg-transparent leading-[1.75] text-[#A1A49D] outline-none focus:outline-none dark:placeholder:text-[#A1A49D]"
                 />
-                <button className="btn col-span-4 max-lg:!px-3 max-lg:!text-sm xs:col-span-4 ">Get Started</button>
+                <button className="btn xs:col-span-4 col-span-4 max-lg:!px-3 max-lg:!text-sm">Get Started</button>
               </div>
             </form>
           </div>
-          <div className="col-span-12 md:col-span-5 ">
+          <div className="col-span-12 md:col-span-5">
             <div className="relative w-full">
               <Image
                 src={hosting}
@@ -64,8 +64,8 @@ export default function Hero() {
           </div>
         </div>
 
-        <div className=" relative z-20">
-          <div className="absolute left-1/2 top-[-500px] -z-10 -translate-x-1/2 max-md:top-[400px]">
+        <div className="relative z-20">
+          <div className="absolute top-[-500px] left-1/2 -z-10 -translate-x-1/2 max-md:top-[400px]">
             <svg width="1668" height="1022" viewBox="0 0 1668 1022" fill="none" xmlns="http://www.w3.org/2000/svg">
               <g filter="url(#filter0_f_0_1)">
                 <ellipse
@@ -109,8 +109,8 @@ export default function Hero() {
               </defs>
             </svg>
           </div>
-          <div className="rounded-medium bg-white p-2.5 shadow-box dark:bg-dark-200">
-            <div className="dark:border-borderColour-dark grid h-full grid-cols-2 rounded border border-dashed border-gray-100 border-opacity-10 p-10 max-lg:p-5 max-md:grid-cols-1">
+          <div className="rounded-medium shadow-box dark:bg-dark-200 bg-white p-2.5">
+            <div className="dark:border-borderColour-dark border-opacity-10 grid h-full grid-cols-2 rounded border border-dashed border-gray-100 p-10 max-lg:p-5 max-md:grid-cols-1">
               <div className="max-md:mb-8">
                 <h2>
                   Find Your Perfect Domain Name <br />
@@ -126,7 +126,7 @@ export default function Hero() {
                         name="first-name"
                         id="username"
                         placeholder="Name"
-                        className="border-borderColour mb-2.5 block h-[50px] w-full rounded-[48px] border bg-white px-5 py-2.5 text-sm text-paragraph-light outline-none transition-all duration-300 placeholder:text-paragraph-light focus:border-primary  dark:border-[#31332F]  dark:bg-dark-200 dark:placeholder:text-paragraph-light dark:focus:border-primary"
+                        className="border-borderColour text-paragraph-light placeholder:text-paragraph-light focus:border-primary dark:bg-dark-200 dark:placeholder:text-paragraph-light dark:focus:border-primary mb-2.5 block h-[50px] w-full rounded-[48px] border bg-white px-5 py-2.5 text-sm transition-all duration-300 outline-none dark:border-[#31332F]"
                       />
                       <ul className="mx-5 flex items-center justify-between">
                         <li>.info</li>

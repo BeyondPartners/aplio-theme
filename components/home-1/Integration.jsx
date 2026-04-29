@@ -3,8 +3,8 @@ import IntegrationAnimation from './IntegrationAnimation'
 
 const Integration = () => {
   return (
-    <section className="bg-white pb-150  dark:bg-dark-300 max-md:pb-20">
-      <div className="container relative z-10">
+    <section className="dark:bg-dark-300 bg-white pb-150 max-md:pb-20">
+      <div className="relative z-10 container">
         <div className="mx-auto max-w-[620px] text-center">
           <p className="section-tagline">Top Integration</p>
 

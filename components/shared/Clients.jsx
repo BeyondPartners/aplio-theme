@@ -16,14 +16,14 @@ const Clients = ({
   return (
     <section className={cn('client', className)}>
       <div className="container overflow-hidden max-lg:!px-0">
-        <div className=" px-10px mx-auto max-w-[550px] text-center max-lg:px-2.5">
+        <div className="px-10px mx-auto max-w-[550px] text-center max-lg:px-2.5">
           {sectionTitle && <h2 className="mb-10">The world&rsquo;s best companies trust aplio.</h2>}
           {sectionDetails && <p className="text-light mb-15">Trusted by thousands of companies across 50+ countries</p>}
         </div>
 
-        <div className="relative py-8 before:absolute before:-right-0.5 before:top-1/2 before:z-10 before:h-[40px] before:w-[120px] before:-translate-y-1/2  before:bg-gradient-to-l before:from-white before:from-[37.5%] after:absolute after:-left-0.5 after:top-1/2 after:z-10 after:h-[40px] after:w-[120px] after:-translate-y-1/2  after:bg-gradient-to-r after:from-white  after:from-[37.5%] dark:before:from-dark-gradient dark:after:from-dark-gradient">
+        <div className="dark:before:from-dark-gradient dark:after:from-dark-gradient relative py-8 before:absolute before:top-1/2 before:-right-0.5 before:z-10 before:h-[40px] before:w-[120px] before:-translate-y-1/2 before:bg-gradient-to-l before:from-white before:from-[37.5%] after:absolute after:top-1/2 after:-left-0.5 after:z-10 after:h-[40px] after:w-[120px] after:-translate-y-1/2 after:bg-gradient-to-r after:from-white after:from-[37.5%]">
           {border && (
-            <div className="absolute left-0 top-1/2 h-full w-full -translate-y-1/2 ">
+            <div className="absolute top-1/2 left-0 h-full w-full -translate-y-1/2">
               <Image
                 src={clientBorder}
                 alt="border"
@@ -59,7 +59,7 @@ const Clients = ({
           </Marquee>
         </div>
         {sectionTitle && (
-          <div className="mt-15 flex items-center justify-center ">
+          <div className="mt-15 flex items-center justify-center">
             <Link href="/contact" className="btn-outline">
               Start your Journey
             </Link>

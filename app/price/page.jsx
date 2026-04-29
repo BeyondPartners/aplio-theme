@@ -16,7 +16,7 @@ const Price = () => {
     <>
       <SecondaryNavbar />
       <main>
-        <section className="relative overflow-hidden bg-white pt-[120px]  dark:bg-dark-300 max-lg:pt-150 max-md:mb-25">
+        <section className="dark:bg-dark-300 relative overflow-hidden bg-white pt-[120px] max-lg:pt-150 max-md:mb-25">
           <Pricing showPricingText={true} largeTitle pricingDescription />
         </section>
         <Counter />

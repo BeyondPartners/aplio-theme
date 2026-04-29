@@ -24,24 +24,24 @@ const CoreValueAnimation = () => {
       <Image
         src={imageOnlineValue}
         alt="banking image"
-        className="max-w-[250px] dark:hidden lg:max-w-[320px] xl:max-w-[420px]"
+        className="max-w-[250px] lg:max-w-[320px] xl:max-w-[420px] dark:hidden"
       />
       <Image
         src={imageOnlineValueDark}
         alt="banking image"
-        className="hidden max-w-[250px]  dark:inline-block lg:max-w-[320px] xl:max-w-[420px]"
+        className="hidden max-w-[250px] lg:max-w-[320px] xl:max-w-[420px] dark:inline-block"
       />
       <motion.div
-        className="absolute bottom-8 left-0 right-auto top-auto max-w-[180px] md:max-w-[250px] xl:max-w-[344px]"
+        className="absolute top-auto right-auto bottom-8 left-0 max-w-[180px] md:max-w-[250px] xl:max-w-[344px]"
         ref={ref2}
         initial="initial"
         animate={controlAnimation2}
         variants={fadeFromRightAnimation}>
         <Image src={imageShape} alt="banking image" className="dark:hidden" />
-        <Image src={imageShapeDark} alt="banking image" className="hidden dark:inline-block " />
+        <Image src={imageShapeDark} alt="banking image" className="hidden dark:inline-block" />
       </motion.div>
 
-      <div className="absolute bottom-8 left-0 right-auto top-auto max-w-[180px] md:max-w-[250px] xl:max-w-[344px]"></div>
+      <div className="absolute top-auto right-auto bottom-8 left-0 max-w-[180px] md:max-w-[250px] xl:max-w-[344px]"></div>
     </motion.div>
   )
 }
