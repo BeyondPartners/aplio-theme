@@ -10,13 +10,12 @@ const TeamMembers = ({ className = 'pt-150' }) => {
         className,
       )}>
       <div className="container">
-        <div className="relative z-10 mx-auto mb-12 max-w-[475px] text-center">
-          <p className="section-tagline">Our Team</p>
-          <h2>Our leading, strong and creative team</h2>
+        <div className="relative z-10 mx-auto mb-12 max-w-[675px] text-center">
+          <p className="section-tagline">Notre équipe</p>
+          <h2>Pédagogue et orientée résultats</h2>
         </div>
 
         <div className="relative z-10">
-          <TeamBackground />
           <Members />
         </div>
       </div>

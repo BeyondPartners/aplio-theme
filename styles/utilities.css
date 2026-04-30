@@ -1,6 +1,13 @@
 @layer utilities {
   .container {
-    @apply mx-auto max-1xl:px-5 1xl:max-w-[1290px];
+
+      width: 100%;
+      margin-left: auto;
+      margin-right: auto;
+      padding-left: 2rem;
+      padding-right: 2rem;
+
+    
   }
   .container-fluid {
     @apply w-full  px-4 1xl:mx-auto;
@@ -18,3 +25,10 @@
     @apply bg-primary text-paragraph dark:text-paragraph text-sm font-medium;
   }
 }
+@media (min-width: 576px)  { .container { max-width: 640px; } }
+@media (min-width: 768px)  { .container { max-width: 900px; } }
+@media (min-width: 992px)  { .container { max-width: 1060px; } }
+@media (min-width: 1200px) { .container { max-width: 1240px;      padding-left: 2rem;
+  padding-right: 2rem;
+} }
+@media (min-width: 1400px) { .container { max-width: 1400px; } }

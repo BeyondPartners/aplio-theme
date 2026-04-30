@@ -172,16 +172,9 @@ const FooterV2 = () => {
             <ul className="flex items-center gap-15 max-lg:justify-center lg:ml-auto">
               <li>
                 <Link
-                  href="/privacy"
+                  href="/mentions-legales"
                   className="text-paragraph before:bg-paragraph relative inline-block overflow-hidden text-base capitalize before:absolute before:bottom-0 before:left-0 before:h-[1px] before:w-full before:origin-right before:scale-x-0 before:transition-transform before:duration-500 before:content-[''] before:hover:origin-left before:hover:scale-x-100 dark:text-white dark:before:bg-white">
-                  Privacy Policy
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/terms"
-                  className="text-paragraph before:bg-paragraph relative inline-block overflow-hidden text-base capitalize before:absolute before:bottom-0 before:left-0 before:h-[1px] before:w-full before:origin-right before:scale-x-0 before:transition-transform before:duration-500 before:content-[''] before:hover:origin-left before:hover:scale-x-100 dark:text-white dark:before:bg-white">
-                  Terms & Conditions
+                  Mentions Légales
                 </Link>
               </li>
             </ul>

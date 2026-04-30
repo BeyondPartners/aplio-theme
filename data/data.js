@@ -788,9 +788,6 @@ export const teamData = [
     id: 1,
     name: 'Cody Fisher',
     designation: 'Lead Designer',
-    fbLink: '#',
-    dribbleInLink: '#',
-    gitHubLink: '#',
     linkedInLink: '#',
     image: '/images/team/team1.png',
     details:
@@ -802,9 +799,6 @@ export const teamData = [
     id: 2,
     name: 'Kristin Coper',
     designation: 'Project Manager',
-    fbLink: '#',
-    dribbleInLink: '#',
-    gitHubLink: '#',
     linkedInLink: '#',
     image: '/images/team/team2.png',
     details:
@@ -816,9 +810,6 @@ export const teamData = [
     id: 3,
     name: 'Guy Hawkins',
     designation: 'Lead Designer',
-    fbLink: '#',
-    dribbleInLink: '#',
-    gitHubLink: '#',
     linkedInLink: '#',
     image: '/images/team/team3.png',
     details:
@@ -830,9 +821,6 @@ export const teamData = [
     id: 4,
     name: 'Wade Wareen',
     designation: 'Designer',
-    fbLink: '#',
-    dribbleInLink: '#',
-    gitHubLink: '#',
     linkedInLink: '#',
     image: '/images/team/team4.png',
     details:
@@ -844,9 +832,6 @@ export const teamData = [
     id: 5,
     name: 'Bessie Cooper',
     designation: 'Product Manager',
-    fbLink: '#',
-    dribbleInLink: '#',
-    gitHubLink: '#',
     linkedInLink: '#',
     image: '/images/team/team5.png',
     details:
@@ -858,9 +843,6 @@ export const teamData = [
     id: 6,
     name: 'Jacob Jones',
     designation: 'Art Director',
-    fbLink: '#',
-    dribbleInLink: '#',
-    gitHubLink: '#',
     linkedInLink: '#',
     image: '/images/team/team6.png',
     details:

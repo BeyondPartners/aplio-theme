@@ -57,7 +57,9 @@ const FeatureBlog = ({ featureBlog }) => {
                           </span>
                           <p>{blogItem.data.date}</p>
                         </div>
-                        <ReactMarkdown className="mb-6">{blogItem.content.slice(0, 150)}</ReactMarkdown>
+                        <div className="mb-6">
+                          <ReactMarkdown>{blogItem.content.slice(0, 150)}</ReactMarkdown>
+                        </div>
                       </div>
                     </div>
                   </div>

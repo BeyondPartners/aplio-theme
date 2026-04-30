@@ -38,45 +38,6 @@
         "designation": "UI Designer",
         "image": "/images/testimonial/avatar3.png"
       }
-    },
-    {
-      "id": 4,
-      "logoLight": "/images/testimonial/infinity.svg",
-      "logoDark": "/images/testimonial/infinity-dark.svg",
-      "testimonial": "Until recently, the prevailing view assumed lorem ipsum was born as a nonsense text. It's not Latin though it looks like it, and it actually says nothing.",
-      "rating": 2,
-      "date": "Feb 13, 2024",
-      "author": {
-        "name": "Albert Flores",
-        "designation": "Sr. Developer",
-        "image": "/images/testimonial/avatar4.png"
-      }
-    },
-    {
-      "id": 5,
-      "logoLight": "/images/testimonial/mfinity.svg",
-      "logoDark": "/images/testimonial/mfinity-dark.svg",
-      "testimonial": "Until recently, the prevailing view assumed lorem ipsum was born as a nonsense text. It's not Latin though it looks like it, and it actually says nothing.",
-      "rating": 1,
-      "date": "Feb 23, 2024",
-      "author": {
-        "name": "Floyed Miles",
-        "designation": "Junior Designer",
-        "image": "/images/testimonial/avatar5.png"
-      }
-    },
-    {
-      "id": 6,
-      "logoLight": "/images/testimonial/coolchat.svg",
-      "logoDark": "/images/testimonial/coolchat-dark.svg",
-      "testimonial": "Until recently, the prevailing view assumed lorem ipsum was born as a nonsense text. It's not Latin though it looks like it, and it actually says nothing.",
-      "rating": 5,
-      "date": "Feb 07, 2024",
-      "author": {
-        "name": "Bessie Cooper",
-        "designation": "Manager",
-        "image": "/images/testimonial/avatar6.png"
-      }
     }
   ]
 }

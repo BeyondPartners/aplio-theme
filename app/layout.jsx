@@ -1,4 +1,3 @@
-import ThemeSwitcher from '@/components/theme/ThemeSwitcher'
 import '@/styles/theme.css'
 import { cn } from '@/utils/cn'
 import { ThemeModeProvider } from '@/utils/ThemeModeProvider'
@@ -46,10 +45,7 @@ export default function RootLayout({ children }) {
           jakarta_sans.variable,
           playfair.variable,
         )}>
-        <ThemeModeProvider>
-          <ThemeSwitcher />
-          {children}
-        </ThemeModeProvider>
+        <ThemeModeProvider>{children}</ThemeModeProvider>
       </body>
     </html>
   )

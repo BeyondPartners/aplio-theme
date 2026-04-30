@@ -11,8 +11,8 @@ const Testimonial = () => {
       <div className="absolute top-1/2 right-0 left-0 h-full w-full -translate-y-1/2 bg-[url('/images/service-bg.png')] bg-center bg-no-repeat opacity-70 md:hidden"></div>
       <div className="relative container">
         <div className="mx-auto mb-16 max-w-[550px] text-center">
-          <p className="section-tagline">Testimonials</p>
-          <h2> What our customer&rsquo;s say about our company </h2>
+          <p className="section-tagline">Témoignages</p>
+          <h2> Ce que nos clients disent de nous </h2>
         </div>
         <div className="relative z-10">
           <div className="max-lg:item-center absolute top-[37%] left-1/2 -z-10 flex -translate-x-1/2 -translate-y-1/2 max-lg:flex-col max-md:hidden">
@@ -20,8 +20,8 @@ const Testimonial = () => {
             <div className="bg-primary-200/25 h-[350px] w-[350px] rounded-full blur-[80px] lg:-ml-[170px] lg:h-[442px] lg:w-[442px] lg:blur-[145px]"></div>
             <div className="bg-primary-200/20 h-[350px] w-[350px] rounded-full blur-[80px] lg:-ml-[170px] lg:h-[442px] lg:w-[442px] lg:blur-[145px]"></div>
           </div>
-          <div className="mb-12 flex flex-wrap justify-center gap-6 gap-y-8 max-md:flex-col">
-            {TestimonialData.slice(0, 5).map((testimonial, i) => (
+          <div className="mb-12 flex flex-wrap justify-center gap-6 gap-y-8 pb-2 max-md:flex-col">
+            {TestimonialData.map((testimonial, i) => (
               <FadeUpOneByOneAnimation
                 i={i}
                 className="rounded-medium shadow-nav dark:bg-dark-200 bg-white p-2.5 md:w-[calc(50%_-_20px)] lg:w-[calc(33.33%_-_20px)]"
@@ -71,14 +71,7 @@ const Testimonial = () => {
               </FadeUpOneByOneAnimation>
             ))}
           </div>
-
-          <div className="flex items-center justify-center">
-            <Link href="/contact" className="btn-outline">
-              Start Your jouney
-            </Link>
-          </div>
         </div>
-        <div className="dark:to-dark-300 absolute bottom-15 left-0 z-10 h-[450px] w-full bg-gradient-to-b from-transparent to-white to-100%"></div>
       </div>
     </section>
   )

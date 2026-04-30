@@ -10,8 +10,8 @@ const TestimonialV2 = () => {
     <section className="relative overflow-hidden pt-25 pb-25">
       <div className="relative container">
         <div className="mx-auto mb-15 max-w-[550px] text-center">
-          <p className="section-tagline">Testimonials</p>
-          <h2>What our customer’s say about our company</h2>
+          <p className="section-tagline">Témoignages</p>
+          <h2>Ce que nos clients disent de nous</h2>
         </div>
         <div className="relative z-10">
           <div className="absolute top-1/2 left-1/2 -z-10 -translate-x-1/2 -translate-y-1/2">

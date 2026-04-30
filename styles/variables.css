@@ -8,11 +8,12 @@
   --font-jakarta: "Plus Jakarta Sans", sans-serif;
   --font-playfair: "Playfair Display", serif;
 
-  /* Primary colors */
-  --color-primary: #b1e346;
-  --color-primary-100: #f3f8e8;
-  --color-primary-200: #c4f241;
-  --color-test: #c4f275;
+  /* Brand colors */
+  --color-primary: #f0f3ff;
+  --color-primary-100: #fffbf9;
+  --color-primary-200: #f5e7e1;
+  --color-accent:#de9d83  ;
+  --color-accent-100: #e7f1eb;
 
   --color-stroke-1: #eceff4;
   --color-stroke-2: #1b232f;
