@@ -1,6 +1,5 @@
 import TestimonialList from '@/data/testimonial'
 import Image from 'next/image'
-import Link from 'next/link'
 import FadeUpOneByOneAnimation from '../animations/FadeUpOneByOneAnimation'
 import { RatingStars } from './Rating'
 

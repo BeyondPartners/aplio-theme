@@ -4,13 +4,10 @@ import { cn } from '@/utils/cn'
 import Image from 'next/image'
 import Link from 'next/link'
 import { useEffect, useState } from 'react'
-import { createPortal } from 'react-dom'
 import { FaAngleDown, FaTimes } from 'react-icons/fa'
-import SearchOption from './SearchOption'
 
 const PrimaryNavbar = () => {
   const { menuData } = NavbarItem
-  const [showSearch, setShowSearch] = useState(false)
   const [showMobileMenu, setShowMobileMenu] = useState(false)
   const [sticky, setSticky] = useState(false)
 

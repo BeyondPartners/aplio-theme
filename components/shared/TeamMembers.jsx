@@ -1,6 +1,5 @@
 import { cn } from '@/utils/cn'
 import Members from './Members'
-import TeamBackground from './TeamBackground'
 
 const TeamMembers = ({ className = 'pt-150' }) => {
   return (
