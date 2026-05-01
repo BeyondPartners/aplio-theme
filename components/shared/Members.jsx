@@ -22,19 +22,25 @@ const Members = () => {
   const isTwoMembers = teamData.length === 2
 
   return (
-    <div className={`grid gap-8 max-md:grid-cols-1 ${isTwoMembers ? 'mx-auto max-w-5xl grid-cols-2' : 'grid-cols-3'}`}>
+    <div
+      className={`grid gap-6 ${
+        isTwoMembers
+          ? 'max-xs:grid-cols-1 grid-cols-2 max-xl:grid-cols-2 xl:mx-auto xl:max-w-5xl'
+          : 'max-xs:grid-cols-1 grid-cols-3 max-xl:grid-cols-2'
+      }`}>
       {teamData.map((member, i) => (
         <FadeUpOneByOneAnimation i={i} className="h-full" key={member.id}>
-          <article className="flex h-full w-full max-w-[450px] flex-col items-stretch rounded-4xl bg-[#f8f8f8] p-3 sm:p-4">
+          <article className="flex h-full w-full max-w-[450px] flex-col items-stretch rounded-4xl bg-[#f8f8f8] p-3 max-xl:mx-auto sm:p-4">
             <Link
               href={`/teams/${member.id}`}
               className="rounded-medium overflow-hidden rounded-b-none bg-gray-100 dark:bg-[#30302F]">
               <Image
                 src={member.image}
-                alt="team member image"
-                className="aspect-square h-full w-full object-cover transition-all duration-300"
+                alt={member.name}
+                className="h-full w-full object-cover transition-all duration-300 max-xl:aspect-4/3 xl:aspect-square"
                 width={389}
                 height={389}
+                loading="lazy"
               />
             </Link>
 
@@ -53,7 +59,7 @@ const Members = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={`${member.name} on LinkedIn`}
-                  className="bg-primary inline-flex items-center rounded-[4px] px-[10px] py-[4px]">
+                  className="bg-primary inline-flex min-h-11 min-w-11 items-center justify-center rounded-[4px] px-3 py-2">
                   <svg
                     width="16"
                     height="16"

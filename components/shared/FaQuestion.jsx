@@ -11,10 +11,11 @@ const FaQuestion = () => {
   }
   const generalFaq = FAQData.filter((faq) => faq.type.includes('general'))
   return (
-    <div className="[&>*:not(:last-child)]:mb-5">
+    <div className="[&>*:not(:last-child)]:mb-5 max-xl:[&>*:not(:last-child)]:mb-0">
       {generalFaq.map((faq) => (
         <FaqItem
           key={faq.id}
+          id={faq.id}
           question={faq.question}
           answer={faq.answer}
           isOpen={activeIndex === faq.id}

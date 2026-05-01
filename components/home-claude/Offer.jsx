@@ -1,6 +1,8 @@
+import { lifelongBenefits } from '@/data/lifelongBenefits'
 import Image from 'next/image'
 import Link from 'next/link'
 import FadeUpAnimation from '../animations/FadeUpAnimation'
+import LifelongBenefitsCarousel from './LifelongBenefitsCarousel'
 import ResultDashboardCard from './ResultDashboardCard'
 
 const programBlocks = [
@@ -74,28 +76,11 @@ const ShieldIcon = () => (
   </svg>
 )
 
-const lifelongBenefits = [
-  {
-    id: 'brief',
-    Icon: NewsletterIcon,
-    title: 'Brief mensuel personnalisé',
-    description:
-      'Les nouveautés Claude pertinentes pour votre contexte métier, filtrées et synthétisées — sans bruit, sans perte de temps.',
-  },
-  {
-    id: 'skills',
-    Icon: RefreshIcon,
-    title: 'Base de skills Claude mise à jour en continu',
-    description: 'Vos équipes retrouvent toujours les bonnes pratiques actuelles — jamais des méthodes déjà obsolètes.',
-  },
-  {
-    id: 'access',
-    Icon: ShieldIcon,
-    title: 'Accès prioritaire à nos experts',
-    description:
-      'Une question sur un usage avancé ou une évolution de Claude ? Nos formateurs vous répondent en priorité.',
-  },
-]
+const LIFELONG_ICONS = {
+  brief: NewsletterIcon,
+  skills: RefreshIcon,
+  access: ShieldIcon,
+}
 
 const ArrowIcon = () => (
   <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -129,21 +114,21 @@ const ImagePlaceholder = ({ label, src, alt = '' }) => (
 
 const Offer = () => {
   return (
-    <section className="dark:bg-dark-300 relative scroll-mt-28 bg-white pb-150 md:scroll-mt-32">
+    <section className="dark:bg-dark-300 relative scroll-mt-28 bg-white pb-16 min-[800px]:pb-150 md:scroll-mt-32 md:pb-24">
       <div className="container">
         <FadeUpAnimation className="mx-auto mb-16 max-w-[940px] text-center max-md:mb-12">
           <span className="bg-accent/25 my-10 inline-block h-[2px] w-16 rounded-full md:my-12" aria-hidden />
           <p
-            className="font-jakarta mb-16 text-[26px] leading-[1.38] font-medium text-[#30343a] md:mb-20 md:text-[32px] dark:text-white/90"
+            className="font-jakarta mx-auto mb-16 max-w-[940px] text-center text-[26px] leading-[1.38] font-medium text-[#30343a] max-[799px]:max-w-[42ch] max-md:text-[23px] md:mb-20 md:text-[32px] dark:text-white/90"
             id="approche">
             Nous accompagnons les bureaux d&apos;architectes ambitieux qui savent que l&apos;IA va transformer en
             profondeur les façons de travailler — et qui veulent prendre une longueur d&apos;avance.
           </p>
         </FadeUpAnimation>
-        <div className="grid grid-cols-15 gap-x-12 gap-y-12 lg:gap-x-20">
-          <div className="col-span-15 xl:col-span-7">
-            <FadeUpAnimation className="xl:sticky xl:top-52">
-              <h2 className="mb-6">Enclenchez votre stratégie IA en 4 semaines</h2>
+        <div className="grid grid-cols-15 gap-x-0 gap-y-12 min-[800px]:gap-x-12 lg:gap-x-20">
+          <div className="col-span-15 max-[799px]:order-1 min-[800px]:col-span-7">
+            <FadeUpAnimation className="min-[800px]:sticky min-[800px]:top-52">
+              <h2 className="mb-6 max-md:text-[28px]">Enclenchez votre stratégie IA en 4 semaines</h2>
               <p className="text-paragraph mb-3 dark:text-white/80">
                 L&apos;objectif : maîtriser Claude Cowork et rendre vos équipes autonomes pour porter cette
                 transformation IA durablement.
@@ -159,13 +144,13 @@ const Offer = () => {
             </FadeUpAnimation>
           </div>
 
-          <div className="col-span-15 xl:col-span-8">
+          <div className="col-span-15 max-[799px]:order-2 min-[800px]:col-span-8">
             <div className="space-y-18 max-md:space-y-15">
               {programBlocks.map((block) => (
                 <FadeUpAnimation className="rounded-medium shadow-box dark:bg-dark-200 bg-white p-2.5" key={block.id}>
                   <article className="dark:border-borderColour-dark rounded border border-dashed border-gray-100 p-6">
                     <div className="mb-6">
-                      <div className="mb-5 flex items-start justify-between gap-3">
+                      <div className="mb-5 flex items-start justify-between gap-3 max-[799px]:flex-col max-[799px]:items-start">
                         <span className="bg-accent/10 text-accent inline-flex min-h-10 shrink-0 items-center justify-center rounded-full px-4 text-sm leading-none font-semibold whitespace-nowrap">
                           <span className="bg-accent mr-2 inline-block h-2 w-2 rounded-full" />
                           {block.id}
@@ -176,8 +161,8 @@ const Offer = () => {
                           </span>
                         )}
                       </div>
-                      <h3 className="mb-4">{block.title}</h3>
-                      <p className="mb-5">{block.description}</p>
+                      <h3 className="mb-4 max-[799px]:text-lg">{block.title}</h3>
+                      <p className="mb-5 max-[799px]:text-[15px] max-[799px]:leading-relaxed">{block.description}</p>
                       <div className="mb-6 flex flex-wrap gap-2.5">
                         {block.pills.map((pill) => (
                           <span
@@ -187,19 +172,21 @@ const Offer = () => {
                           </span>
                         ))}
                       </div>
-                      <ImagePlaceholder
-                        label={`Visuel ${block.id} · à venir`}
-                        src={block.imageSrc}
-                        alt={block.imageAlt ?? ''}
-                      />
+                      <div className="max-[799px]:hidden">
+                        <ImagePlaceholder
+                          label={`Visuel ${block.id} · à venir`}
+                          src={block.imageSrc}
+                          alt={block.imageAlt ?? ''}
+                        />
+                      </div>
                     </div>
-                    <div className="dark:border-borderColour-dark border-borderColour mt-6 flex items-center border-t pt-5">
-                      <button
-                        className="text-secondary hover:text-secondary/80 dark:text-secondary dark:hover:text-secondary/70 inline-flex items-center gap-2 text-sm font-semibold"
-                        type="button">
+                    <div className="dark:border-borderColour-dark border-borderColour mt-6 flex min-h-11 items-center border-t pt-5">
+                      <Link
+                        href="#"
+                        className="text-secondary hover:text-secondary/80 dark:text-secondary dark:hover:text-secondary/70 inline-flex items-center gap-2 text-sm font-semibold">
                         {block.cta}
                         <ArrowIcon />
-                      </button>
+                      </Link>
                     </div>
                   </article>
                 </FadeUpAnimation>
@@ -235,8 +222,13 @@ const Offer = () => {
                 </article>
               </FadeUpAnimation>
 
-              <FadeUpAnimation>
+              <FadeUpAnimation className="space-y-6">
                 <ResultDashboardCard />
+                <div className="flex justify-center min-[800px]:hidden">
+                  <Link href="#" className="btn">
+                    Réservez votre audit
+                  </Link>
+                </div>
               </FadeUpAnimation>
             </div>
           </div>
@@ -251,21 +243,25 @@ const Offer = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-3 gap-6 max-lg:grid-cols-1 max-lg:gap-4">
-            {lifelongBenefits.map((benefit) => (
-              <div key={benefit.id} className="rounded-medium shadow-box dark:bg-dark-200 bg-white p-2.5">
-                <div className="dark:border-borderColour-dark flex h-full flex-col rounded border border-dashed border-gray-100 p-6">
-                  <span className="bg-secondary/10 text-secondary mb-5 flex h-10 w-10 items-center justify-center rounded-full">
-                    <benefit.Icon />
-                  </span>
-                  <p className="mb-2 leading-snug font-semibold">{benefit.title}</p>
-                  <p className="text-paragraph-light text-sm leading-relaxed dark:text-white/60">
-                    {benefit.description}
-                  </p>
+          <div className="hidden md:grid md:grid-cols-3 md:gap-6">
+            {lifelongBenefits.map((benefit) => {
+              const Icon = LIFELONG_ICONS[benefit.id]
+              return (
+                <div key={benefit.id} className="rounded-medium shadow-box dark:bg-dark-200 bg-white p-2.5">
+                  <div className="dark:border-borderColour-dark flex h-full flex-col rounded border border-dashed border-gray-100 p-6">
+                    <span className="bg-secondary/10 text-secondary mb-5 flex h-10 w-10 items-center justify-center rounded-full">
+                      <Icon />
+                    </span>
+                    <p className="mb-2 leading-snug font-semibold">{benefit.title}</p>
+                    <p className="text-paragraph-light text-sm leading-relaxed dark:text-white/60">
+                      {benefit.description}
+                    </p>
+                  </div>
                 </div>
-              </div>
-            ))}
+              )
+            })}
           </div>
+          <LifelongBenefitsCarousel />
         </FadeUpAnimation>
       </div>
     </section>

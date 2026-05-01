@@ -2,39 +2,76 @@
   "FAQData": [
     {
       "id": 1,
-      "type": ["general", "changelog"],
-      "question": "What is a business agency?",
-      "answer": "Until recently, the prevailing view assumed lorem ipsum was born as a nonsense text. “It's not Latin."
-    },
-    {
-      "id": 2,
       "type": ["general"],
-      "question": "What services does a business agency provide?",
-      "answer": "Until recently, the prevailing view assumed lorem ipsum was born as a nonsense text. “It's not Latin."
+      "question": "À qui s’adresse l’accompagnement Aplio ?",
+      "answer": "s"
     },
     {
       "id": 3,
-      "type": ["general", "changelog"],
-      "question": "How often should I update my website?",
-      "answer": "Until recently, the prevailing view assumed lorem ipsum was born as a nonsense text. “It's not Latin."
+      "type": ["general"],
+      "question": "Qu’est-ce que Claude Cowork apporte concrètement à un cabinet d’architecture ?",
+      "answer": ""
     },
     {
       "id": 4,
-      "type": ["general", "terms"],
-      "question": "How do subscriptions work?",
-      "answer": "Until recently, the prevailing view assumed lorem ipsum was born as a nonsense text. “It's not Latin."
+      "type": ["general"],
+      "question": "Quels types de tâches ou de process peut-on améliorer avec Claude Cowork ?",
+      "answer": ""
     },
     {
       "id": 5,
-      "type": ["changelog", "terms"],
-      "question": "What other services are you compatible with?",
-      "answer": "Until recently, the prevailing view assumed lorem ipsum was born as a nonsense text. “It's not Latin."
+      "type": ["general"],
+      "question": "Comment se déroule le programme de 4 semaines ?",
+      "answer": ""
     },
     {
       "id": 6,
-      "type": ["general", "terms"],
-      "question": "What other services are you compatible with?",
-      "answer": "Until recently, the prevailing view assumed lorem ipsum was born as a nonsense text. “It's not Latin."
+      "type": ["general"],
+      "question": "Combien de temps nos équipes doivent-elles y consacrer ?",
+      "answer": ""
+    },
+    {
+      "id": 8,
+      "type": ["general"],
+      "question": "Quels sont les livrables à la fin du programme ?",
+      "answer": ""
+    },
+    {
+      "id": 9,
+      "type": ["general"],
+      "question": "Comment choisissez-vous les 3 process à transformer en priorité ?",
+      "answer": ""
+    },
+    {
+      "id": 10,
+      "type": ["general"],
+      "question": "Est-ce que l’accompagnement est adapté à la taille de notre cabinet ?",
+      "answer": ""
+    },
+    {
+      "id": 11,
+      "type": ["general"],
+      "question": "Que se passe-t-il après les 4 semaines ?",
+      "answer": ""
+    },
+    {
+      "id": 12,
+      "type": ["general"],
+      "question": "Est-ce que vous formez seulement à l’outil ou aussi à la conduite du changement ?",
+      "answer": ""
+    },
+    {
+      "id": 13,
+      "type": ["general"],
+      "question": "Comment garantissez-vous que les usages restent dans le temps ?",
+      "answer": ""
+    },
+
+    {
+      "id": 17,
+      "type": ["general"],
+      "question": "Faut-il déjà maîtriser l’IA ou Claude pour commencer ?",
+      "answer": ""
     }
   ]
 }

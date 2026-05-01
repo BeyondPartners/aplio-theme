@@ -1,9 +1,15 @@
 'use client'
 import { fadeUpAnimation } from '@/data/animation'
-import { motion } from 'framer-motion'
+import { motion, useReducedMotion } from 'framer-motion'
 import PropTypes from 'prop-types'
 
 const FadeUpAnimation = ({ children, className }) => {
+  const prefersReducedMotion = useReducedMotion()
+
+  if (prefersReducedMotion) {
+    return <div className={className}>{children}</div>
+  }
+
   return (
     <motion.div variants={fadeUpAnimation} initial="initial" animate="animate" className={className}>
       {children}

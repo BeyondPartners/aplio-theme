@@ -17,6 +17,8 @@ const Clients = ({
   marqueeItemClassName,
   /** Applied to every custom logo inner wrapper unless an item sets `logoPaddingClassName`. */
   defaultLogoPaddingClassName,
+  /** Pause marquee when false (e.g. prefers-reduced-motion). */
+  marqueePlay = true,
 }) => {
   const { ClientData } = ClientList
   const list = items?.length ? items : ClientData
@@ -31,7 +33,7 @@ const Clients = ({
 
         <div
           className={cn(
-            'dark:before:from-dark-gradient dark:after:from-dark-gradient relative py-8 before:pointer-events-none before:absolute before:inset-y-0 before:-right-0.5 before:z-10 before:w-[120px] before:bg-gradient-to-l before:from-white before:from-[37.5%] after:pointer-events-none after:absolute after:inset-y-0 after:-left-0.5 after:z-10 after:w-[120px] after:bg-gradient-to-r after:from-white after:from-[37.5%]',
+            'dark:before:from-dark-gradient dark:after:from-dark-gradient relative overflow-hidden py-8 before:pointer-events-none before:absolute before:inset-y-0 before:-right-0.5 before:z-10 before:w-[120px] before:bg-gradient-to-l before:from-white before:from-[37.5%] after:pointer-events-none after:absolute after:inset-y-0 after:-left-0.5 after:z-10 after:w-[120px] after:bg-gradient-to-r after:from-white after:from-[37.5%]',
             marqueeClassName,
           )}>
           {border && (
@@ -53,12 +55,12 @@ const Clients = ({
             </div>
           )}
 
-          <div className="relative z-10">
-            <Marquee pauseOnHover>
+          <div className="relative z-10 overflow-hidden">
+            <Marquee pauseOnHover play={marqueePlay} style={{ overflow: 'hidden' }}>
               {list.map((clients) => (
                 <div
                   className={cn(
-                    'marquee-content-list relative flex min-h-15 items-center justify-center overflow-x-clip px-3',
+                    'marquee-content-list relative flex min-h-15 items-center justify-center overflow-hidden px-3',
                     isCustomLogos ? 'w-[260px] max-md:w-[220px]' : 'w-[215px]',
                     clients.wrapperClassName,
                     marqueeItemClassName,

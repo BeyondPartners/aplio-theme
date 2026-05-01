@@ -44,8 +44,25 @@ const ResultDashboardCard = () => {
   const sectionRef = useRef(null)
   const [isVisible, setIsVisible] = useState(false)
   const [progress, setProgress] = useState(0)
+  const [prefersReducedMotion, setPrefersReducedMotion] = useState(false)
 
   useEffect(() => {
+    if (typeof window === 'undefined') return
+    const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)')
+    const updatePreference = () => setPrefersReducedMotion(mediaQuery.matches)
+    updatePreference()
+
+    mediaQuery.addEventListener('change', updatePreference)
+    return () => mediaQuery.removeEventListener('change', updatePreference)
+  }, [])
+
+  useEffect(() => {
+    if (prefersReducedMotion) {
+      setIsVisible(true)
+      setProgress(1)
+      return
+    }
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
@@ -53,7 +70,7 @@ const ResultDashboardCard = () => {
           observer.disconnect()
         }
       },
-      { threshold: 0.35 },
+      { threshold: 0.5 },
     )
 
     if (sectionRef.current) {
@@ -61,10 +78,10 @@ const ResultDashboardCard = () => {
     }
 
     return () => observer.disconnect()
-  }, [])
+  }, [prefersReducedMotion])
 
   useEffect(() => {
-    if (!isVisible) return
+    if (!isVisible || prefersReducedMotion) return
 
     const duration = 1300
     let frameId = null
@@ -83,7 +100,7 @@ const ResultDashboardCard = () => {
     return () => {
       if (frameId) cancelAnimationFrame(frameId)
     }
-  }, [isVisible])
+  }, [isVisible, prefersReducedMotion])
 
   const getAnimatedValue = (value) => {
     if (!isVisible) return 0
@@ -101,32 +118,50 @@ const ResultDashboardCard = () => {
           <p className="text-paragraph-light text-sm dark:text-white/60">Vous repartez avec :</p>
         </div>
 
-        <div className="dark:divide-borderColour-dark grid grid-cols-2 divide-x divide-y divide-gray-100 max-md:grid-cols-1 max-md:divide-x-0">
-          {metrics.map((metric) => (
-            <div key={metric.id} className="p-6 max-lg:p-5">
-              <div className="text-accent mb-2.5 flex items-end gap-1 leading-none font-bold">
-                {metric.animate ? (
-                  <span className="text-[38px] max-lg:text-[32px]">{getAnimatedValue(metric.value)}</span>
-                ) : (
-                  <span className="text-[38px] max-lg:text-[32px]">{metric.symbol}</span>
-                )}
-                {metric.suffix && <span className="mb-0.5 text-[20px] max-lg:text-[18px]">{metric.suffix}</span>}
-                {metric.unit && (
-                  <span className="mb-0.5 text-[16px] font-semibold max-lg:text-[15px]">{metric.unit}</span>
-                )}
+        <div className="dark:divide-borderColour-dark grid grid-cols-2 divide-x divide-y divide-gray-100">
+          {metrics.map((metric) => {
+            const finalNumericLabel = `${metric.value}${metric.suffix ?? ''}${metric.unit ? ` ${metric.unit}` : ''}`
+            return (
+              <div key={metric.id} className="p-4 max-[799px]:p-5 max-sm:px-3 min-[800px]:p-6">
+                <div className="text-accent mb-2.5 flex items-end gap-1 leading-none font-bold">
+                  {metric.animate ? (
+                    <span className="text-[28px] max-[799px]:text-[32px] min-[800px]:text-[38px]" aria-hidden="true">
+                      {getAnimatedValue(metric.value)}
+                    </span>
+                  ) : (
+                    <span className="text-[28px] max-[799px]:text-[32px] min-[800px]:text-[38px]" aria-hidden="true">
+                      {metric.symbol}
+                    </span>
+                  )}
+                  <span className="sr-only">{finalNumericLabel}</span>
+                  {metric.suffix && (
+                    <span
+                      className="mb-0.5 text-[18px] max-[799px]:text-[18px] min-[800px]:text-[20px]"
+                      aria-hidden="true">
+                      {metric.suffix}
+                    </span>
+                  )}
+                  {metric.unit && (
+                    <span
+                      className="mb-0.5 text-[14px] font-semibold max-[799px]:text-[15px] min-[800px]:text-[16px]"
+                      aria-hidden="true">
+                      {metric.unit}
+                    </span>
+                  )}
+                </div>
+                <p className="text-paragraph max-w-[260px] text-[13px] leading-snug font-medium max-[799px]:text-sm max-sm:max-w-none min-[800px]:text-sm dark:text-white/80">
+                  {metric.title}
+                </p>
+                {metric.micro && <p className="text-accent mt-0.5 text-xs font-medium">{metric.micro}</p>}
               </div>
-              <p className="text-paragraph max-w-[260px] text-sm leading-snug font-medium dark:text-white/80">
-                {metric.title}
-              </p>
-              {metric.micro && <p className="text-accent mt-0.5 text-xs font-medium">{metric.micro}</p>}
-            </div>
-          ))}
+            )
+          })}
         </div>
 
         <div className="border-borderColour dark:border-borderColour-dark bg-secondary/10 dark:bg-secondary/15 border-t px-5 py-7 max-lg:p-4">
           <div className="flex items-start gap-3">
             <span
-              className="bg-secondary mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-full text-base leading-none text-white"
+              className="bg-secondary mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-full text-base leading-none text-white max-[799px]:h-8 max-[799px]:w-8 min-[800px]:h-9 min-[800px]:w-9"
               aria-hidden>
               ★
             </span>

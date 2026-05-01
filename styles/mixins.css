@@ -1,4 +1,8 @@
 /* // Marquee CSS */
+.client .rfm-marquee-container {
+  overflow: hidden;
+}
+
 .marquee-content-list {
   @apply after:absolute after:top-1/2 after:right-11 after:h-[60px] after:w-[1px] after:-translate-y-1/2 after:content-[url('/images/clients/client-item-border.svg')] dark:after:content-[url('/images/clients/client-item-border-dark.svg')];
 }

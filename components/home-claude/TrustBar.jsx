@@ -1,3 +1,6 @@
+'use client'
+
+import { useEffect, useState } from 'react'
 import FadeUpAnimation from '../animations/FadeUpAnimation'
 import Clients from '../shared/Clients'
 
@@ -46,16 +49,29 @@ const TRUST_BAR_LOGOS = [
 ]
 
 const TrustBar = () => {
+  const [marqueePlay, setMarqueePlay] = useState(true)
+
+  useEffect(() => {
+    if (typeof window === 'undefined') return
+    const mq = window.matchMedia('(prefers-reduced-motion: reduce)')
+    const sync = () => setMarqueePlay(!mq.matches)
+    sync()
+    mq.addEventListener('change', sync)
+    return () => mq.removeEventListener('change', sync)
+  }, [])
+
   return (
-    <section className="bg-white dark:bg-white">
-      <FadeUpAnimation className="container">
+    <section className="overflow-hidden bg-white dark:bg-white" aria-label="Entreprises accompagnées">
+      <FadeUpAnimation className="container overflow-hidden">
         <Clients
           sectionTitle={false}
           sectionDetails={false}
           border={true}
-          className="bg-transparent py-0 dark:bg-transparent"
-          marqueeClassName="py-3 max-md:py-2"
-          defaultLogoPaddingClassName="px-5 max-md:px-4"
+          className="overflow-hidden bg-transparent py-0 dark:bg-transparent"
+          marqueeClassName="overflow-hidden py-3 max-md:py-2"
+          marqueeItemClassName="max-md:w-[190px] max-md:px-1"
+          defaultLogoPaddingClassName="px-5 max-md:px-2"
+          marqueePlay={marqueePlay}
           items={TRUST_BAR_LOGOS}
         />
       </FadeUpAnimation>

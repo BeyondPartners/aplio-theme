@@ -1,11 +1,11 @@
 import { cn } from '@/utils/cn'
 import Members from './Members'
 
-const TeamMembers = ({ className = 'pt-150' }) => {
+const TeamMembers = ({ className = 'pt-150 max-xl:pt-24' }) => {
   return (
     <section
       className={cn(
-        'dark:bg-dark-300 bg-white pb-[170px] max-md:overflow-hidden max-md:pt-20 max-md:pb-25',
+        'dark:bg-dark-300 bg-white pb-[170px] max-xl:pb-20 max-md:overflow-hidden max-md:pb-16',
         className,
       )}>
       <div className="container">
