@@ -6,7 +6,7 @@ const Faq = () => {
     <section className="relative pb-150 max-md:overflow-hidden">
       <div className="relative container">
         <FaqBackground />
-        <div className="mx-auto max-w-[830px]">
+        <div className="mx-auto max-w-[min(100%,1079px)]">
           <div className="text-center">
             <p className="section-tagline mb-3">Faq’s</p>
             <h2 className="mb-12">

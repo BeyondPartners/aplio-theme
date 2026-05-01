@@ -104,6 +104,24 @@ body {
   @apply mx-auto flex items-center justify-center;
 }
 
+/* Homepage testimonials carousel — equal-height slides */
+.testimonials-swiper .swiper-wrapper {
+  align-items: stretch;
+}
+
+.testimonials-swiper .swiper-slide {
+  display: flex;
+  height: auto;
+}
+
+.testimonials-swiper .swiper-slide .testimonial-slide-inner {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  min-height: 0;
+  width: 100%;
+}
+
 /* Fancybox */
 .f-button svg {
   @apply stroke-white;

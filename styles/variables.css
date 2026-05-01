@@ -12,8 +12,11 @@
   --color-primary: #f0f3ff;
   --color-primary-100: #fffbf9;
   --color-primary-200: #f5e7e1;
-  --color-accent:#de9d83  ;
+  --color-accent: #E8886B;
+  /* #E8886B  */
   --color-accent-100: #e7f1eb;
+  --color-secondary: #1187A8;
+
 
   --color-stroke-1: #eceff4;
   --color-stroke-2: #1b232f;

@@ -2,41 +2,74 @@
   "TestimonialData": [
     {
       "id": 1,
-      "logoLight": "/images/testimonial/bodygroup.svg",
-      "logoDark": "/images/testimonial/bodygroup-dark.svg",
-      "testimonial": "Until recently, the prevailing view assumed lorem ipsum was born as a nonsense text. It's not Latin though it looks like it, and it actually says nothing.",
-      "rating": 4,
-      "date": "Feb 03, 2024",
+      "logoLight": "/images/kilome_logo.png",
+      "logoDark": "/images/kilome_logo.png",
+      "testimonial": "Merci Yasmina pour la formation, que j'ai trouvée vraiment top. Les différents modules étaient très clairs et concrets, et répondaient parfaitement à mes attentes.",
+      "date": "",
       "author": {
-        "name": "Robert Frost",
-        "designation": "Lead Developer",
+        "name": "Mat",
+        "designation": "Pharm-assist",
         "image": "/images/testimonial/avatar1.png"
       }
     },
     {
       "id": 2,
-      "logoLight": "/images/testimonial/caudile.svg",
-      "logoDark": "/images/testimonial/caudile-dark.svg",
-      "testimonial": "Until recently, the prevailing view assumed lorem ipsum was born as a nonsense text. It's not Latin though it looks like it, and it actually says nothing.",
-      "rating": 5,
-      "date": "Feb 04, 2024",
+      "logoLight": "/images/made_in_courtage_logo.png",
+      "logoDark": "/images/made_in_courtage_logo.png",
+      "testimonial": "Un immense BRAVO à Yasmina qui a su comprendre nos besoins, reformuler nos envies et nous livrer dans un temps record notre assistant juridique dopé à l'IA !",
+      "date": "",
       "author": {
-        "name": "Guy Hawkins",
-        "designation": "Developer",
+        "name": "Eric",
+        "designation": "Made In Courtage",
         "image": "/images/testimonial/avatar2.png"
       }
     },
     {
       "id": 3,
-      "logoLight": "/images/testimonial/axeptio.svg",
-      "logoDark": "/images/testimonial/axeptio-dark.svg",
-      "testimonial": "Until recently, the prevailing view assumed lorem ipsum was born as a nonsense text. It's not Latin though it looks like it, and it actually says nothing.",
-      "rating": 3,
-      "date": "Feb 12, 2024",
+      "logoLight": null,
+      "logoDark": null,
+      "testimonial": "Justin a cette force de comprendre nos besoins. Il veut comprendre de A à Z comment fonctionne ton activité pour bien savoir quel plan mettre en place. Je recommande à 1000 % les compétences de Justin pour la qualité de son travail et son professionnalisme hors pair.",
+      "date": "",
       "author": {
-        "name": "Cody Fisher",
-        "designation": "UI Designer",
+        "name": "Nicolas",
+        "designation": "Fit Routine",
         "image": "/images/testimonial/avatar3.png"
+      }
+    },
+    {
+      "id": 4,
+      "logoLight": null,
+      "logoDark": null,
+      "testimonial": "Merci Yasmina encore pour cette conférence sur l'intelligence artificielle c'était vraiment enrichissant, très précis et surtout accessible. Un vrai plus… ta clarté et la fluidité de ta présentation : on suit facilement, même sur des sujets parfois techniques.",
+      "date": "",
+      "author": {
+        "name": "Florent",
+        "designation": "Conférence IA",
+        "image": "/images/testimonial/avatar4.png"
+      }
+    },
+    {
+      "id": 5,
+      "logoLight": null,
+      "logoDark": null,
+      "testimonial": "Merci beaucoup Yasmina pour cette conférence inspirante et très éclairante. Tu as su rendre concrète et accessible l'importance, pour les entreprises, d'accueillir l'IA dès aujourd'hui. Un grand merci pour la clarté, la pédagogie et l'élan que tu nous transmets.",
+      "date": "",
+      "author": {
+        "name": "Une participante",
+        "designation": "Masterclass IA",
+        "image": "/images/testimonial/avatar5.png"
+      }
+    },
+    {
+      "id": 6,
+      "logoLight": null,
+      "logoDark": null,
+      "testimonial": "Il suffisait de demander ! J'avais peur de passer pour un ringard avec mes questions basiques à plus de 50 ans. Il n'en a rien été. Non seulement Yasmina est une fine pédagogue mais surtout sa capacité à prendre en charge avec douceur toutes mes demandes m'a immédiatement rassuré. Aujourd'hui, j'ai des bases solides et une furieuse envie de faire par moi-même en toute autonomie.",
+      "date": "",
+      "author": {
+        "name": "Un participant",
+        "designation": "Formation IA",
+        "image": "/images/testimonial/avatar2.png"
       }
     }
   ]

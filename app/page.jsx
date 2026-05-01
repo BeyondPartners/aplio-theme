@@ -1,6 +1,7 @@
 import Footer from '@/components/footer/Footer'
 import Hero from '@/components/home-claude/Hero'
 import Offer from '@/components/home-claude/Offer'
+import PainPoints from '@/components/home-claude/PainPoints'
 import PrimaryNavbar from '@/components/navbar/PrimaryNavbar'
 import Faq from '@/components/shared/Faq'
 import TeamMembers from '@/components/shared/TeamMembers'
@@ -16,6 +17,7 @@ export default function Home() {
       <PrimaryNavbar />
       <main>
         <Hero />
+        <PainPoints />
         <Offer />
         <Testimonial />
         <Faq />

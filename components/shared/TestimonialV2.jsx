@@ -9,29 +9,39 @@ const TestimonialV2 = () => {
   return (
     <section className="relative overflow-hidden pt-25 pb-25">
       <div className="relative container">
-        <div className="mx-auto mb-15 max-w-[550px] text-center">
-          <p className="section-tagline">Témoignages</p>
+        <div className="mx-auto mb-15 max-w-[650px] text-center">
+          <p className="text-accent leading-tight">Témoignages</p>
           <h2>Ce que nos clients disent de nous</h2>
         </div>
         <div className="relative z-10">
           <div className="absolute top-1/2 left-1/2 -z-10 -translate-x-1/2 -translate-y-1/2">
             <TestmonialBg />
           </div>
-          <div className="grid grid-cols-3 gap-8 max-lg:grid-cols-2 max-md:grid-cols-1">
+          <div className="grid grid-cols-3 items-stretch gap-8 max-lg:grid-cols-2 max-md:grid-cols-1">
             {TestimonialData.map((testimonial, i) => (
               <FadeUpOneByOneAnimation
                 i={i}
-                className="rounded-medium shadow-nav dark:bg-dark-200 bg-white p-2.5"
+                className="rounded-medium shadow-nav dark:bg-dark-200 flex h-full min-h-0 flex-col bg-white p-2.5"
                 key={testimonial.id}>
-                <div className="dark:border-borderColour-dark h-full rounded border border-dashed border-gray-100 p-8">
-                  <div className="flex items-center pb-7">
-                    <Image
-                      src={testimonial.author.image}
-                      alt="avatar"
-                      className="mr-4 rounded-full"
-                      width={56}
-                      height={56}
-                    />
+                <div className="dark:border-borderColour-dark flex min-h-0 flex-1 flex-col rounded border border-dashed border-gray-100 p-8">
+                  <div className="flex shrink-0 items-center pb-7">
+                    {testimonial.logoLight ? (
+                      <Image
+                        src={testimonial.logoLight}
+                        alt=""
+                        className="mr-4 h-14 w-auto max-w-[132px] shrink-0 object-contain object-left"
+                        width={140}
+                        height={56}
+                      />
+                    ) : (
+                      <Image
+                        src={testimonial.author.image}
+                        alt=""
+                        className="mr-4 rounded-full"
+                        width={56}
+                        height={56}
+                      />
+                    )}
                     <div className="block">
                       <h3 className="text-base font-semibold">{testimonial.author.name}</h3>
                       <p className="font-jakarta text-paragraph-light text-sm font-medium dark:text-[#A1A49D]">
@@ -40,28 +50,14 @@ const TestimonialV2 = () => {
                     </div>
                   </div>
 
-                  <blockquote className="text-paragraph mb-7 leading-[1.75] italic dark:text-white">
+                  <blockquote className="text-paragraph mb-0 min-h-0 flex-1 pb-7 leading-[1.75] italic dark:text-white">
                     &ldquo;{testimonial.testimonial}&rdquo;
                   </blockquote>
-                  <div className="dark:border-borderColour-dark flex items-center justify-between border-t border-dashed border-gray-100 pt-7">
-                    <div>
-                      <Image
-                        src={testimonial.logoLight}
-                        alt="image"
-                        className="inline-block dark:hidden"
-                        width={110}
-                        height={35}
-                      />
-                      <Image
-                        src={testimonial.logoDark}
-                        alt="image"
-                        className="hidden dark:inline-block"
-                        width={110}
-                        height={35}
-                      />
+                  {testimonial.date ? (
+                    <div className="dark:border-borderColour-dark mt-auto flex shrink-0 items-center justify-end border-t border-dashed border-gray-100 pt-7">
+                      <p className="text-paragraph-light dark:text-paragraph-light text-sm">{testimonial.date}</p>
                     </div>
-                    <p className="text-paragraph-light dark:text-paragraph-light text-sm">{testimonial.date}</p>
-                  </div>
+                  ) : null}
                 </div>
               </FadeUpOneByOneAnimation>
             ))}
