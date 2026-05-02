@@ -195,8 +195,13 @@ const PainPoints = () => {
                 key={pain.title}
                 className="dark:border-borderColour-dark dark:bg-dark-200 rounded-medium shadow-box flex min-h-0 min-w-0 border border-[#f1f1f1] bg-white">
                 <div className="flex h-full min-h-full flex-col gap-4 p-6 md:p-8">
-                  <div className="bg-accent/10 text-accent flex h-10 w-10 shrink-0 items-center justify-center rounded-[10px]">
-                    <Icon />
+                  <div className="flex items-center justify-between gap-2">
+                    <div className="bg-accent/10 text-accent flex h-10 w-10 shrink-0 items-center justify-center rounded-[10px]">
+                      <Icon />
+                    </div>
+                    <span className="bg-accent/10 text-accent inline-flex rounded-full px-3 py-1 text-xs font-medium">
+                      {pain.tag}
+                    </span>
                   </div>
 
                   <div className="flex flex-col gap-2">
@@ -207,10 +212,6 @@ const PainPoints = () => {
                       {pain.desc}
                     </p>
                   </div>
-
-                  <span className="bg-accent/10 text-accent mt-auto inline-flex self-start rounded-full px-3 py-1 text-xs font-medium">
-                    {pain.tag}
-                  </span>
                 </div>
               </li>
             )

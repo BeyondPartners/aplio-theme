@@ -3,7 +3,7 @@ import Hero from '@/components/home-claude/Hero'
 import Offer from '@/components/home-claude/Offer'
 import PainPoints from '@/components/home-claude/PainPoints'
 import PrimaryNavbar from '@/components/navbar/PrimaryNavbar'
-import Faq from '@/components/shared/Faq'
+import Faq from '@/components/home-claude/Faq'
 import TeamMembers from '@/components/shared/TeamMembers'
 import Testimonial from '@/components/shared/Testimonial'
 
