@@ -13,7 +13,7 @@ const axes = [
     desc: 'Claude Cowork est intégré à vos 3 process les plus chronophages.',
   },
   {
-    title: 'Création de la stratégie et conduite du changement',
+    title: 'Définition de la stratégie et conduite du changement',
     desc: 'De 30 à 90 jours et portée par vos équipes, pour une transformation durable.',
   },
 ]

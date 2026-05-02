@@ -4,13 +4,30 @@ import NavbarItem from '@/data/navbar'
 import { cn } from '@/utils/cn'
 import Image from 'next/image'
 import Link from 'next/link'
-import { useEffect, useState } from 'react'
+import { useCallback, useEffect, useState } from 'react'
 import { FaAngleDown, FaTimes } from 'react-icons/fa'
+
+/** Primary navbar is only used on `/`; hash targets home sections. Next.js Link needs `/#id`, not `#id`. */
+function homeSectionHref(href) {
+  if (typeof href !== 'string' || !href.startsWith('#')) return href
+  return `/${href}`
+}
 
 const PrimaryNavbar = () => {
   const { menuData } = NavbarItem
   const [showMobileMenu, setShowMobileMenu] = useState(false)
   const [sticky, setSticky] = useState(false)
+
+  const closeMobileMenuAndScrollToHash = useCallback((hashPath) => {
+    const id = hashPath.replace(/^#/, '')
+    setShowMobileMenu(false)
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+        window.history.replaceState(null, '', `#${id}`)
+      })
+    })
+  }, [])
 
   const handleStickyNavbar = () => {
     if (window.scrollY >= 20) {
@@ -50,7 +67,7 @@ const PrimaryNavbar = () => {
               <li className={cn(menuItem.megaMenu ? 'group' : menuItem.path ? '' : 'group relative')} key={menuItem.id}>
                 {menuItem.path ? (
                   <Link
-                    href={menuItem.path}
+                    href={homeSectionHref(menuItem.path)}
                     className={cn(
                       'rounded-large font-Inter text-paragraph flex items-center border border-transparent px-5 py-[5px] text-base leading-8 font-medium whitespace-nowrap capitalize transition-colors duration-500 hover:bg-zinc-100 hover:duration-500 lg:px-2.5 xl:px-3 2xl:px-5',
                     )}>
@@ -120,7 +137,7 @@ const PrimaryNavbar = () => {
 
           <ul className="ml-auto flex shrink-0 items-center [&>*:not(:last-child)]:me-2.5">
             <li className="flex items-center max-lg:hidden">
-              <Link href={menuData.btnLlink} className="btn btn-navbar btn-sm whitespace-nowrap">
+              <Link href={homeSectionHref(menuData.btnLlink)} className="btn btn-navbar btn-sm whitespace-nowrap">
                 Nous Contacter
               </Link>
             </li>
@@ -162,11 +179,18 @@ const PrimaryNavbar = () => {
                 <li className={cn(menuItem.path ? 'relative' : 'group relative')} key={menuItem.id}>
                   {menuItem.path ? (
                     <Link
-                      href={menuItem.path}
+                      href={homeSectionHref(menuItem.path)}
                       className={cn(
                         'rounded-large font-Inter text-paragraph flex items-center border border-transparent px-5 py-[5px] text-base leading-8 font-medium transition-colors duration-500 hover:bg-zinc-100 hover:duration-500 lg:px-4 xl:px-5',
                       )}
-                      onClick={() => setShowMobileMenu(!showMobileMenu)}>
+                      onClick={(e) => {
+                        if (menuItem.path.startsWith('#')) {
+                          e.preventDefault()
+                          closeMobileMenuAndScrollToHash(menuItem.path)
+                        } else {
+                          setShowMobileMenu(false)
+                        }
+                      }}>
                       {menuItem.title}
                     </Link>
                   ) : menuItem.megaMenu ? (
@@ -231,7 +255,17 @@ const PrimaryNavbar = () => {
               ))}
 
               <li>
-                <Link href={menuData.btnLlink} className="btn btn-navbar btn-sm">
+                <Link
+                  href={homeSectionHref(menuData.btnLlink)}
+                  className="btn btn-navbar btn-sm"
+                  onClick={(e) => {
+                    if (menuData.btnLlink.startsWith('#')) {
+                      e.preventDefault()
+                      closeMobileMenuAndScrollToHash(menuData.btnLlink)
+                    } else {
+                      setShowMobileMenu(false)
+                    }
+                  }}>
                   Nous contacter
                 </Link>
               </li>

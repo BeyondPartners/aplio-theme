@@ -129,7 +129,9 @@ const Offer = () => {
         <div className="grid grid-cols-15 gap-x-0 gap-y-12 min-[800px]:gap-x-12 lg:gap-x-20">
           <div className="col-span-15 max-[799px]:order-1 min-[800px]:col-span-7">
             <FadeUpAnimation className="min-[800px]:sticky min-[800px]:top-52">
-              <h2 className="mb-6 max-md:text-[28px]">Enclenchez votre stratégie IA en 4 semaines</h2>
+              <h2 className="mb-6 max-md:text-[28px]">
+                Activez votre stratégie IA en <span className="whitespace-nowrap">4 semaines</span>
+              </h2>
               <p className="text-paragraph mb-3">
                 L&apos;objectif : maîtriser Claude Cowork et rendre vos équipes autonomes pour porter cette
                 transformation IA durablement.

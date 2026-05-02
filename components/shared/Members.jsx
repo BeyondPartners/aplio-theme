@@ -31,7 +31,7 @@ const Members = () => {
       {teamData.map((member, i) => (
         <FadeUpOneByOneAnimation i={i} className="h-full" key={member.id}>
           <article className="shadow-box rounded-medium flex h-full w-full max-w-[450px] flex-col items-stretch bg-white p-2.5 max-xl:mx-auto">
-            <Link href={`/teams/${member.id}`} className="rounded-medium bg-primary overflow-hidden rounded-b-none">
+            <div className="rounded-medium bg-primary overflow-hidden rounded-b-none">
               <Image
                 src={member.image}
                 alt={member.name}
@@ -40,13 +40,11 @@ const Members = () => {
                 height={389}
                 loading="lazy"
               />
-            </Link>
+            </div>
 
             <div className="flex w-full flex-col items-start gap-2 rounded rounded-t-none border border-t-0 border-dashed border-gray-100 bg-white p-4 sm:gap-3">
               <div className="w-full">
-                <Link href={`/teams/${member.id}`}>
-                  <h3 className="text-xl font-medium sm:text-2xl">{member.name}</h3>
-                </Link>
+                <h3 className="text-xl font-medium sm:text-2xl">{member.name}</h3>
               </div>
 
               <p className="text-sm leading-relaxed text-gray-700 sm:text-base">{getMemberSummary(member)}</p>
