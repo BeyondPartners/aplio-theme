@@ -29,7 +29,7 @@ const FeatureBlog = ({ featureBlog }) => {
             {featuredBlogFiltered.map((blogItem) => (
               <SwiperSlide key={blogItem.slug}>
                 <article className="swiper-slide rounded-medium shadow-nav dark:bg-dark-200 bg-white p-2.5">
-                  <div className="dark:border-borderColour-dark rounded border border-dashed border-gray-100 p-6 max-md:p-4">
+                  <div className="dark:border-gray-600 rounded border border-dashed border-gray-100 p-6 max-md:p-4">
                     <div className="grid grid-cols-2 items-center gap-12 max-md:grid-cols-1 max-md:gap-y-5">
                       <div className="relative h-full w-full xl:min-h-[330px]">
                         <Image

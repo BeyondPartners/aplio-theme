@@ -25,8 +25,19 @@ body {
   @apply top-0 py-3 backdrop-blur-2xl transition-all duration-500;
 }
 
+/* Logo wordmark: base `*` / `a` in typography.css set text-paragraph on every element, which can
+   override utility text colors in cascade order. Dedicated rule uses theme accent reliably. */
+@layer components {
+  .beyond-partners-wordmark {
+    color: var(--color-accent, #e8886b) !important;
+  }
+  .dark .beyond-partners-wordmark {
+    color: color-mix(in srgb, var(--color-accent, #e8886b) 88%, white) !important;
+  }
+}
+
 .mobile-menu {
-  @apply bg-primary dark:bg-dark fixed top-0 right-0 z-[9999] h-screen w-full rounded-none p-2.5 px-10 transition-all duration-500 ease-in-out;
+  @apply bg-white dark:bg-dark fixed top-0 right-0 z-[9999] h-screen w-full rounded-none p-2.5 px-10 transition-all duration-500 ease-in-out;
 }
 
 .mobile-menu.open {
@@ -38,7 +49,7 @@ body {
 }
 
 .active {
-  @apply border-borderColour dark:border-borderColour/10 dark:bg-dark-200 bg-white;
+  @apply border-[#e5e7eb] dark:border-gray-500/20 dark:bg-dark-200 bg-white;
 }
 
 .section-tagline {
@@ -112,14 +123,29 @@ body {
 .testimonials-swiper .swiper-slide {
   display: flex;
   height: auto;
+  justify-content: flex-start;
+  /* Allow flex children to shrink below content intrinsic width (avoids horizontal overflow on narrow viewports). */
+  min-width: 0;
+  /* Cap slide width when Swiper assigns a px width larger than the viewport (e.g. hydration / auto sizing). */
+  max-width: 100%;
+  width: min(100%, 500px);
+  box-sizing: border-box;
+}
+
+@media (max-width: 767px) {
+  .testimonials-swiper .swiper-slide {
+    justify-content: center;
+  }
 }
 
 .testimonials-swiper .swiper-slide .testimonial-slide-inner {
   display: flex;
-  flex: 1;
   flex-direction: column;
+  align-self: stretch;
   min-height: 0;
+  min-width: 0;
   width: 100%;
+  max-width: min(100%, 500px);
 }
 
 /* Fancybox */

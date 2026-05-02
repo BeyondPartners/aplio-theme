@@ -35,11 +35,12 @@ const FaqFilter = () => {
       initial="initial"
       animate={controlAnimation}
       variants={fadeUpAnimation}>
-      <ul className="faq-tabs dark:border-borderColour-dark mx-auto mb-15 flex w-fit max-w-[530px] items-center border-b-2 border-white max-md:flex-col max-md:border-none">
+      <ul className="faq-tabs mx-auto mb-15 flex w-fit max-w-[530px] items-center border-b-2 border-white max-md:flex-col max-md:border-none dark:border-gray-600">
         {categories?.map((btn, index) => (
           <li className={index === active ? 'tabActive group' : 'group'} key={btn}>
             <button
-              className="after:bg-paragraph relative -mb-0.5 px-7 py-4 text-center text-xl font-medium capitalize after:absolute after:bottom-0 after:left-1/2 after:h-0.5 after:w-full after:origin-right after:-translate-x-1/2 after:scale-x-0 after:transition-transform after:duration-500 group-[.tabActive]:after:origin-left group-[.tabActive]:after:scale-x-100 dark:after:bg-white"
+              type="button"
+              className="after:bg-paragraph relative -mb-0.5 cursor-pointer px-7 py-4 text-center text-xl font-medium capitalize after:absolute after:bottom-0 after:left-1/2 after:h-0.5 after:w-full after:origin-right after:-translate-x-1/2 after:scale-x-0 after:transition-transform after:duration-500 group-[.tabActive]:after:origin-left group-[.tabActive]:after:scale-x-100 dark:after:bg-white"
               onClick={() => {
                 handleClick(btn)
                 setActive(index)

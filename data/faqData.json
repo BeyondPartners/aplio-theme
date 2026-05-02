@@ -3,75 +3,44 @@
     {
       "id": 1,
       "type": ["general"],
-      "question": "À qui s’adresse l’accompagnement Aplio ?",
-      "answer": "s"
+      "question": "Qu’est-ce que Claude Cowork concrètement ?",
+      "answer": "Claude Cowork est un accompagnement qui combine formation à l’assistant IA Claude et mise en œuvre dans vos process métier : rédaction, synthèses, qualification de dossiers, coordination — pour gagner du temps sur les tâches répétitives tout en gardant le contrôle sur les décisions professionnelles."
+    },
+    {
+      "id": 2,
+      "type": ["general"],
+      "question": "Est-ce adapté à un cabinet qui débute complètement avec l’IA ?",
+      "answer": "Oui. Le parcours part du niveau réel de l’équipe : vocabulaire clair, premiers cas concrets, progression par étapes. Aucun prérequis technique n’est exigé ; l’objectif est que chacun s’approprie des usages utiles au quotidien."
     },
     {
       "id": 3,
       "type": ["general"],
-      "question": "Qu’est-ce que Claude Cowork apporte concrètement à un cabinet d’architecture ?",
-      "answer": ""
+      "question": "Comment identifier les bons cas d’usage dans notre cabinet ?",
+      "answer": "Nous cartographions vos flux avec vous, priorisons les tâches chronophages à faible risque, et testons rapidement sur vos vrais documents pour valider la pertinence avant de généraliser. Les cas d’usage émergent de votre activité, pas d’une liste générique."
     },
     {
       "id": 4,
       "type": ["general"],
-      "question": "Quels types de tâches ou de process peut-on améliorer avec Claude Cowork ?",
-      "answer": ""
+      "question": "Est-ce que ça s’intègre facilement dans nos outils et process existants ?",
+      "answer": "L’approche vise à enrichir ce que vous faites déjà : messagerie, documents, outils métier selon les cas. On s’appuie sur vos process actuels pour y brancher Claude de façon progressive, sans tout reconstruire d’un coup."
     },
     {
       "id": 5,
       "type": ["general"],
-      "question": "Comment se déroule le programme de 4 semaines ?",
-      "answer": ""
+      "question": "Claude Cowork est-il conforme au RGPD ?",
+      "answer": "L’accompagnement intègre les principes de minimisation des données, de finalité et de traçabilité. Nous vous aidons à cadrer les usages (données personnelles, sous-traitance, analyses d’impact si besoin) en cohérence avec votre rôle de responsable de traitement."
     },
     {
       "id": 6,
       "type": ["general"],
-      "question": "Combien de temps nos équipes doivent-elles y consacrer ?",
-      "answer": ""
+      "question": "Qu’en est-il de la sécurité de nos données ?",
+      "answer": "Les bonnes pratiques couvrent la confidentialité des supports, la gestion des accès et le choix des environnements adaptés à votre politique interne. Les sujets sensibles sont traités avec vos référents IT ou juridiques au cas par cas."
     },
     {
-      "id": 8,
+      "id": 7,
       "type": ["general"],
-      "question": "Quels sont les livrables à la fin du programme ?",
-      "answer": ""
-    },
-    {
-      "id": 9,
-      "type": ["general"],
-      "question": "Comment choisissez-vous les 3 process à transformer en priorité ?",
-      "answer": ""
-    },
-    {
-      "id": 10,
-      "type": ["general"],
-      "question": "Est-ce que l’accompagnement est adapté à la taille de notre cabinet ?",
-      "answer": ""
-    },
-    {
-      "id": 11,
-      "type": ["general"],
-      "question": "Que se passe-t-il après les 4 semaines ?",
-      "answer": ""
-    },
-    {
-      "id": 12,
-      "type": ["general"],
-      "question": "Est-ce que vous formez seulement à l’outil ou aussi à la conduite du changement ?",
-      "answer": ""
-    },
-    {
-      "id": 13,
-      "type": ["general"],
-      "question": "Comment garantissez-vous que les usages restent dans le temps ?",
-      "answer": ""
-    },
-
-    {
-      "id": 17,
-      "type": ["general"],
-      "question": "Faut-il déjà maîtriser l’IA ou Claude pour commencer ?",
-      "answer": ""
+      "question": "Que se passe-t-il après la formation ?",
+      "answer": "Vous repartez avec une équipe autonome sur les usages validés et une feuille de route pour étendre l’adoption. Selon le format retenu, un suivi peut prolonger le dispositif : brief sur les évolutions pertinentes, mise à jour des bonnes pratiques et accès à un support pour les questions d’usage."
     }
   ]
 }

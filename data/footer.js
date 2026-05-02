@@ -3,7 +3,7 @@ export const FooterData = {
   logo: '/images/logo.svg',
   logoDark: '/images/logo-light.svg',
   footerText: 'Turpis tortor nunc sed amet et faucibus vitae morbi congue sed id mauris.',
-  copyright: `${new Date().getFullYear()} Aplio. All Rights Reserved`,
+  copyright: `${new Date().getFullYear()} Beyond Partners. Tous droits réservés.`,
   email: 'info@example.com',
   phone: '+3 230 705 5448',
   expolre: [

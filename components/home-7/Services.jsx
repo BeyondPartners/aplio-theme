@@ -36,9 +36,9 @@ const Services = () => {
             animate={controlAnimation}
             variants={fadeFromRightAnimation}>
             <div className="rounded-medium shadow-nav dark:bg-dark-200 mb-8 bg-white p-2.5">
-              <div className="dark:border-borderColour-dark rounded border border-dashed border-gray-100 p-10 max-lg:p-5">
+              <div className="dark:border-gray-600 rounded border border-dashed border-gray-100 p-10 max-lg:p-5">
                 <div className="shadow-nav dark:bg-dark-200 mb-6 inline-block rounded-full bg-white p-2.5 max-lg:p-2">
-                  <div className="dark:border-borderColour-dark h-full rounded-full border border-dashed border-gray-100 p-5 max-lg:p-5">
+                  <div className="dark:border-gray-600 h-full rounded-full border border-dashed border-gray-100 p-5 max-lg:p-5">
                     <Image
                       src="/images/home-7-img/wallet.svg"
                       alt="account icon"
@@ -87,9 +87,9 @@ const Services = () => {
               </div>
             </div>
             <div className="rounded-medium shadow-nav dark:bg-dark-200 bg-white p-2.5">
-              <div className="dark:border-borderColour-dark rounded border border-dashed border-gray-100 p-10 max-lg:p-5">
+              <div className="dark:border-gray-600 rounded border border-dashed border-gray-100 p-10 max-lg:p-5">
                 <div className="shadow-nav dark:bg-dark-200 mb-6 inline-block rounded-full bg-white p-2.5 max-lg:p-2">
-                  <div className="dark:border-borderColour-dark h-full rounded-full border border-dashed border-gray-100 p-5 max-lg:p-5">
+                  <div className="dark:border-gray-600 h-full rounded-full border border-dashed border-gray-100 p-5 max-lg:p-5">
                     <Image
                       src="/images/home-7-img/sales.svg"
                       alt="account icon"
@@ -131,9 +131,9 @@ const Services = () => {
             animate={controlAnimation}
             variants={fadeFromLeftAnimation}>
             <div className="rounded-medium shadow-nav dark:bg-dark-200 mb-8 bg-white p-2.5">
-              <div className="dark:border-borderColour-dark rounded border border-dashed border-gray-100 p-10 max-lg:p-5">
+              <div className="dark:border-gray-600 rounded border border-dashed border-gray-100 p-10 max-lg:p-5">
                 <div className="shadow-nav dark:bg-dark-200 mb-6 inline-block rounded-full bg-white p-2.5 max-lg:p-2">
-                  <div className="dark:border-borderColour-dark h-full rounded-full border border-dashed border-gray-100 p-5 max-lg:p-5">
+                  <div className="dark:border-gray-600 h-full rounded-full border border-dashed border-gray-100 p-5 max-lg:p-5">
                     <Image
                       src="/images/home-7-img/exchange.svg"
                       alt="account icon"
@@ -157,9 +157,9 @@ const Services = () => {
               </div>
             </div>
             <div className="rounded-medium shadow-nav dark:bg-dark-200 bg-white p-2.5">
-              <div className="dark:border-borderColour-dark rounded border border-dashed border-gray-100 p-10 max-lg:p-5">
+              <div className="dark:border-gray-600 rounded border border-dashed border-gray-100 p-10 max-lg:p-5">
                 <div className="shadow-nav dark:bg-dark-200 mb-6 inline-block rounded-full bg-white p-2.5 max-lg:p-2">
-                  <div className="dark:border-borderColour-dark h-full rounded-full border border-dashed border-gray-100 p-5 max-lg:p-5">
+                  <div className="dark:border-gray-600 h-full rounded-full border border-dashed border-gray-100 p-5 max-lg:p-5">
                     <Image
                       src="/images/home-7-img/payment.svg"
                       alt="account icon"

@@ -1,4 +1,5 @@
 'use client'
+import BeyondPartnersLogo from '@/components/shared/BeyondPartnersLogo'
 import NavbarItem from '@/data/navbar'
 import { cn } from '@/utils/cn'
 import Image from 'next/image'
@@ -31,31 +32,27 @@ const PrimaryNavbar = () => {
     <>
       <header
         className={cn(
-          'fixed left-0 z-50 w-full bg-transparent pt-8 transition-all duration-500 max-md:z-[500]',
+          'fixed left-0 z-50 w-full bg-transparent pt-8 transition-all duration-500 max-lg:z-[500]',
           sticky ? 'nav-sticky' : '',
         )}>
-        <nav className="relative container flex items-center">
-          <div className="nav-logo xl:min-w-[266px]">
-            <Link href="/">
-              <Image src={menuData.logoLight} alt="logo" className="dark:hidden" width={70} height={29} />
-              <Image
-                src={menuData.logoDark}
-                alt="logo dark version"
-                className="hidden dark:inline-block"
-                width={70}
-                height={29}
-              />
+        <nav className="relative container flex !max-w-[min(100%,1360px)] items-center lg:px-4 xl:px-6 2xl:max-w-[min(100%,1420px)]! 2xl:px-8">
+          <div className="nav-logo shrink-0 lg:min-w-[200px] xl:min-w-[220px] 2xl:min-w-[266px]">
+            <Link
+              href="/"
+              aria-label="BeyondPartners — accueil"
+              className="inline-block focus-visible:rounded-sm focus-visible:ring-2 focus-visible:ring-[#612D3A]/35 focus-visible:outline-none">
+              <BeyondPartnersLogo className="text-lg leading-none sm:text-xl" />
             </Link>
           </div>
 
-          <ul className="nav-list rounded-large shadow-nav dark:bg-dark-200 mx-auto hidden bg-white p-2.5 lg:flex [&>*:not(:last-child)]:me-1">
+          <ul className="nav-list rounded-large shadow-nav dark:bg-dark-200 mx-auto hidden shrink-0 bg-white p-2.5 lg:flex [&>*:not(:last-child)]:me-1">
             {menuData.menuContent.map((menuItem) => (
               <li className={cn(menuItem.megaMenu ? 'group' : menuItem.path ? '' : 'group relative')} key={menuItem.id}>
                 {menuItem.path ? (
                   <Link
                     href={menuItem.path}
                     className={cn(
-                      'rounded-large font-Inter text-paragraph hover:border-borderColour dark:hover:border-borderColour/10 dark:hover:bg-dark-200 flex items-center border border-transparent px-5 py-[5px] text-base leading-8 font-medium capitalize transition-colors duration-500 hover:bg-white hover:duration-500 lg:px-4 xl:px-5 dark:text-white',
+                      'rounded-large font-Inter text-paragraph dark:hover:bg-dark-200 flex items-center border border-transparent px-5 py-[5px] text-base leading-8 font-medium whitespace-nowrap capitalize transition-colors duration-500 hover:bg-zinc-100 hover:duration-500 lg:px-2.5 xl:px-3 2xl:px-5 dark:text-white',
                     )}>
                     {menuItem.title}
                   </Link>
@@ -64,7 +61,7 @@ const PrimaryNavbar = () => {
                     <Link
                       href="#"
                       className={cn(
-                        'hover:border-borderColour dark:hover:border-borderColour/10 group rounded-large font-Inter text-paragraph dark:hover:bg-dark-200 flex items-center border border-transparent px-5 py-[5px] text-base leading-8 font-medium transition-colors duration-500 hover:bg-white hover:duration-500 lg:px-4 xl:px-5 dark:text-white',
+                        'group rounded-large font-Inter text-paragraph dark:hover:bg-dark-200 flex items-center border border-transparent px-5 py-[5px] text-base leading-8 font-medium whitespace-nowrap transition-colors duration-500 hover:bg-zinc-100 hover:duration-500 lg:px-2.5 xl:px-3 2xl:px-5 dark:text-white',
                         menuItem.title === 'page' ? 'active' : '',
                       )}>
                       {menuItem.title}
@@ -105,13 +102,13 @@ const PrimaryNavbar = () => {
                     <Link
                       href="#"
                       className={cn(
-                        'rounded-large font-Inter text-paragraph hover:border-borderColour dark:hover:border-borderColour/10 dark:hover:bg-dark-200 flex items-center border border-transparent px-5 py-[5px] text-base leading-8 font-medium capitalize transition-colors duration-500 hover:bg-white hover:duration-500 lg:px-4 xl:px-5 dark:text-white',
+                        'rounded-large font-Inter text-paragraph dark:hover:bg-dark-200 flex items-center border border-transparent px-5 py-[5px] text-base leading-8 font-medium whitespace-nowrap capitalize transition-colors duration-500 hover:bg-zinc-100 hover:duration-500 lg:px-2.5 xl:px-3 2xl:px-5 dark:text-white',
                         menuItem.title === 'home' ? 'active' : '',
                       )}>
                       {menuItem.title}
                       <FaAngleDown className="text-paragraph mt-1 ml-1 duration-500 group-hover:rotate-180 dark:text-white" />
                     </Link>
-                    <ul className="dark:bg-dark-200 [&>*:not(:last-child)]:border-borderColour dark:[&>*:not(:last-child)]:border-borderColour-dark absolute top-12 left-0 z-10 min-w-[250px] origin-top scale-y-0 rounded-md bg-white p-5 opacity-0 duration-500 group-hover:scale-y-100 group-hover:opacity-100 [&>*:not(:first-child)]:mt-2.5 [&>*:not(:last-child)]:border-b [&>*:not(:last-child)]:border-dashed">
+                    <ul className="dark:bg-dark-200 absolute top-12 left-0 z-10 min-w-[250px] origin-top scale-y-0 rounded-md bg-white p-5 opacity-0 duration-500 group-hover:scale-y-100 group-hover:opacity-100 [&>*:not(:first-child)]:mt-2.5 [&>*:not(:last-child)]:border-b [&>*:not(:last-child)]:border-dashed [&>*:not(:last-child)]:border-gray-200 dark:[&>*:not(:last-child)]:border-gray-600">
                       {menuItem.submenu.map((submenuItem) => (
                         <li
                           className="text-paragraph before:bg-paragraph relative overflow-hidden pb-2.5 text-base capitalize duration-500 before:absolute before:bottom-0 before:left-0 before:h-[2px] before:w-full before:origin-right before:scale-x-0 before:transition-transform before:duration-500 before:content-[''] before:hover:origin-left before:hover:scale-x-100 dark:before:bg-white"
@@ -128,15 +125,16 @@ const PrimaryNavbar = () => {
             ))}
           </ul>
 
-          <ul className="ml-auto flex items-center [&>*:not(:last-child)]:me-2.5">
+          <ul className="ml-auto flex shrink-0 items-center [&>*:not(:last-child)]:me-2.5">
             <li className="flex items-center max-lg:hidden">
-              <Link href="/request-demo" className="btn btn-navbar btn-sm">
-                Request Demo
+              <Link href={menuData.btnLlink} className="btn btn-navbar btn-sm whitespace-nowrap">
+                Nous Contacter
               </Link>
             </li>
             <li className="max-lg:inline-block lg:hidden">
               <button
-                className="mobile-menu-button dark:bg-dark-200 relative flex size-10 items-center justify-center rounded-full bg-white outline-none"
+                type="button"
+                className="mobile-menu-button dark:bg-dark-200 relative flex size-10 cursor-pointer items-center justify-center rounded-full bg-white outline-none"
                 onClick={() => setShowMobileMenu(!showMobileMenu)}>
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 14" fill="none" className="size-5">
                   <path
@@ -161,7 +159,8 @@ const PrimaryNavbar = () => {
 
           <div className={cn('mobile-menu max-lg:overflow-y-auto', showMobileMenu ? 'open' : 'close')}>
             <button
-              className="navbar-toggle-close dark:bg-dark-200 absolute top-5 right-6 flex size-10 items-center justify-center rounded-full bg-white outline-none"
+              type="button"
+              className="navbar-toggle-close dark:bg-dark-200 absolute top-5 right-6 flex size-10 cursor-pointer items-center justify-center rounded-full bg-white outline-none"
               onClick={() => setShowMobileMenu(!showMobileMenu)}>
               <FaTimes />
             </button>
@@ -172,7 +171,7 @@ const PrimaryNavbar = () => {
                     <Link
                       href={menuItem.path}
                       className={cn(
-                        'rounded-large font-Inter text-paragraph hover:border-borderColour dark:hover:border-borderColour/10 dark:hover:bg-dark-200 flex items-center border border-transparent px-5 py-[5px] text-base leading-8 font-medium transition-colors duration-500 hover:bg-white hover:duration-500 lg:px-4 xl:px-5 dark:text-white',
+                        'rounded-large font-Inter text-paragraph dark:hover:bg-dark-200 flex items-center border border-transparent px-5 py-[5px] text-base leading-8 font-medium transition-colors duration-500 hover:bg-zinc-100 hover:duration-500 lg:px-4 xl:px-5 dark:text-white',
                       )}
                       onClick={() => setShowMobileMenu(!showMobileMenu)}>
                       {menuItem.title}
@@ -181,7 +180,7 @@ const PrimaryNavbar = () => {
                     <>
                       <Link
                         href="#"
-                        className="hover:border-borderColour dark:hover:border-borderColour/10 group rounded-large font-Inter text-paragraph dark:hover:bg-dark-200 flex items-center border border-transparent px-5 py-[5px] text-base leading-8 font-medium transition-colors duration-500 hover:bg-white hover:duration-500 lg:px-4 xl:px-5 dark:text-white">
+                        className="group rounded-large font-Inter text-paragraph dark:hover:bg-dark-200 flex items-center border border-transparent px-5 py-[5px] text-base leading-8 font-medium transition-colors duration-500 hover:bg-zinc-100 hover:duration-500 lg:px-4 xl:px-5 dark:text-white">
                         {menuItem.title}
                         <FaAngleDown className="text-paragraph mt-1 ml-auto duration-500 group-hover:rotate-180 dark:text-white" />
                       </Link>
@@ -222,11 +221,11 @@ const PrimaryNavbar = () => {
                     <>
                       <Link
                         href="#"
-                        className="rounded-large font-Inter text-paragraph hover:border-borderColour dark:hover:border-borderColour/10 dark:hover:bg-dark-200 flex items-center border border-transparent px-5 py-[5px] text-base leading-8 font-medium transition-colors duration-500 hover:bg-white hover:duration-500 lg:px-4 xl:px-5 dark:text-white">
+                        className="rounded-large font-Inter text-paragraph dark:hover:bg-dark-200 flex items-center border border-transparent px-5 py-[5px] text-base leading-8 font-medium transition-colors duration-500 hover:bg-zinc-100 hover:duration-500 lg:px-4 xl:px-5 dark:text-white">
                         {menuItem.title}
                         <FaAngleDown className="text-paragraph mt-1 ml-auto duration-500 group-hover:rotate-180 dark:text-white" />
                       </Link>
-                      <ul className="dark:bg-dark-200 [&>*:not(:last-child)]:border-borderColour dark:[&>*:not(:last-child)]:border-borderColour-dark absolute top-12 left-0 z-10 min-w-full origin-top scale-y-0 rounded-3xl bg-white p-8 opacity-0 duration-500 group-hover:scale-y-100 group-hover:opacity-100 [&>*:not(:first-child)]:mt-2.5 [&>*:not(:last-child)]:border-b [&>*:not(:last-child)]:border-dashed">
+                      <ul className="dark:bg-dark-200 absolute top-12 left-0 z-10 min-w-full origin-top scale-y-0 rounded-3xl bg-white p-8 opacity-0 duration-500 group-hover:scale-y-100 group-hover:opacity-100 [&>*:not(:first-child)]:mt-2.5 [&>*:not(:last-child)]:border-b [&>*:not(:last-child)]:border-dashed [&>*:not(:last-child)]:border-gray-200 dark:[&>*:not(:last-child)]:border-gray-600">
                         {menuItem.submenu.map((submenuItem) => (
                           <li
                             className="text-paragraph before:bg-paragraph relative overflow-hidden pb-2.5 text-base capitalize duration-500 before:absolute before:bottom-0 before:left-0 before:h-[2px] before:w-full before:origin-right before:scale-x-0 before:transition-transform before:duration-500 before:content-[''] before:hover:origin-left before:hover:scale-x-100 dark:before:bg-white"
@@ -246,8 +245,8 @@ const PrimaryNavbar = () => {
               ))}
 
               <li>
-                <Link href="/request-demo" className="btn btn-navbar btn-sm">
-                  Request Demo
+                <Link href={menuData.btnLlink} className="btn btn-navbar btn-sm">
+                  Nous contacter
                 </Link>
               </li>
             </ul>

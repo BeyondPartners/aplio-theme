@@ -22,7 +22,7 @@ const ServiceBoxes = () => {
         <div
           className="rounded-medium shadow-nav dark:bg-dark-200 relative scale-100 bg-white p-2.5 transition-transform duration-500 hover:scale-105 hover:transition-transform hover:duration-500"
           key={items.id}>
-          <div className="dark:border-borderColour-dark h-full rounded border border-dashed border-gray-100 p-10 max-lg:p-5">
+          <div className="dark:border-gray-600 h-full rounded border border-dashed border-gray-100 p-10 max-lg:p-5">
             <Image
               src={items.iconLight}
               alt="service logo"

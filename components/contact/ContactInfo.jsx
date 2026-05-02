@@ -14,7 +14,7 @@ const ContactInfo = () => {
           </div>
           <div className="grid grid-cols-3 gap-8 max-md:grid-cols-1">
             <FadeUpAnimation className="rounded-medium shadow-box dark:bg-dark-200 bg-white p-2.5">
-              <div className="dark:border-borderColour-dark h-full rounded border border-dashed border-gray-100 p-10 text-center">
+              <div className="dark:border-gray-600 h-full rounded border border-dashed border-gray-100 p-10 text-center">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="40"
@@ -33,7 +33,7 @@ const ContactInfo = () => {
               </div>
             </FadeUpAnimation>
             <FadeUpAnimation className="rounded-medium shadow-box dark:bg-dark-200 bg-white p-2.5">
-              <div className="dark:border-borderColour-dark h-full rounded border border-dashed border-gray-100 p-10 text-center max-lg:p-5">
+              <div className="dark:border-gray-600 h-full rounded border border-dashed border-gray-100 p-10 text-center max-lg:p-5">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="40"
@@ -52,7 +52,7 @@ const ContactInfo = () => {
               </div>
             </FadeUpAnimation>
             <FadeUpAnimation className="rounded-medium shadow-box dark:bg-dark-200 bg-white p-2.5">
-              <div className="dark:border-borderColour-dark h-full rounded border border-dashed border-gray-100 p-10 text-center">
+              <div className="dark:border-gray-600 h-full rounded border border-dashed border-gray-100 p-10 text-center">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="40"

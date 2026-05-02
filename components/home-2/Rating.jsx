@@ -36,7 +36,7 @@ const Rating = () => {
             <div className="grid grid-cols-3 gap-3 max-lg:grid-cols-1">
               {PaymentRatingData.map((item) => (
                 <div
-                  className="dark:border-borderColour-dark rounded border border-dashed border-gray-100 px-7 py-12 text-center"
+                  className="dark:border-gray-600 rounded border border-dashed border-gray-100 px-7 py-12 text-center"
                   key={item.id}>
                   <h3 className="mb-5 text-[48px]">{item.rating}</h3>
                   <div className="mb-4">

@@ -1,3 +1,4 @@
+import NavbarItem from '@/data/navbar'
 import Link from 'next/link'
 import FadeUpAnimation from '../animations/FadeUpAnimation'
 import TrustBar from './TrustBar'
@@ -33,8 +34,8 @@ const Hero = () => {
               l&apos;esquisse à la réalisation.
             </p>
             <div className="flex flex-col items-center justify-center gap-3 sm:flex-row sm:flex-wrap sm:gap-4">
-              <Link href="#" className="btn">
-                Réserver votre audit
+              <Link href={NavbarItem.bookingCalendlyUrl} target="_blank" rel="noopener noreferrer" className="btn">
+                Échanger avec un expert
               </Link>
             </div>
           </FadeUpAnimation>

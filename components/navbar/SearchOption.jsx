@@ -7,8 +7,8 @@ const SearchOption = ({ onClose }) => {
     <div className="bg-metal-900 fixed top-0 right-0 left-0 z-[9999] flex animate-bounce items-center justify-center">
       <div className="relative h-auto w-full max-w-xl p-4">
         <div className="rounded-medium shadow-box dark:bg-dark-200 relative bg-white p-2.5">
-          <div className="dark:border-borderColour-dark rounded border border-dashed border-gray-100 p-10">
-            <div className="bg border-b-borderColor dark:border-borderColour-dark flex items-center justify-between border-b border-dashed pb-5">
+          <div className="rounded border border-dashed border-gray-100 p-10 dark:border-gray-600">
+            <div className="bg flex items-center justify-between border-b border-dashed border-gray-200 pb-5 dark:border-b-gray-600">
               <h3 className="text-paragraph dark:text-white">Search</h3>
               <button onClick={onClose} className="text-paragraph dark:text-white" id="ok-btn">
                 <svg
@@ -54,7 +54,7 @@ const SearchOption = ({ onClose }) => {
                 <div className="flex">
                   <div className="relative w-full">
                     <input
-                      className="border- placeholder:text-metal-400 rounded-medium border-borderColour text-paragraph placeholder:text-paragraph focus:border-primary block w-full border bg-transparent px-5 py-2.5 transition-all duration-300 outline-none focus:ring-0 focus:outline-none dark:text-white dark:placeholder:text-white"
+                      className="border- placeholder:text-metal-400 rounded-medium text-paragraph placeholder:text-paragraph focus:border-primary block w-full border border-gray-200 bg-transparent px-5 py-2.5 transition-all duration-300 outline-none focus:ring-0 focus:outline-none dark:text-white dark:placeholder:text-white"
                       id="#id-10"
                       placeholder="Search Component"
                       type="text"
@@ -69,7 +69,7 @@ const SearchOption = ({ onClose }) => {
             </p>
             <div className="pt-5">
               <h3 className="mb-1">Search Result</h3>
-              <ul className="dark:[&>*:not(:last-child)]:border-borderColour-dark [&>*:not(:last-child)]:border-b [&>*:not(:last-child)]:border-dashed [&>*:not(:last-child)]:border-gray-100">
+              <ul className="[&>*:not(:last-child)]:border-b [&>*:not(:last-child)]:border-dashed [&>*:not(:last-child)]:border-gray-100 dark:[&>*:not(:last-child)]:border-gray-600">
                 <li className="group">
                   <Link className="flex items-center justify-between py-5 font-medium" href="/services">
                     Investment Banks

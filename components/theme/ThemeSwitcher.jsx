@@ -17,7 +17,7 @@ const ThemeSwitcher = () => {
       <button
         onClick={() => setTheme(currentTheme === 'dark' ? 'light' : 'dark')}
         type="button"
-        className="border-paragraph/25 text-paragraph dark:border-borderColour-dark flex h-10 w-10 items-center justify-center rounded-md border focus:ring-0 focus:ring-gray-200 focus:outline-none dark:text-white">
+        className="border-paragraph/25 text-paragraph flex h-10 w-10 cursor-pointer items-center justify-center rounded-md border focus:ring-0 focus:ring-gray-200 focus:outline-none dark:border-gray-600 dark:text-white">
         <LightMode />
         <DarkMode />
       </button>

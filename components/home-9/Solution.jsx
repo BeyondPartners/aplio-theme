@@ -46,7 +46,7 @@ const Solution = () => {
             <div className="grid grid-cols-3 gap-8 max-lg:grid-cols-2 max-sm:grid-cols-1">
               {SolutionData.map((items) => (
                 <div className="dark:bg-dark-200 rounded-medium shadow-nav relative bg-white p-2.5" key={items.id}>
-                  <div className="dark:border-borderColour-dark h-full rounded border border-dashed border-gray-100 p-10 max-lg:p-5">
+                  <div className="dark:border-gray-600 h-full rounded border border-dashed border-gray-100 p-10 max-lg:p-5">
                     <figure>
                       <Image
                         src={items.iconLight}

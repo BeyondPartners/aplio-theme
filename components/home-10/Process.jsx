@@ -45,7 +45,7 @@ const Process = () => {
                 i={i}
                 className="dark:bg-dark-200 rounded-medium shadow-nav max-w-[408px] flex-1 bg-white p-2.5"
                 key={items.id}>
-                <div className="dark:border-borderColour-dark h-full rounded border border-dashed border-gray-100 p-10 max-lg:p-5">
+                <div className="dark:border-gray-600 h-full rounded border border-dashed border-gray-100 p-10 max-lg:p-5">
                   <div className="mb-5 flex items-center justify-between sm:mb-8">
                     <span className="tagline-2 dark:text-white">Step {items.id}</span>
                     <figure>

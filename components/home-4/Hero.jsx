@@ -28,7 +28,7 @@ const Hero = () => {
 
           <div className="mx-auto flex flex-col items-center justify-center gap-4 md:flex-row">
             <button className="btn">Get Started</button>
-            <button className="btn-outline px-1">Get a Demo</button>
+            <button className="btn-outline px-1">Échanger avec un expert</button>
           </div>
         </div>
       </FadeUpAnimation>

@@ -47,14 +47,14 @@ const TabContent = () => {
   return (
     <>
       <div className="shadow-box dark:bg-dark-200 mb-8 rounded-[90px] bg-white p-2.5">
-        <div className="rounded-large dark:border-borderColour-dark h-full border border-dashed border-gray-100 p-2.5 text-center">
+        <div className="rounded-large h-full border border-dashed border-gray-100 p-2.5 text-center dark:border-gray-600">
           <ul className="flex items-center gap-3 overflow-auto">
             {TabItemList.map((tabItem, index) => (
               <li
                 className={cn('tab group', selectedTab === index ? 'tab-active' : '')}
                 key={tabItem.id}
                 onClick={() => setSelectedTab(index)}>
-                <span className="border-borderColour-dark hover:bg-paragraph group-[.tab-active]:border-paragraph group-[.tab-active]:bg-paragraph dark:border-borderColour-dark dark:hover:bg-primary dark:hover:text-paragraph dark:group-[.tab-active]:border-primary dark:group-[.tab-active]:bg-primary dark:group-[.tab-active]:text-paragraph cursor-pointer rounded-[60px] border px-5 py-2 leading-[22px] font-medium transition-colors duration-500 group-[.tab-active]:text-white hover:text-white hover:duration-500">
+                <span className="hover:bg-paragraph group-[.tab-active]:border-paragraph group-[.tab-active]:bg-paragraph dark:hover:bg-primary dark:hover:text-paragraph dark:group-[.tab-active]:border-primary dark:group-[.tab-active]:bg-primary dark:group-[.tab-active]:text-paragraph cursor-pointer rounded-[60px] border border-gray-200 px-5 py-2 leading-[22px] font-medium transition-colors duration-500 group-[.tab-active]:text-white hover:text-white hover:duration-500 dark:border-gray-600">
                   {tabItem.title}
                 </span>
               </li>

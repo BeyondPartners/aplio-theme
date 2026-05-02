@@ -96,7 +96,7 @@ const IntegrationAnimation = () => {
           </div>
           <div className="absolute top-0 right-auto bottom-auto left-0 block h-full w-1/2">
             <div className="shadow-box dark:bg-dark-200 absolute top-0 right-auto bottom-auto left-0 aspect-square w-25 rounded-full bg-white p-2.5 xl:w-[120px]">
-              <div className="dark:border-borderColour-dark 1xl:p-2.5 flex aspect-square items-center justify-center rounded-full border border-dashed border-gray-100 text-center">
+              <div className="dark:border-gray-600 1xl:p-2.5 flex aspect-square items-center justify-center rounded-full border border-dashed border-gray-100 text-center">
                 <Image src="/images/twitter.svg" alt="value image" className="inline-block" width={40} height={40} />
               </div>
             </div>
@@ -152,7 +152,7 @@ const IntegrationAnimation = () => {
             </div>
 
             <div className="shadow-box dark:bg-dark-200 absolute top-1/2 right-auto bottom-auto left-10 aspect-square w-25 -translate-y-1/2 rounded-full bg-white p-2.5 xl:w-[120px]">
-              <div className="dark:border-borderColour-dark 1xl:p-2.5 flex aspect-square items-center justify-center rounded-full border border-dashed border-gray-100 text-center">
+              <div className="dark:border-gray-600 1xl:p-2.5 flex aspect-square items-center justify-center rounded-full border border-dashed border-gray-100 text-center">
                 <Image src="/images/snapchat.svg" alt="value image" className="inline-block" width={40} height={40} />
               </div>
             </div>
@@ -203,7 +203,7 @@ const IntegrationAnimation = () => {
             </div>
 
             <div className="shadow-box dark:bg-dark-200 absolute top-auto right-auto bottom-0 left-0 aspect-square w-25 rounded-full bg-white p-2.5 xl:w-[120px]">
-              <div className="dark:border-borderColour-dark 1xl:p-2.5 flex aspect-square items-center justify-center rounded-full border border-dashed border-gray-100 text-center">
+              <div className="dark:border-gray-600 1xl:p-2.5 flex aspect-square items-center justify-center rounded-full border border-dashed border-gray-100 text-center">
                 <Image src="/images/dropbox.svg" alt="value image" className="inline-block" width={40} height={40} />
               </div>
             </div>
@@ -260,7 +260,7 @@ const IntegrationAnimation = () => {
           </div>
           <div className="absolute top-0 right-0 bottom-auto left-auto block h-full w-1/2">
             <div className="shadow-box dark:bg-dark-200 absolute top-0 right-0 bottom-auto left-auto aspect-square w-25 rounded-full bg-white p-2.5 xl:w-[120px]">
-              <div className="dark:border-borderColour-dark 1xl:p-2.5 flex aspect-square items-center justify-center rounded-full border border-dashed border-gray-100 text-center">
+              <div className="dark:border-gray-600 1xl:p-2.5 flex aspect-square items-center justify-center rounded-full border border-dashed border-gray-100 text-center">
                 <Image src="/images/slack.svg" alt="value image" className="inline-block" width={40} height={40} />
               </div>
             </div>
@@ -316,7 +316,7 @@ const IntegrationAnimation = () => {
             </div>
 
             <div className="shadow-box dark:bg-dark-200 absolute top-1/2 right-10 bottom-auto left-auto aspect-square w-25 -translate-y-1/2 rounded-full bg-white p-2.5 xl:w-[120px]">
-              <div className="dark:border-borderColour-dark 1xl:p-2.5 flex aspect-square items-center justify-center rounded-full border border-dashed border-gray-100 text-center">
+              <div className="dark:border-gray-600 1xl:p-2.5 flex aspect-square items-center justify-center rounded-full border border-dashed border-gray-100 text-center">
                 <Image src="/images/asana.svg" alt="value image" className="inline-block" width={40} height={40} />
               </div>
             </div>
@@ -367,7 +367,7 @@ const IntegrationAnimation = () => {
             </div>
 
             <div className="shadow-box dark:bg-dark-200 absolute top-auto right-0 bottom-0 left-auto aspect-square w-25 rounded-full bg-white p-2.5 xl:w-[120px]">
-              <div className="dark:border-borderColour-dark 1xl:p-2.5 flex aspect-square items-center justify-center rounded-full border border-dashed border-gray-100 text-center">
+              <div className="dark:border-gray-600 1xl:p-2.5 flex aspect-square items-center justify-center rounded-full border border-dashed border-gray-100 text-center">
                 <Image
                   src="/images/google-drive.svg"
                   alt="value image"
@@ -432,34 +432,34 @@ const IntegrationAnimation = () => {
       </div>
       <div className="mt-10 grid grid-cols-2 gap-8 md:hidden">
         <div className="shadow-box dark:bg-dark-200 mx-auto aspect-square w-25 rounded-full bg-white p-2.5">
-          <div className="dark:border-borderColour-dark flex aspect-square items-center justify-center rounded-full border border-dashed border-gray-100 text-center">
+          <div className="dark:border-gray-600 flex aspect-square items-center justify-center rounded-full border border-dashed border-gray-100 text-center">
             <Image src="/images/figma.svg" alt="value image" className="inline-block" width={40} height={40} />
           </div>
         </div>
 
         <div className="shadow-box dark:bg-dark-200 mx-auto aspect-square w-25 rounded-full bg-white p-2.5">
-          <div className="dark:border-borderColour-dark flex aspect-square items-center justify-center rounded-full border border-dashed border-gray-100 text-center">
+          <div className="dark:border-gray-600 flex aspect-square items-center justify-center rounded-full border border-dashed border-gray-100 text-center">
             <Image src="/images/dropbox.svg" alt="value image" className="inline-block" width={40} height={40} />
           </div>
         </div>
 
         <div className="shadow-box dark:bg-dark-200 mx-auto aspect-square w-25 rounded-full bg-white p-2.5">
-          <div className="dark:border-borderColour-dark flex aspect-square items-center justify-center rounded-full border border-dashed border-gray-100 text-center">
+          <div className="dark:border-gray-600 flex aspect-square items-center justify-center rounded-full border border-dashed border-gray-100 text-center">
             <Image src="/images/twitter.svg" alt="value image" className="inline-block" width={40} height={40} />
           </div>
         </div>
         <div className="shadow-box dark:bg-dark-200 mx-auto aspect-square w-25 rounded-full bg-white p-2.5">
-          <div className="dark:border-borderColour-dark flex aspect-square items-center justify-center rounded-full border border-dashed border-gray-100 text-center">
+          <div className="dark:border-gray-600 flex aspect-square items-center justify-center rounded-full border border-dashed border-gray-100 text-center">
             <Image src="/images/slack.svg" alt="value image" className="inline-block" width={40} height={40} />
           </div>
         </div>
         <div className="shadow-box dark:bg-dark-200 mx-auto aspect-square w-25 rounded-full bg-white p-2.5">
-          <div className="dark:border-borderColour-dark flex aspect-square items-center justify-center rounded-full border border-dashed border-gray-100 text-center">
+          <div className="dark:border-gray-600 flex aspect-square items-center justify-center rounded-full border border-dashed border-gray-100 text-center">
             <Image src="/images/google-drive.svg" alt="value image" className="inline-block" width={40} height={40} />
           </div>
         </div>
         <div className="shadow-box dark:bg-dark-200 mx-auto aspect-square w-25 rounded-full bg-white p-2.5">
-          <div className="dark:border-borderColour-dark flex aspect-square items-center justify-center rounded-full border border-dashed border-gray-100 text-center">
+          <div className="dark:border-gray-600 flex aspect-square items-center justify-center rounded-full border border-dashed border-gray-100 text-center">
             <Image src="/images/asana.svg" alt="value image" className="inline-block" width={40} height={40} />
           </div>
         </div>

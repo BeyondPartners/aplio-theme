@@ -40,7 +40,7 @@ const Feature = () => {
         {userManageCard?.map((userCard) => (
           <div
             key={userCard.id}
-            className="hover:dark:border-borderColour-dark rounded-medium shadow-nav dark:bg-dark-200 relative max-w-[402px] border border-solid border-transparent bg-white p-8 transition-colors hover:transition-colors max-lg:p-5">
+            className="hover:dark:border-gray-600 rounded-medium shadow-nav dark:bg-dark-200 relative max-w-[402px] border border-solid border-transparent bg-white p-8 transition-colors hover:transition-colors max-lg:p-5">
             <figure>
               <Image
                 src={userCard.img}

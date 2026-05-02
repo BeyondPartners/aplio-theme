@@ -30,7 +30,7 @@ const SignUpPage = () => {
                 <div className="bg-primary-200/30 max-1xl:h-[335px] max-1xl:w-[335px] 1xl:h-[442px] 1xl:w-[442px] -ml-[170px] rounded-full blur-[145px] max-md:ml-0"></div>
               </div>
               <div className="rounded-medium shadow-nav dark:bg-dark-200 bg-white p-2.5">
-                <div className="dark:border-borderColour-dark dark:bg-dark-200 rounded border border-dashed border-gray-100 bg-white p-12 max-md:px-5 max-md:py-7">
+                <div className="dark:border-gray-600 dark:bg-dark-200 rounded border border-dashed border-gray-100 bg-white p-12 max-md:px-5 max-md:py-7">
                   <form>
                     <div className="grid grid-cols-12 gap-y-6">
                       <div className="col-span-12">
@@ -44,7 +44,7 @@ const SignUpPage = () => {
                           name="name"
                           id="name"
                           placeholder="Enter Your Name"
-                          className="border-borderColour text-paragraph-light placeholder:text-paragraph-light focus:border-primary dark:border-borderColour-dark dark:bg-dark-200 dark:placeholder:text-paragraph-light dark:focus:border-primary block w-full rounded-[48px] border bg-white px-5 py-2.5 text-sm outline-none"
+                          className="border-gray-200 text-paragraph-light placeholder:text-paragraph-light focus:border-primary dark:border-gray-600 dark:bg-dark-200 dark:placeholder:text-paragraph-light dark:focus:border-primary block w-full rounded-[48px] border bg-white px-5 py-2.5 text-sm outline-none"
                         />
                       </div>
                       <div className="col-span-12">
@@ -58,7 +58,7 @@ const SignUpPage = () => {
                           name="email"
                           id="email"
                           placeholder="Email address"
-                          className="border-borderColour text-paragraph-light placeholder:text-paragraph-light focus:border-primary dark:border-borderColour-dark dark:bg-dark-200 dark:placeholder:text-paragraph-light dark:focus:border-primary block w-full rounded-[48px] border bg-white px-5 py-2.5 text-sm transition-all duration-300 outline-none"
+                          className="border-gray-200 text-paragraph-light placeholder:text-paragraph-light focus:border-primary dark:border-gray-600 dark:bg-dark-200 dark:placeholder:text-paragraph-light dark:focus:border-primary block w-full rounded-[48px] border bg-white px-5 py-2.5 text-sm transition-all duration-300 outline-none"
                         />
                       </div>
                       <div className="col-span-full">
@@ -72,7 +72,7 @@ const SignUpPage = () => {
                           name="password"
                           id="password"
                           placeholder="At least 8 character"
-                          className="border-borderColour text-paragraph-light placeholder:text-paragraph-light focus:border-primary dark:border-borderColour-dark dark:bg-dark-200 dark:focus:border-primary block w-full rounded-[48px] border bg-white px-5 py-2.5 text-sm transition-all duration-300 outline-none"
+                          className="border-gray-200 text-paragraph-light placeholder:text-paragraph-light focus:border-primary dark:border-gray-600 dark:bg-dark-200 dark:focus:border-primary block w-full rounded-[48px] border bg-white px-5 py-2.5 text-sm transition-all duration-300 outline-none"
                         />
                       </div>
 
@@ -81,13 +81,13 @@ const SignUpPage = () => {
                       </div>
                     </div>
                   </form>
-                  <div className="after:border-borderColour dark:after:border-borderColour-dark relative py-8 after:absolute after:top-1/2 after:h-[1px] after:w-full after:-translate-y-1/2 after:border after:border-dashed">
+                  <div className="after:border-gray-200 dark:after:border-gray-600 relative py-8 after:absolute after:top-1/2 after:h-[1px] after:w-full after:-translate-y-1/2 after:border after:border-dashed">
                     <span className="dark:bg-dark-200 absolute top-1/2 left-1/2 z-10 inline-block w-10 -translate-x-1/2 -translate-y-1/2 bg-white text-center">
                       Or
                     </span>
                   </div>
                   <div className="mb-8">
-                    <button className="group border-borderColour font-jakarta-paragraph dark:border-borderColour-dark mb-6 flex w-full items-center justify-center gap-2 rounded-[30px] border bg-white px-[30px] py-3.5 text-sm font-medium -tracking-[0.3px] max-md:px-5 dark:bg-transparent dark:text-white">
+                    <button className="group border-gray-200 font-jakarta-paragraph dark:border-gray-600 mb-6 flex w-full items-center justify-center gap-2 rounded-[30px] border bg-white px-[30px] py-3.5 text-sm font-medium -tracking-[0.3px] max-md:px-5 dark:bg-transparent dark:text-white">
                       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                         <path
                           d="M21.7502 12.216C21.7502 11.4143 21.6839 10.8293 21.5402 10.2227H12.1992V13.8409H17.6822C17.5717 14.7401 16.9747 16.0943 15.6482 17.0043L15.6296 17.1254L18.583 19.3676L18.7876 19.3877C20.6669 17.6868 21.7502 15.1843 21.7502 12.216Z"
@@ -108,7 +108,7 @@ const SignUpPage = () => {
                       </svg>
                       <span className="font-jakarta-medium"> Continue with Google </span>
                     </button>
-                    <button className="group border-borderColour font-jakarta-paragraph dark:border-borderColour-dark flex w-full items-center justify-center gap-2 rounded-[30px] border bg-white px-[30px] py-3.5 text-sm font-medium -tracking-[0.3px] max-md:px-5 dark:bg-transparent dark:text-white">
+                    <button className="group border-gray-200 font-jakarta-paragraph dark:border-gray-600 flex w-full items-center justify-center gap-2 rounded-[30px] border bg-white px-[30px] py-3.5 text-sm font-medium -tracking-[0.3px] max-md:px-5 dark:bg-transparent dark:text-white">
                       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                         <path
                           d="M22.5 12.0642C22.5 6.22974 17.799 1.5 12 1.5C6.20101 1.5 1.5 6.22974 1.5 12.0642C1.5 17.337 5.33968 21.7075 10.3594 22.5V15.1179H7.69336V12.0642H10.3594V9.73675C10.3594 7.08911 11.927 5.62663 14.3254 5.62663C15.4738 5.62663 16.6758 5.83296 16.6758 5.83296V8.43274H15.3518C14.0475 8.43274 13.6406 9.24713 13.6406 10.0834V12.0642H16.5527L16.0872 15.1179H13.6406V22.5C18.6603 21.7075 22.5 17.337 22.5 12.0642Z"

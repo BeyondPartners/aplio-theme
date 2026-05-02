@@ -34,7 +34,7 @@ export default function Hero() {
               aperiam inventore.
             </p>
             <form>
-              <div className="border-borderColour focus-within:border-primary dark:bg-dark-200 dark:focus-within:border-primary grid w-full max-w-[520px] grid-cols-12 items-center rounded-[60px] border bg-white pe-1 pt-1 pb-1 pl-4 transition-all duration-300 sm:pl-5 dark:border-[#31332F]">
+              <div className="border-gray-200 focus-within:border-primary dark:bg-dark-200 dark:focus-within:border-primary grid w-full max-w-[520px] grid-cols-12 items-center rounded-[60px] border bg-white pe-1 pt-1 pb-1 pl-4 transition-all duration-300 sm:pl-5 dark:border-[#31332F]">
                 <input
                   type="text"
                   placeholder="Enter your email"
@@ -110,7 +110,7 @@ export default function Hero() {
             </svg>
           </div>
           <div className="rounded-medium shadow-box dark:bg-dark-200 bg-white p-2.5">
-            <div className="dark:border-borderColour-dark border-opacity-10 grid h-full grid-cols-2 rounded border border-dashed border-gray-100 p-10 max-lg:p-5 max-md:grid-cols-1">
+            <div className="dark:border-gray-600 border-opacity-10 grid h-full grid-cols-2 rounded border border-dashed border-gray-100 p-10 max-lg:p-5 max-md:grid-cols-1">
               <div className="max-md:mb-8">
                 <h2>
                   Find Your Perfect Domain Name <br />
@@ -126,7 +126,7 @@ export default function Hero() {
                         name="first-name"
                         id="username"
                         placeholder="Name"
-                        className="border-borderColour text-paragraph-light placeholder:text-paragraph-light focus:border-primary dark:bg-dark-200 dark:placeholder:text-paragraph-light dark:focus:border-primary mb-2.5 block h-[50px] w-full rounded-[48px] border bg-white px-5 py-2.5 text-sm transition-all duration-300 outline-none dark:border-[#31332F]"
+                        className="border-gray-200 text-paragraph-light placeholder:text-paragraph-light focus:border-primary dark:bg-dark-200 dark:placeholder:text-paragraph-light dark:focus:border-primary mb-2.5 block h-[50px] w-full rounded-[48px] border bg-white px-5 py-2.5 text-sm transition-all duration-300 outline-none dark:border-[#31332F]"
                       />
                       <ul className="mx-5 flex items-center justify-between">
                         <li>.info</li>

@@ -26,7 +26,7 @@ const FinancialBlog = ({ className = 'dark:bg-dark pb-150 pt-150' }) => {
               <article
                 className="rounded-medium shadow-nav dark:bg-dark-200 cursor-pointer bg-white p-2.5 transition-transform duration-500 hover:scale-105 hover:transition-transform hover:duration-500"
                 key={blogItems.slug}>
-                <div className="dark:border-borderColour-dark h-full rounded border border-dashed border-gray-100 p-6">
+                <div className="dark:border-gray-600 h-full rounded border border-dashed border-gray-100 p-6">
                   <Image
                     src={blogItems.data.thumbnail}
                     alt="service logo"

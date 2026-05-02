@@ -1,6 +1,7 @@
 'use client'
 import { fadeUpAnimation } from '@/data/animation'
 import TestimonialList from '@/data/testimonial'
+import TestimonialAuthorAvatar from '@/components/shared/TestimonialAuthorAvatar'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 
@@ -24,12 +25,12 @@ const TestimonialSingle = () => {
                 initial="initial"
                 animate="animate"
                 variants={fadeUpAnimation}>
-                <div className="dark:border-borderColour-dark flex min-h-0 flex-1 flex-col rounded border border-dashed border-gray-100 p-7">
+                <div className="flex min-h-0 flex-1 flex-col rounded border border-dashed border-gray-100 p-7 dark:border-gray-600">
                   <blockquote className="text-paragraph min-h-0 flex-1 pb-7 leading-[1.75] italic dark:text-white">
                     &ldquo;{testimonial.testimonial}&rdquo;
                   </blockquote>
 
-                  <div className="dark:border-borderColour-dark mt-auto flex shrink-0 items-center border-t border-dashed border-gray-100 pt-7">
+                  <div className="mt-auto flex shrink-0 items-center border-t border-dashed border-gray-100 pt-7 dark:border-gray-600">
                     {testimonial.logoLight ? (
                       <Image
                         src={testimonial.logoLight}
@@ -39,12 +40,10 @@ const TestimonialSingle = () => {
                         height={56}
                       />
                     ) : (
-                      <Image
-                        src={testimonial.author.image}
-                        alt=""
-                        className="mr-4 rounded-full"
-                        width={56}
-                        height={56}
+                      <TestimonialAuthorAvatar
+                        image={testimonial.author.image}
+                        name={testimonial.author.name}
+                        className="mr-4 size-14 shrink-0 rounded-full object-cover"
                       />
                     )}
                     <div className="block">

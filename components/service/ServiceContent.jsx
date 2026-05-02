@@ -40,9 +40,9 @@ const ServiceContent = ({ data }) => {
 
           <div className="grid auto-rows-max grid-cols-12 gap-y-15 md:gap-8 lg:gap-16">
             <div className="rounded-medium shadow-nav dark:bg-dark-200 self-start bg-white p-2.5 max-md:static max-md:col-span-full max-md:hidden md:sticky md:top-20 md:col-span-6 lg:col-span-4">
-              <div className="dark:border-borderColour-dark rounded border border-dashed border-gray-100 px-10 pt-9 pb-7">
+              <div className="dark:border-gray-600 rounded border border-dashed border-gray-100 px-10 pt-9 pb-7">
                 <h3 className="mb-3">Categories</h3>
-                <ul className="dark:[&>*:not(:last-child)]:border-borderColour-dark [&>*:not(:last-child)]:border-b [&>*:not(:last-child)]:border-dashed [&>*:not(:last-child)]:border-gray-100">
+                <ul className="dark:[&>*:not(:last-child)]:border-gray-600 [&>*:not(:last-child)]:border-b [&>*:not(:last-child)]:border-dashed [&>*:not(:last-child)]:border-gray-100">
                   {ServiceData?.map((services) => (
                     <li className={`group ${services.slug === data.slug ? 'tabActive' : ''}`} key={services.id}>
                       <Link

@@ -33,7 +33,7 @@ const Integration = () => {
               <FadeUpAnimation className="grid grid-cols-2 gap-8 max-md:grid-cols-1">
                 {IntegrationData.map((items) => (
                   <div className="rounded-medium shadow-box dark:bg-dark-200 bg-white p-2.5" key={items.id}>
-                    <div className="dark:border-borderColour-dark rounded border border-dashed border-gray-100 p-10 text-center">
+                    <div className="dark:border-gray-600 rounded border border-dashed border-gray-100 p-10 text-center">
                       <Image
                         src={items.image}
                         alt="integartion image"

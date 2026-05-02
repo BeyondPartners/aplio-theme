@@ -30,7 +30,7 @@ const Blog = () => {
           <div className="grid grid-cols-3 gap-8 max-md:grid-cols-1">
             {FinancialBlogItems.map((blogItems, index) => (
               <article className="rounded-medium shadow-nav dark:bg-dark-200 bg-white p-2.5" key={index}>
-                <div className="dark:border-borderColour-dark rounded border border-dashed border-gray-100 p-6">
+                <div className="dark:border-gray-600 rounded border border-dashed border-gray-100 p-6">
                   <Link href={`/tags/${blogItems.data.tags}`} className="badge badge-primary">
                     {blogItems.data.tags}
                   </Link>

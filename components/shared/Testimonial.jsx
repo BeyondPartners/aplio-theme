@@ -2,7 +2,8 @@
 
 import TestimonialList from '@/data/testimonial'
 import Image from 'next/image'
-import { useCallback, useState } from 'react'
+import TestimonialAuthorAvatar from '@/components/shared/TestimonialAuthorAvatar'
+import { useCallback, useEffect, useState, useSyncExternalStore } from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react'
 
 import 'swiper/css'
@@ -15,137 +16,214 @@ function ChevronRightIcon() {
   )
 }
 
-const Testimonial = () => {
+const testimonialArrowBtnClass =
+  'border-zinc-200 text-paragraph hover:bg-zinc-50 dark:border-zinc-600 dark:bg-dark-200 dark:hover:bg-dark-300 flex size-11 shrink-0 cursor-pointer items-center justify-center rounded-full border bg-white shadow-sm transition dark:text-white outline-none focus-visible:outline-none focus-visible:ring-0 focus-visible:ring-offset-0 disabled:cursor-default'
+
+function useViewportWidth() {
+  return useSyncExternalStore(
+    (onStoreChange) => {
+      window.addEventListener('resize', onStoreChange)
+      return () => window.removeEventListener('resize', onStoreChange)
+    },
+    () => window.innerWidth,
+    () => 1024,
+  )
+}
+
+function getContainerLeftInset(viewportWidth) {
+  // Mirror styles/utilities.css `.container` breakpoints.
+  if (viewportWidth < 576) return 16
+  if (viewportWidth < 768) return 24
+  if (viewportWidth < 992) return 32
+  if (viewportWidth < 1200) return Math.max((viewportWidth - 1060) / 2, 32)
+  if (viewportWidth < 1400) return Math.max((viewportWidth - 1240) / 2, 32)
+  return Math.max((viewportWidth - 1400) / 2, 32)
+}
+
+const Testimonial = ({ anchorId }) => {
   const { TestimonialData } = TestimonialList
   const [swiper, setSwiper] = useState(null)
   const [activeSlide, setActiveSlide] = useState(0)
+  const [isAtStart, setIsAtStart] = useState(true)
+  const [isAtEnd, setIsAtEnd] = useState(false)
+  const viewportWidth = useViewportWidth()
+  const isWideViewport = viewportWidth >= 1100
+  const step = isWideViewport ? 2 : 1
+  const slidesOffsetBefore = getContainerLeftInset(viewportWidth)
+  /** Viewport under 768px: centered card; tablet and up keep the existing strip + offsets. */
+  const isMobileSwiperLayout = viewportWidth < 768
+  /** Enable finger swipe on mobile + tablet, keep desktop as arrow-driven navigation. */
+  const isTouchSwipeViewport = viewportWidth < 1100
+  const swiperSlidesOffsetBefore = isMobileSwiperLayout ? 0 : slidesOffsetBefore
+  const swiperSlidesOffsetAfter = isMobileSwiperLayout ? 0 : 320
+  const lastSlideIndex = Math.max(TestimonialData.length - 1, 0)
 
-  const enableLoop = TestimonialData.length > 2
+  const getTotalSlides = useCallback(() => TestimonialData.length, [TestimonialData.length])
 
-  const getTotalSlides = useCallback(() => {
-    if (!swiper) return TestimonialData.length
-    return enableLoop ? swiper.slides.length - swiper.loopedSlides * 2 : swiper.slides.length
-  }, [swiper, TestimonialData.length, enableLoop])
+  const syncNavState = useCallback((instance) => {
+    setActiveSlide(instance.activeIndex)
+    setIsAtStart(instance.isBeginning)
+    setIsAtEnd(instance.isEnd)
+  }, [])
 
   const goPrev = useCallback(() => {
-    swiper?.slidePrev()
-  }, [swiper])
+    if (!swiper) return
+    const nextIndex = Math.max(swiper.activeIndex - step, 0)
+    swiper.slideTo(nextIndex)
+  }, [swiper, step])
 
   const goNext = useCallback(() => {
-    swiper?.slideNext()
-  }, [swiper])
+    if (!swiper) return
+    if (swiper.isEnd) return
+    const nextIndex = swiper.activeIndex + step >= lastSlideIndex ? lastSlideIndex : swiper.activeIndex + step
+    swiper.slideTo(nextIndex)
+  }, [swiper, lastSlideIndex, step])
+
+  useEffect(() => {
+    if (!swiper) return
+    swiper.update()
+    syncNavState(swiper)
+  }, [step, swiper, syncNavState, isMobileSwiperLayout, swiperSlidesOffsetBefore, swiperSlidesOffsetAfter])
 
   return (
-    <section className="dark:bg-dark-300 relative bg-white pt-150 pb-150 max-xl:py-24">
+    <section
+      id={anchorId}
+      className="dark:bg-dark-300 relative my-32 min-w-0 scroll-mt-32 overflow-x-clip bg-[#fdf5f0]">
       <div className="relative container">
-        <div className="mx-auto mb-14 max-w-[550px] text-center max-md:mb-12">
+        <div className="mx-auto mb-8 pt-14 text-center md:mb-0">
           <p className="section-tagline text-accent">Témoignages</p>
           <h2>Ce que nos clients disent de nous</h2>
         </div>
 
-        <div className="relative z-10">
-          <div className="relative md:pr-14">
-            <Swiper
-              className="testimonials-swiper"
-              spaceBetween={20}
-              slidesPerView={1}
-              loop={enableLoop}
-              breakpoints={{
-                768: {
-                  slidesPerView: 2,
-                  spaceBetween: 28,
-                },
-              }}
-              onSwiper={setSwiper}
-              onSlideChange={(instance) => setActiveSlide(instance.realIndex)}>
-              {TestimonialData.map((testimonial) => (
-                <SwiperSlide key={testimonial.id} className="h-auto!">
-                  <article className="testimonial-slide-inner rounded-medium border-borderColour shadow-box dark:border-borderColour-dark/50 dark:bg-dark-200 flex min-h-[305px] w-full flex-col border bg-white">
-                    <div className="flex min-h-0 flex-1 flex-col p-8 md:p-11">
-                      <blockquote className="mb-0 min-h-0 flex-1 pb-10 text-left text-[15px] leading-[1.62] font-normal text-[#202132] md:text-base dark:text-white/90">
-                        &ldquo;{testimonial.testimonial}&rdquo;
-                      </blockquote>
+        <div className="relative z-10 mb-8 hidden items-center justify-end gap-4 md:flex">
+          <button
+            type="button"
+            className={`${testimonialArrowBtnClass} ${isAtStart ? 'pointer-events-none invisible' : ''}`}
+            aria-label="Témoignage précédent"
+            aria-hidden={isAtStart}
+            tabIndex={isAtStart ? -1 : 0}
+            disabled={isAtStart}
+            onClick={goPrev}>
+            <span className="inline-flex rotate-180">
+              <ChevronRightIcon />
+            </span>
+          </button>
+          <button
+            type="button"
+            className={`${testimonialArrowBtnClass} ${isAtEnd ? 'pointer-events-none invisible' : ''}`}
+            aria-label="Témoignage suivant"
+            aria-hidden={isAtEnd}
+            tabIndex={isAtEnd ? -1 : 0}
+            disabled={isAtEnd}
+            onClick={goNext}>
+            <ChevronRightIcon />
+          </button>
+        </div>
+      </div>
 
-                      <div className="mt-auto flex shrink-0 items-center justify-between gap-6 max-xl:flex-col max-xl:items-start max-xl:gap-4">
-                        <div className="flex min-w-0 flex-1 items-center gap-4">
-                          <Image
-                            src={testimonial.author.image}
-                            alt=""
-                            className="size-14 shrink-0 rounded-full object-cover"
-                            width={56}
-                            height={56}
-                            loading="lazy"
-                          />
-                          <div className="min-w-0">
-                            <p className="text-[17px] leading-snug font-normal text-[#202132] dark:text-white">
-                              {testimonial.author.name}
-                            </p>
-                          </div>
-                        </div>
-                        {testimonial.logoLight ? (
-                          <Image
-                            src={testimonial.logoLight}
-                            alt=""
-                            className="h-11 w-auto max-w-[118px] shrink-0 object-contain object-right max-xl:object-left md:max-w-[132px]"
-                            width={120}
-                            height={44}
-                            loading="lazy"
-                          />
-                        ) : (
-                          <p className="text-paragraph-light max-w-[130px] shrink-0 text-right text-sm leading-snug font-normal max-xl:text-left dark:text-white/60">
-                            {testimonial.author.designation}
-                          </p>
-                        )}
+      {/* Full width strip; horizontal inset on small screens so cards don’t hug the viewport edge */}
+      <div className="relative w-full min-w-0 overflow-x-clip px-4 sm:px-6 md:px-0">
+        <Swiper
+          className="testimonials-swiper w-full max-w-full min-w-0"
+          spaceBetween={20}
+          slidesPerView={1}
+          centeredSlides={isMobileSwiperLayout}
+          loop={false}
+          allowTouchMove={isTouchSwipeViewport}
+          simulateTouch={isTouchSwipeViewport}
+          slidesOffsetBefore={swiperSlidesOffsetBefore}
+          slidesOffsetAfter={swiperSlidesOffsetAfter}
+          breakpoints={{
+            768: {
+              slidesPerView: 'auto',
+              spaceBetween: 20,
+              slidesOffsetBefore,
+              slidesOffsetAfter: 320,
+              centeredSlides: false,
+            },
+          }}
+          onSwiper={(instance) => {
+            setSwiper(instance)
+            syncNavState(instance)
+          }}
+          onSlideChange={syncNavState}>
+          {TestimonialData.map((testimonial) => (
+            <SwiperSlide key={testimonial.id} className="h-auto!">
+              <article className="testimonial-slide-inner rounded-medium dark:bg-dark-200 flex min-h-[305px] w-full flex-col border border-zinc-200 bg-white dark:border-zinc-600/55">
+                <div className="flex min-h-0 min-w-0 flex-1 flex-col p-8 md:p-11">
+                  <blockquote className="mb-0 min-h-0 min-w-0 flex-1 pb-10 text-left text-[15px] leading-[1.62] font-normal wrap-break-word text-[#202132] md:text-base dark:text-white/90">
+                    &ldquo;{testimonial.testimonial}&rdquo;
+                  </blockquote>
+
+                  <div className="mt-auto flex shrink-0 items-center justify-between gap-6 max-xl:flex-col max-xl:items-start max-xl:gap-4">
+                    <div className="flex min-w-0 flex-1 items-center gap-4">
+                      <TestimonialAuthorAvatar image={testimonial.author.image} name={testimonial.author.name} />
+                      <div className="min-w-0">
+                        <p className="text-[17px] leading-snug font-normal text-[#202132] dark:text-white">
+                          {testimonial.author.name}
+                        </p>
                       </div>
                     </div>
-                  </article>
-                </SwiperSlide>
-              ))}
-            </Swiper>
+                    {testimonial.logoLight ? (
+                      <Image
+                        src={testimonial.logoLight}
+                        alt=""
+                        className="h-11 w-auto max-w-[118px] shrink-0 object-contain object-right max-xl:object-left md:max-w-[132px]"
+                        width={120}
+                        height={44}
+                        loading="lazy"
+                      />
+                    ) : (
+                      <p className="text-paragraph-light max-w-[130px] shrink-0 text-right text-sm leading-snug font-normal max-xl:text-left dark:text-white/60">
+                        {testimonial.author.designation}
+                      </p>
+                    )}
+                  </div>
+                </div>
+              </article>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </div>
 
-            <button
-              type="button"
-              className="dark:border-borderColour-dark text-paragraph dark:bg-dark-200 dark:hover:bg-dark-300 absolute top-1/2 right-0 z-10 hidden size-11 -translate-y-1/2 items-center justify-center rounded-full border border-gray-200 bg-white shadow-sm transition hover:bg-gray-50 max-xl:hidden md:flex dark:text-white"
-              aria-label="Témoignage suivant"
-              onClick={goNext}>
+      <div className="container pb-14">
+        <div className="mt-8 flex items-center justify-center gap-4 md:hidden">
+          <button
+            type="button"
+            className={`${testimonialArrowBtnClass} ${isAtStart ? 'pointer-events-none invisible' : ''}`}
+            aria-label="Témoignage précédent"
+            aria-hidden={isAtStart}
+            tabIndex={isAtStart ? -1 : 0}
+            disabled={isAtStart}
+            onClick={goPrev}>
+            <span className="inline-flex rotate-180">
               <ChevronRightIcon />
-            </button>
-          </div>
-
-          <div className="mt-8 flex items-center justify-center gap-4 md:max-xl:mt-10 xl:hidden">
-            <button
-              type="button"
-              className="dark:border-borderColour-dark text-paragraph dark:bg-dark-200 dark:hover:bg-dark-300 flex size-11 items-center justify-center rounded-full border border-gray-200 bg-white shadow-sm transition hover:bg-gray-50 dark:text-white"
-              aria-label="Témoignage précédent"
-              onClick={goPrev}>
-              <span className="inline-flex rotate-180">
-                <ChevronRightIcon />
-              </span>
-            </button>
-            <div className="flex items-center gap-2" aria-label="Pagination des témoignages">
-              {Array.from({ length: TestimonialData.length }).map((_, index) => (
-                <button
-                  type="button"
-                  key={index}
-                  aria-label={`Aller au témoignage ${index + 1}`}
-                  onClick={() => swiper?.slideToLoop(index)}
-                  className={`h-2 rounded-full transition-all ${
-                    activeSlide === index ? 'bg-accent w-6' : 'bg-borderColour dark:bg-borderColour-dark w-2'
-                  }`}
-                />
-              ))}
-            </div>
-            <button
-              type="button"
-              className="dark:border-borderColour-dark text-paragraph dark:bg-dark-200 dark:hover:bg-dark-300 flex size-11 items-center justify-center rounded-full border border-gray-200 bg-white shadow-sm transition hover:bg-gray-50 dark:text-white"
-              aria-label="Témoignage suivant"
-              onClick={goNext}>
-              <ChevronRightIcon />
-            </button>
-            <span className="sr-only">
-              {activeSlide + 1} / {getTotalSlides()}
             </span>
+          </button>
+          <div className="flex items-center gap-2" aria-label="Pagination des témoignages">
+            {Array.from({ length: TestimonialData.length }).map((_, index) => (
+              <span
+                key={index}
+                aria-hidden
+                className={`h-2 rounded-full transition-all ${
+                  activeSlide === index ? 'bg-accent w-6' : 'w-2 bg-zinc-300 dark:bg-zinc-600'
+                }`}
+              />
+            ))}
           </div>
+          <button
+            type="button"
+            className={`${testimonialArrowBtnClass} ${isAtEnd ? 'pointer-events-none invisible' : ''}`}
+            aria-label="Témoignage suivant"
+            aria-hidden={isAtEnd}
+            tabIndex={isAtEnd ? -1 : 0}
+            disabled={isAtEnd}
+            onClick={goNext}>
+            <ChevronRightIcon />
+          </button>
+          <span className="sr-only">
+            {activeSlide + 1} / {getTotalSlides()}
+          </span>
         </div>
       </div>
     </section>

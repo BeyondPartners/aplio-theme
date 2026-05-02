@@ -109,7 +109,7 @@ const ResultDashboardCard = () => {
 
   return (
     <article ref={sectionRef} className="rounded-medium shadow-box dark:bg-dark-200 bg-white p-2.5">
-      <div className="dark:border-borderColour-dark overflow-hidden rounded border border-dashed border-gray-100">
+      <div className="dark:border-gray-600 overflow-hidden rounded border border-dashed border-gray-100">
         <div className="p-6 max-lg:p-5">
           <p className="bg-accent/10 text-accent mb-4 inline-flex rounded-full px-4 py-1.5 text-xs font-semibold tracking-[0.12em] uppercase">
             Résultat
@@ -118,7 +118,7 @@ const ResultDashboardCard = () => {
           <p className="text-paragraph-light text-sm dark:text-white/60">Vous repartez avec :</p>
         </div>
 
-        <div className="dark:divide-borderColour-dark grid grid-cols-2 divide-x divide-y divide-gray-100">
+        <div className="dark:divide-gray-600 grid grid-cols-2 divide-x divide-y divide-gray-100">
           {metrics.map((metric) => {
             const finalNumericLabel = `${metric.value}${metric.suffix ?? ''}${metric.unit ? ` ${metric.unit}` : ''}`
             return (
@@ -158,7 +158,7 @@ const ResultDashboardCard = () => {
           })}
         </div>
 
-        <div className="border-borderColour dark:border-borderColour-dark bg-secondary/10 dark:bg-secondary/15 border-t px-5 py-7 max-lg:p-4">
+        <div className="border-gray-200 dark:border-gray-600 bg-secondary/10 dark:bg-secondary/15 border-t px-5 py-7 max-lg:p-4">
           <div className="flex items-start gap-3">
             <span
               className="bg-secondary mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-full text-base leading-none text-white max-[799px]:h-8 max-[799px]:w-8 min-[800px]:h-9 min-[800px]:w-9"

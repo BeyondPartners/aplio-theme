@@ -41,9 +41,9 @@ const Steps = () => {
                 i={i}
                 key={items.id}
                 className="rounded-medium shadow-box dark:bg-dark-200 bg-white p-2.5">
-                <div className="dark:border-borderColour-dark h-full rounded border border-dashed border-gray-100 p-10 text-center max-lg:p-5">
+                <div className="dark:border-gray-600 h-full rounded border border-dashed border-gray-100 p-10 text-center max-lg:p-5">
                   <div className="bg-primary shadow-box dark:bg-primary/5 mx-auto mb-6 flex h-20 w-20 items-center justify-center rounded-full">
-                    <div className="dark:border-borderColour-dark flex h-15 w-15 items-center justify-center rounded-full border border-dashed border-white">
+                    <div className="dark:border-gray-600 flex h-15 w-15 items-center justify-center rounded-full border border-dashed border-white">
                       <span className="font-jakarta text-[36px] leading-normal font-bold">{items.id}</span>
                     </div>
                   </div>

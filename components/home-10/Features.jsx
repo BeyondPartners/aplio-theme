@@ -54,7 +54,7 @@ const Features = () => {
               i={i}
               className="dark:bg-dark-200 rounded-medium shadow-nav col-span-12 w-full bg-white p-2.5 sm:w-[calc(50%-20px)] lg:w-[calc(33.33%-20px)]"
               key={items.id}>
-              <div className="dark:border-borderColour-dark h-full rounded border border-dashed border-gray-100 p-5 max-lg:p-5">
+              <div className="dark:border-gray-600 h-full rounded border border-dashed border-gray-100 p-5 max-lg:p-5">
                 <figure className="mb-3">
                   <Image
                     src={items.imageLight}

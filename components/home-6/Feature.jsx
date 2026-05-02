@@ -45,7 +45,7 @@ const Feature = () => {
         <div className="grid grid-cols-3 gap-8 max-md:grid-cols-1">
           {userManageCard?.map((userCard) => (
             <div className="rounded-medium shadow-nav dark:bg-dark-200 bg-white p-2.5" key={userCard.id}>
-              <div className="dark:border-borderColour-dark h-full rounded border border-dashed border-gray-100 p-10 max-lg:p-5">
+              <div className="dark:border-gray-600 h-full rounded border border-dashed border-gray-100 p-10 max-lg:p-5">
                 <Image src={userCard.img} alt="image" className="mb-10 inline-block w-full rounded dark:hidden" />
                 <Image src={userCard.darkImg} alt="image" className="mb-10 hidden w-full rounded dark:inline-block" />
                 <h3 className="mb-2.5 leading-8">{userCard.title}</h3>

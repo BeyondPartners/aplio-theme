@@ -1,3 +1,4 @@
+import NavbarItem from '@/data/navbar'
 import { lifelongBenefits } from '@/data/lifelongBenefits'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -96,7 +97,7 @@ const ArrowIcon = () => (
 
 const ImagePlaceholder = ({ label, src, alt = '' }) => (
   <div
-    className={`dark:border-borderColour-dark bg-gray dark:bg-dark-200 relative flex aspect-video w-full items-center justify-center overflow-hidden rounded-md border border-gray-100 ${src ? '' : 'border-dashed'}`}>
+    className={`bg-gray dark:bg-dark-200 relative flex aspect-video w-full items-center justify-center overflow-hidden rounded-md border border-gray-100 dark:border-gray-600 ${src ? '' : 'border-dashed'}`}>
     {src ? (
       <>
         <Image src={src} alt={alt} fill className="z-0 object-cover" sizes="(max-width: 768px) 100vw, 800px" />
@@ -114,12 +115,12 @@ const ImagePlaceholder = ({ label, src, alt = '' }) => (
 
 const Offer = () => {
   return (
-    <section className="dark:bg-dark-300 relative scroll-mt-28 bg-white pb-16 min-[800px]:pb-150 md:scroll-mt-32 md:pb-24">
+    <section className="dark:bg-dark-300 relative mb-16 scroll-mt-28 bg-white min-[800px]:mb-150 md:mb-24 md:scroll-mt-32">
       <div className="container">
         <FadeUpAnimation className="mx-auto mb-16 max-w-[940px] text-center max-md:mb-12">
           <span className="bg-accent/25 my-10 inline-block h-[2px] w-16 rounded-full md:my-12" aria-hidden />
           <p
-            className="font-jakarta mx-auto mb-16 max-w-[940px] text-center text-[26px] leading-[1.38] font-medium text-[#30343a] max-[799px]:max-w-[42ch] max-md:text-[23px] md:mb-20 md:text-[32px] dark:text-white/90"
+            className="font-jakarta mx-auto mb-16 max-w-[940px] text-center text-[26px] leading-[1.38] font-medium text-[#30343a] max-[799px]:max-w-[42ch] max-md:text-[23px] md:mb-28 md:text-[32px] dark:text-white/90"
             id="approche">
             Nous accompagnons les bureaux d&apos;architectes ambitieux qui savent que l&apos;IA va transformer en
             profondeur les façons de travailler — et qui veulent prendre une longueur d&apos;avance.
@@ -137,8 +138,8 @@ const Offer = () => {
                 À l&apos;issue des 4 semaines, vous disposez d&apos;une équipe formée, de process augmentés par
                 l&apos;IA et d&apos;une feuille de route construite avec votre équipe.
               </p>
-              <Link href="#" className="btn">
-                Réservez votre audit
+              <Link href={NavbarItem.bookingCalendlyUrl} target="_blank" rel="noopener noreferrer" className="btn">
+                Échanger avec un expert
               </Link>
               {/* <p className="text-paragraph-light mt-4 text-sm">Audit 30 minutes · Sans engagement</p> */}
             </FadeUpAnimation>
@@ -148,7 +149,7 @@ const Offer = () => {
             <div className="space-y-18 max-md:space-y-15">
               {programBlocks.map((block) => (
                 <FadeUpAnimation className="rounded-medium shadow-box dark:bg-dark-200 bg-white p-2.5" key={block.id}>
-                  <article className="dark:border-borderColour-dark rounded border border-dashed border-gray-100 p-6">
+                  <article className="rounded border border-dashed border-gray-100 p-6 dark:border-gray-600">
                     <div className="mb-6">
                       <div className="mb-5 flex items-start justify-between gap-3 max-[799px]:flex-col max-[799px]:items-start">
                         <span className="bg-accent/10 text-accent inline-flex min-h-10 shrink-0 items-center justify-center rounded-full px-4 text-sm leading-none font-semibold whitespace-nowrap">
@@ -156,7 +157,7 @@ const Offer = () => {
                           {block.id}
                         </span>
                         {block.timeframe && (
-                          <span className="dark:border-borderColour-dark border-borderColour text-paragraph-light inline-flex items-center rounded-full border px-4 py-1.5 text-sm whitespace-nowrap">
+                          <span className="text-paragraph-light inline-flex items-center rounded-full border border-gray-200 px-4 py-1.5 text-sm whitespace-nowrap dark:border-gray-600">
                             {block.timeframe}
                           </span>
                         )}
@@ -180,7 +181,7 @@ const Offer = () => {
                         />
                       </div>
                     </div>
-                    <div className="dark:border-borderColour-dark border-borderColour mt-6 flex min-h-11 items-center border-t pt-5">
+                    <div className="mt-6 flex min-h-11 items-center border-t border-gray-200 pt-5 dark:border-gray-600">
                       <Link
                         href="#"
                         className="text-secondary hover:text-secondary/80 dark:text-secondary dark:hover:text-secondary/70 inline-flex items-center gap-2 text-sm font-semibold">
@@ -193,7 +194,7 @@ const Offer = () => {
               ))}
 
               <FadeUpAnimation className="rounded-medium shadow-box dark:bg-dark-200 bg-white p-2.5">
-                <article className="dark:border-borderColour-dark rounded border border-dashed border-gray-100 p-8 max-lg:p-6">
+                <article className="rounded border border-dashed border-gray-100 p-8 max-lg:p-6 dark:border-gray-600">
                   <div className="mb-5 flex items-center gap-4">
                     <span className="bg-accent/10 text-accent flex h-10 w-10 shrink-0 items-center justify-center rounded-full">
                       <CheckIcon />
@@ -206,7 +207,7 @@ const Offer = () => {
                   <p className="text-paragraph-light mb-6 dark:text-white/60">
                     Vous bénéficiez d&apos;un accompagnement continu pour ancrer durablement les usages.
                   </p>
-                  <ul className="dark:divide-borderColour-dark divide-y divide-dashed divide-gray-100">
+                  <ul className="divide-y divide-dashed divide-gray-100 dark:divide-gray-600">
                     {continuousSupport.map((item) => (
                       <li className="flex items-start gap-4 py-4 first:pt-0 last:pb-0" key={item.title}>
                         <span className="text-accent mt-1 shrink-0">
@@ -225,8 +226,8 @@ const Offer = () => {
               <FadeUpAnimation className="space-y-6">
                 <ResultDashboardCard />
                 <div className="flex justify-center min-[800px]:hidden">
-                  <Link href="#" className="btn">
-                    Réservez votre audit
+                  <Link href={NavbarItem.bookingCalendlyUrl} target="_blank" rel="noopener noreferrer" className="btn">
+                    Échanger avec un expert
                   </Link>
                 </div>
               </FadeUpAnimation>
@@ -234,7 +235,7 @@ const Offer = () => {
           </div>
         </div>
 
-        <FadeUpAnimation className="dark:border-borderColour-dark mt-20 border-t border-dashed border-gray-100 pt-16 max-md:mt-14 max-md:pt-12">
+        <FadeUpAnimation className="mt-20 border-t border-dashed border-gray-100 pt-16 max-md:mt-14 max-md:pt-12 dark:border-gray-600">
           <div className="mb-10 max-w-xl max-md:mb-8">
             <h2 className="mb-3">Et après ce programme ?</h2>
             <p className="text-paragraph-light dark:text-white/60">
@@ -248,7 +249,7 @@ const Offer = () => {
               const Icon = LIFELONG_ICONS[benefit.id]
               return (
                 <div key={benefit.id} className="rounded-medium shadow-box dark:bg-dark-200 bg-white p-2.5">
-                  <div className="dark:border-borderColour-dark flex h-full flex-col rounded border border-dashed border-gray-100 p-6">
+                  <div className="flex h-full flex-col rounded border border-dashed border-gray-100 p-6 dark:border-gray-600">
                     <span className="bg-secondary/10 text-secondary mb-5 flex h-10 w-10 items-center justify-center rounded-full">
                       <Icon />
                     </span>

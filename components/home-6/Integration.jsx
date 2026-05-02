@@ -89,7 +89,7 @@ const Integration = () => {
           {sliderItems?.map((items) => (
             <SwiperSlide className="swiper-slide group !flex aspect-square !items-center" key={items.id}>
               <div className="shadow-box dark:bg-dark-200 mx-auto aspect-square w-20 origin-center scale-100 rounded-full bg-white p-2.5 transition-transform duration-500 group-[.swiper-slide-active]:scale-150 group-[.swiper-slide-active]:transition-transform group-[.swiper-slide-active]:duration-500">
-                <div className="dark:border-borderColour-dark flex aspect-square items-center justify-center rounded-full border border-dashed border-gray-100 text-center">
+                <div className="dark:border-gray-600 flex aspect-square items-center justify-center rounded-full border border-dashed border-gray-100 text-center">
                   <img src={items.image} alt="value image" className="inline-block h-8 w-8" />
                 </div>
               </div>

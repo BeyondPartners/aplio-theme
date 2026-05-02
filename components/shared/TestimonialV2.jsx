@@ -1,5 +1,6 @@
 import TestimonialList from '@/data/testimonial'
 import Image from 'next/image'
+import TestimonialAuthorAvatar from '@/components/shared/TestimonialAuthorAvatar'
 import React from 'react'
 import TestmonialBg from '../icons/TestmonialBg'
 import FadeUpOneByOneAnimation from '../animations/FadeUpOneByOneAnimation'
@@ -23,7 +24,7 @@ const TestimonialV2 = () => {
                 i={i}
                 className="rounded-medium shadow-nav dark:bg-dark-200 flex h-full min-h-0 flex-col bg-white p-2.5"
                 key={testimonial.id}>
-                <div className="dark:border-borderColour-dark flex min-h-0 flex-1 flex-col rounded border border-dashed border-gray-100 p-8">
+                <div className="flex min-h-0 flex-1 flex-col rounded border border-dashed border-gray-100 p-8 dark:border-gray-600">
                   <div className="flex shrink-0 items-center pb-7">
                     {testimonial.logoLight ? (
                       <Image
@@ -34,12 +35,10 @@ const TestimonialV2 = () => {
                         height={56}
                       />
                     ) : (
-                      <Image
-                        src={testimonial.author.image}
-                        alt=""
-                        className="mr-4 rounded-full"
-                        width={56}
-                        height={56}
+                      <TestimonialAuthorAvatar
+                        image={testimonial.author.image}
+                        name={testimonial.author.name}
+                        className="mr-4 size-14 shrink-0 rounded-full object-cover"
                       />
                     )}
                     <div className="block">
@@ -54,7 +53,7 @@ const TestimonialV2 = () => {
                     &ldquo;{testimonial.testimonial}&rdquo;
                   </blockquote>
                   {testimonial.date ? (
-                    <div className="dark:border-borderColour-dark mt-auto flex shrink-0 items-center justify-end border-t border-dashed border-gray-100 pt-7">
+                    <div className="mt-auto flex shrink-0 items-center justify-end border-t border-dashed border-gray-100 pt-7 dark:border-gray-600">
                       <p className="text-paragraph-light dark:text-paragraph-light text-sm">{testimonial.date}</p>
                     </div>
                   ) : null}

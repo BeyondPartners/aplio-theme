@@ -51,9 +51,9 @@ const EasyStepFeature = () => {
                 i={i}
                 className="rounded-medium shadow-box dark:bg-dark-200 bg-white p-2.5"
                 key={plan.id}>
-                <div className="dark:border-borderColour-dark rounded border border-dashed border-gray-100 p-8 max-md:p-4">
+                <div className="rounded border border-dashed border-gray-100 p-8 max-md:p-4 dark:border-gray-600">
                   <div className="flex gap-10 max-lg:gap-5">
-                    <div className="after:border-borderColour-dark bg-primary relative flex size-10 shrink-0 items-center justify-center rounded-full after:absolute after:top-1/2 after:left-1/2 after:size-[30px] after:-translate-x-1/2 after:-translate-y-1/2 after:rounded-full after:border after:border-dashed">
+                    <div className="bg-primary relative flex size-10 shrink-0 items-center justify-center rounded-full after:absolute after:top-1/2 after:left-1/2 after:size-[30px] after:-translate-x-1/2 after:-translate-y-1/2 after:rounded-full after:border after:border-dashed after:border-gray-300 dark:after:border-gray-600">
                       <p className="font-jakarta text-paragraph dark:text-paragraph font-bold">{plan.id}</p>
                     </div>
                     <div>

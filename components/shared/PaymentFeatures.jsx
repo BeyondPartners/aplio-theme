@@ -25,7 +25,7 @@ const PaymentFeatures = ({
           <div className="grid grid-cols-3 gap-8 max-md:grid-cols-1">
             {features.map((items) => (
               <div className="rounded-medium shadow-box dark:bg-dark-200 bg-white p-2.5" key={items.id}>
-                <div className="dark:border-borderColour-dark h-full rounded border border-dashed border-gray-100 p-10 text-center max-lg:p-5">
+                <div className="dark:border-gray-600 h-full rounded border border-dashed border-gray-100 p-10 text-center max-lg:p-5">
                   <Image
                     src={items.iconLight}
                     alt="payment logo"

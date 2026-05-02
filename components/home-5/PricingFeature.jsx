@@ -52,7 +52,7 @@ const PricingFeature = () => {
               <div key={index}>
                 {price.featured ? (
                   <div className="rounded-medium shadow-box dark:bg-dark-200 bg-white p-2.5">
-                    <div className="dark:border-borderColour-dark rounded border border-dashed border-gray-100 p-8 lg:px-8 lg:pt-3 lg:pb-15">
+                    <div className="dark:border-gray-600 rounded border border-dashed border-gray-100 p-8 lg:px-8 lg:pt-3 lg:pb-15">
                       <div className="mb-2.5 flex justify-end">
                         <span className="bg-primary text-paragraph -mr-4 rounded-full px-3 py-1.5 font-medium">
                           Save {price.save}
@@ -104,7 +104,7 @@ const PricingFeature = () => {
                   </div>
                 ) : (
                   <div className="rounded-medium shadow-box dark:bg-dark-200 bg-white p-2.5">
-                    <div className="dark:border-borderColour-dark rounded border border-dashed border-gray-100 p-8">
+                    <div className="dark:border-gray-600 rounded border border-dashed border-gray-100 p-8">
                       <h3 className="mb-2">{price.title}</h3>
                       <p className="mb-6">{price.desc}</p>
                       {isAnnual ? (

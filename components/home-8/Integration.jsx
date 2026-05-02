@@ -30,7 +30,7 @@ const Integration = () => {
             {IntegrationData?.map((items, i) => (
               <FadeUpOneByOneAnimation
                 i={i}
-                className="dark:border-borderColour-dark dark:bg-dark-200 h-full rounded border border-dashed border-gray-100 bg-white p-8 max-lg:p-5"
+                className="dark:border-gray-600 dark:bg-dark-200 h-full rounded border border-dashed border-gray-100 bg-white p-8 max-lg:p-5"
                 key={items.id}>
                 <Image src={items.image} alt="image" width={42} height={42} className="mb-6" />
                 <h3 className="mb-2.5">{items.title}</h3>

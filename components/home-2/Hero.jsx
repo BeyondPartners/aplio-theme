@@ -27,7 +27,7 @@ const Hero = () => {
                 Get Started
               </Link>
               <Link href="/request-demo" className="btn-outline">
-                Get a Demo
+                Échanger avec un expert
               </Link>
             </div>
           </FadeUpAnimation>

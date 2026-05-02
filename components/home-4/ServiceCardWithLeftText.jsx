@@ -89,7 +89,7 @@ export default function ServiceCardWithLeftText() {
                 <div
                   className="rounded-medium shadow-nav dark:bg-dark-200 relative scale-100 bg-white p-2.5 transition-transform duration-500 hover:scale-105 hover:transition-transform hover:duration-500"
                   key={service.id}>
-                  <div className="dark:border-borderColour-dark dark:border-opacity-15 rounded border border-dashed border-gray-100 p-10 max-lg:p-5">
+                  <div className="dark:border-gray-600 dark:border-opacity-15 rounded border border-dashed border-gray-100 p-10 max-lg:p-5">
                     <Image src={service.svg} alt="service logo" className="mb-6 inline-block dark:hidden" />
                     <Image src={service.darkSvg} alt="service logo" className="mb-6 hidden dark:inline-block" />
 

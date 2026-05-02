@@ -1,3 +1,4 @@
+import BeyondPartnersLogo from '@/components/shared/BeyondPartnersLogo'
 import { FooterData } from '@/data/footer'
 import footerSeperator from '@/public/images/footer-seperator.svg'
 import footerSeperatorDark from '@/public/images/footer-seperator-dark.svg'
@@ -14,14 +15,12 @@ const FooterV2 = () => {
         </div>
         <div className="mb-10 flex items-center justify-between max-md:flex-col max-md:gap-y-10">
           <div className="max-md:text-center">
-            <Image src={FooterData.logo} alt="logo" className="mb-10 inline-block dark:hidden" width={70} height={29} />
-            <Image
-              src={FooterData.logoDark}
-              alt="logo dark version"
-              className="mb-10 hidden dark:inline-block"
-              width={70}
-              height={29}
-            />
+            <Link
+              href="/"
+              aria-label="BeyondPartners — accueil"
+              className="mb-10 inline-block focus-visible:rounded-sm focus-visible:ring-2 focus-visible:ring-[#612D3A]/35 focus-visible:outline-none">
+              <BeyondPartnersLogo className="text-lg leading-none sm:text-xl" />
+            </Link>
             <p className="max-w-[350px] max-lg:mx-auto">{FooterData.footerText}</p>
           </div>
           <div>
@@ -104,7 +103,7 @@ const FooterV2 = () => {
                   <input
                     type="text"
                     placeholder="Enter your email"
-                    className="placeholder:text-light text-light border-borderColour focus:border-primary dark:bg-dark-200 dark:focus:border-primary h-full rounded-[60px] border bg-transparent bg-white ps-5 leading-[1.5] text-[#A1A49D] transition-all duration-300 outline-none focus:outline-none max-lg:col-span-full max-lg:py-3.5 lg:col-span-8 dark:border-[#31332F] dark:placeholder:text-[#A1A49D]"
+                    className="placeholder:text-light text-light focus:border-primary dark:bg-dark-200 dark:focus:border-primary h-full rounded-[60px] border border-gray-200 bg-transparent bg-white ps-5 leading-[1.5] text-[#A1A49D] transition-all duration-300 outline-none focus:outline-none max-lg:col-span-full max-lg:py-3.5 lg:col-span-8 dark:border-[#31332F] dark:placeholder:text-[#A1A49D]"
                   />
                   <button className="btn max-lg:col-span-full lg:col-span-4">Get Started</button>
                 </div>

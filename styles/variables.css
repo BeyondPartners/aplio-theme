@@ -28,12 +28,12 @@
   --color-dark-300: #191a17;
   --color-dark-gradient: #191917;
 
-  /* Gray colors */
-  --color-gray: #f6f8f1;
-  --color-gray-50: #f7f7f7;
-  --color-gray-100: #dce0d3;
-  --color-gray-200: #d9e0c5;
-  --color-gray-darkGradient: rgba(217, 224, 197, 0.07);
+  /* Gray colors — Tailwind default gray scale (subset + bg-gray alias) */
+  --color-gray: #f9fafb;
+  --color-gray-50: #f9fafb;
+  --color-gray-100: #f3f4f6;
+  --color-gray-200: #e5e7eb;
+  --color-gray-darkGradient: rgba(229, 231, 235, 0.07);
 
   /* Border colors */
   --color-borderColour: #edf0e6;

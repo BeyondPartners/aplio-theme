@@ -8,20 +8,24 @@ import TeamMembers from '@/components/shared/TeamMembers'
 import Testimonial from '@/components/shared/Testimonial'
 
 export const metadata = {
-  title: 'Aplio',
+  title: {
+    absolute: 'BeyondPartners',
+  },
 }
 
 export default function Home() {
   return (
     <>
       <PrimaryNavbar />
-      <main>
-        <Hero />
-        <PainPoints />
-        <Offer />
-        <Testimonial />
-        <Faq />
-        <TeamMembers />
+      <main id="home" className="scroll-mt-32">
+        <section id="notre-accompagnement" className="scroll-mt-32">
+          <Hero />
+          <PainPoints />
+          <Offer />
+        </section>
+        <Testimonial anchorId="temoignages" />
+        <Faq anchorId="faq" />
+        <TeamMembers anchorId="a-propos-de-nous" />
       </main>
       <Footer />
     </>

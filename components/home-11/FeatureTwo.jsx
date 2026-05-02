@@ -28,8 +28,8 @@ const FeatureTwo = () => {
           </FadeUpAnimation>
           <div>
             <FadeUpAnimation className="dark:bg-dark-200 rounded-medium shadow-nav bg-white p-2.5">
-              <div className="dark:border-borderColour-dark flex flex-col items-center justify-between gap-8 rounded border border-dashed border-gray-100 py-6 md:flex-row md:gap-0">
-                <div className="border-borderColour-dark/20 dark:border-borderColour/10 flex flex-1 flex-col items-center space-y-6 border-dashed py-6 md:border-r">
+              <div className="dark:border-gray-600 flex flex-col items-center justify-between gap-8 rounded border border-dashed border-gray-100 py-6 md:flex-row md:gap-0">
+                <div className="border-gray-400/25 dark:border-gray-500/20 flex flex-1 flex-col items-center space-y-6 border-dashed py-6 md:border-r">
                   <figure className="bg-primary flex h-[52px] w-20 items-center justify-center rounded-full px-7 py-3.5">
                     <img src="images/avatar/check-circle.svg" alt="Project completed" className="size-6" />
                   </figure>
@@ -38,7 +38,7 @@ const FeatureTwo = () => {
                   </h2>
                 </div>
 
-                <div className="border-borderColour-dark/20 dark:border-borderColour/10 flex flex-1 flex-col items-center space-y-6 border-dashed py-6 md:border-r">
+                <div className="border-gray-400/25 dark:border-gray-500/20 flex flex-1 flex-col items-center space-y-6 border-dashed py-6 md:border-r">
                   <figure className="bg-primary flex h-[52px] w-20 items-center justify-center rounded-full px-7 py-3.5">
                     <img src="images/avatar/users.svg" alt="Team members" className="size-6" />
                   </figure>

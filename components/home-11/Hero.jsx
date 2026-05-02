@@ -35,7 +35,7 @@ const Hero = () => {
         </div>
         <div className="relative z-12 flex justify-center py-[72px]">
           <Link href="/price" className="btn">
-            Get a free demo
+            Échanger avec un expert
           </Link>
         </div>
         <div className="relative z-10 grid grid-cols-12 items-center gap-5 max-lg:gap-y-10">

@@ -28,11 +28,11 @@ const playfair = Playfair_Display({
 
 export const metadata = {
   title: {
-    default: 'Aplio - Aplio Sass Landing Page',
-    template: '%s - Aplio Sass Landing Page',
+    default: 'BeyondPartners',
+    template: '%s | BeyondPartners',
   },
   description:
-    'Aplio is an exceptional Next js template tailored for SaaS landing websites. Embodying the essence of modern SaaS platforms.',
+    "BeyondPartners accompagne les organisations dans l'adoption de l'intelligence artificielle : formation, intégration et stratégie.",
 }
 
 export default function RootLayout({ children }) {

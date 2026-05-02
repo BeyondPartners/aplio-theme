@@ -50,7 +50,7 @@ const Services = () => {
             {ServicesData.map((items, i) => (
               <FadeUpOneByOneAnimation i={i} className="col-span-12 md:col-span-6 lg:col-span-4" key={items.id}>
                 <div className="dark:bg-dark-200 rounded-medium shadow-nav relative scale-100 bg-white p-2.5 text-center transition-transform duration-500 ease-in-out hover:-translate-y-2 hover:scale-105">
-                  <div className="dark:border-borderColour-dark space-y-4 rounded border border-dashed border-gray-100 p-10 max-lg:p-5 sm:space-y-6">
+                  <div className="dark:border-gray-600 space-y-4 rounded border border-dashed border-gray-100 p-10 max-lg:p-5 sm:space-y-6">
                     <div className="mx-auto w-fit">
                       <figure>
                         <Image
