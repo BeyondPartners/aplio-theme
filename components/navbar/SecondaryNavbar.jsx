@@ -40,11 +40,11 @@ const SecondaryNavbar = () => {
           'top-8',
         )}>
         <nav className="relative container flex items-center">
-          <div className="nav-logo">
+          <div className="nav-logo flex items-center">
             <Link
               href="/"
               aria-label="BeyondPartners — accueil"
-              className="inline-block focus-visible:rounded-sm focus-visible:ring-2 focus-visible:ring-[#612D3A]/35 focus-visible:outline-none">
+              className="inline-flex items-center leading-none focus-visible:rounded-sm focus-visible:ring-2 focus-visible:ring-[#612D3A]/35 focus-visible:outline-none">
               <BeyondPartnersLogo className="text-lg leading-none sm:text-xl" />
             </Link>
           </div>
@@ -153,7 +153,7 @@ const SecondaryNavbar = () => {
                 Échanger avec un expert
               </Link>
             </li>
-            <li className="max-lg:inline-block lg:hidden">
+            <li className="flex items-center lg:hidden">
               <button
                 className="mobile-menu-button dark:bg-dark-200 relative flex size-10 items-center justify-center rounded-full bg-white outline-none"
                 onClick={() => setInnerMobileMenu(!innerMobileMenu)}>

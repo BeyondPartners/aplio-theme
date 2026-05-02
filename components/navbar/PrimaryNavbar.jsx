@@ -49,15 +49,15 @@ const PrimaryNavbar = () => {
     <>
       <header
         className={cn(
-          'fixed left-0 z-50 w-full bg-transparent pt-8 transition-all duration-500 max-lg:z-[500]',
-          sticky ? 'nav-sticky' : '',
+          'fixed left-0 z-50 w-full bg-transparent transition-all duration-500 max-lg:z-[500]',
+          sticky ? 'nav-sticky' : 'pt-8',
         )}>
         <nav className="relative container flex !max-w-[min(100%,1360px)] items-center lg:px-4 xl:px-6 2xl:max-w-[min(100%,1420px)]! 2xl:px-8">
-          <div className="nav-logo shrink-0 lg:min-w-[200px] xl:min-w-[220px] 2xl:min-w-[266px]">
+          <div className="nav-logo flex shrink-0 items-center lg:min-w-[200px] xl:min-w-[220px] 2xl:min-w-[266px]">
             <Link
               href="/"
               aria-label="BeyondPartners — accueil"
-              className="inline-block focus-visible:rounded-sm focus-visible:ring-2 focus-visible:ring-[#612D3A]/35 focus-visible:outline-none">
+              className="inline-flex items-center leading-none focus-visible:rounded-sm focus-visible:ring-2 focus-visible:ring-[#612D3A]/35 focus-visible:outline-none">
               <BeyondPartnersLogo className="text-lg leading-none sm:text-xl" />
             </Link>
           </div>
@@ -141,7 +141,7 @@ const PrimaryNavbar = () => {
                 Nous Contacter
               </Link>
             </li>
-            <li className="max-lg:inline-block lg:hidden">
+            <li className="flex items-center lg:hidden">
               <button
                 type="button"
                 className="mobile-menu-button relative flex size-10 cursor-pointer items-center justify-center rounded-full bg-white outline-none"

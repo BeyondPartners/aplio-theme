@@ -11,8 +11,8 @@ export default function BeyondPartnersLogo({ className }) {
       <img
         src="/images/beyond_partners_logo.png"
         alt=""
-        width={70}
-        height={70}
+        width={64}
+        height={64}
         className="h-[1.5em] w-auto shrink-0"
         aria-hidden
       />
