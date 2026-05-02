@@ -58,7 +58,7 @@ const PrimaryNavbar = () => {
               href="/"
               aria-label="BeyondPartners — accueil"
               className="inline-flex items-center leading-none focus-visible:rounded-sm focus-visible:ring-2 focus-visible:ring-[#612D3A]/35 focus-visible:outline-none">
-              <BeyondPartnersLogo className="text-lg leading-none sm:text-xl" />
+              <BeyondPartnersLogo className="text-base leading-none sm:text-lg xl:text-xl" />
             </Link>
           </div>
 
@@ -69,7 +69,7 @@ const PrimaryNavbar = () => {
                   <Link
                     href={homeSectionHref(menuItem.path)}
                     className={cn(
-                      'rounded-large font-Inter text-paragraph flex items-center border border-transparent px-5 py-[5px] text-base leading-8 font-medium whitespace-nowrap capitalize transition-colors duration-500 hover:bg-zinc-100 hover:duration-500 lg:px-2.5 xl:px-3 2xl:px-5',
+                      'rounded-large font-Inter text-paragraph flex items-center border border-transparent px-3 py-[5px] text-sm leading-7 font-medium whitespace-nowrap capitalize transition-colors duration-500 hover:bg-zinc-100 hover:duration-500 lg:px-2 xl:px-3 xl:text-base xl:leading-8 2xl:px-5',
                     )}>
                     {menuItem.title}
                   </Link>
@@ -78,7 +78,7 @@ const PrimaryNavbar = () => {
                     <Link
                       href="#"
                       className={cn(
-                        'group rounded-large font-Inter text-paragraph flex items-center border border-transparent px-5 py-[5px] text-base leading-8 font-medium whitespace-nowrap transition-colors duration-500 hover:bg-zinc-100 hover:duration-500 lg:px-2.5 xl:px-3 2xl:px-5',
+                        'group rounded-large font-Inter text-paragraph flex items-center border border-transparent px-3 py-[5px] text-sm leading-7 font-medium whitespace-nowrap transition-colors duration-500 hover:bg-zinc-100 hover:duration-500 lg:px-2 xl:px-3 xl:text-base xl:leading-8 2xl:px-5',
                         menuItem.title === 'page' ? 'active' : '',
                       )}>
                       {menuItem.title}
@@ -112,7 +112,7 @@ const PrimaryNavbar = () => {
                     <Link
                       href="#"
                       className={cn(
-                        'rounded-large font-Inter text-paragraph flex items-center border border-transparent px-5 py-[5px] text-base leading-8 font-medium whitespace-nowrap capitalize transition-colors duration-500 hover:bg-zinc-100 hover:duration-500 lg:px-2.5 xl:px-3 2xl:px-5',
+                        'rounded-large font-Inter text-paragraph flex items-center border border-transparent px-3 py-[5px] text-sm leading-7 font-medium whitespace-nowrap capitalize transition-colors duration-500 hover:bg-zinc-100 hover:duration-500 lg:px-2 xl:px-3 xl:text-base xl:leading-8 2xl:px-5',
                         menuItem.title === 'home' ? 'active' : '',
                       )}>
                       {menuItem.title}
@@ -137,7 +137,9 @@ const PrimaryNavbar = () => {
 
           <ul className="ml-auto flex shrink-0 items-center [&>*:not(:last-child)]:me-2.5">
             <li className="flex items-center max-lg:hidden">
-              <Link href={homeSectionHref(menuData.btnLlink)} className="btn btn-navbar btn-sm whitespace-nowrap">
+              <Link
+                href={homeSectionHref(menuData.btnLlink)}
+                className="btn btn-navbar btn-sm text-sm whitespace-nowrap xl:text-base">
                 Nous Contacter
               </Link>
             </li>

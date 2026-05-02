@@ -6,14 +6,11 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useEffect, useState } from 'react'
-import { createPortal } from 'react-dom'
 import { FaAngleDown, FaTimes } from 'react-icons/fa'
-import SearchOption from './SearchOption'
 
 const SecondaryNavbar = () => {
   const { menuData } = NavbarItem
   const pathname = usePathname()
-  const [showSearch, setShowSearch] = useState(false)
   const [innerMobileMenu, setInnerMobileMenu] = useState(false)
   const [sticky, setSticky] = useState(false)
   const handleStickyNavbar = () => {
@@ -45,10 +42,10 @@ const SecondaryNavbar = () => {
               href="/"
               aria-label="BeyondPartners — accueil"
               className="inline-flex items-center leading-none focus-visible:rounded-sm focus-visible:ring-2 focus-visible:ring-[#612D3A]/35 focus-visible:outline-none">
-              <BeyondPartnersLogo className="text-lg leading-none sm:text-xl" />
+              <BeyondPartnersLogo className="text-base leading-none sm:text-lg xl:text-xl" />
             </Link>
           </div>
-          <ul className="nav-list hidden lg:ml-7 lg:flex xl:ml-15 [&>*:not(:last-child)]:me-1">
+          <ul className="nav-list rounded-large shadow-nav dark:bg-dark-200 hidden shrink-0 bg-white p-2.5 lg:ml-4 lg:flex xl:ml-10 2xl:ml-15 [&>*]:shrink-0 [&>*:not(:last-child)]:me-0 xl:[&>*:not(:last-child)]:me-1">
             {menuData.menuContent.map((menuItem) => (
               <li
                 className={`${menuItem.megaMenu ? 'group' : !menuItem.path ? 'group relative' : ''}`}
@@ -57,7 +54,7 @@ const SecondaryNavbar = () => {
                   <Link
                     href={menuItem.path}
                     className={cn(
-                      'rounded-large font-Inter text-paragraph dark:hover:bg-dark-200 flex items-center border border-transparent px-5 py-[5px] text-base leading-8 font-medium capitalize transition-colors duration-500 hover:bg-zinc-100 hover:duration-500 lg:px-4 xl:px-5 dark:text-white',
+                      'rounded-large font-Inter text-paragraph dark:hover:bg-dark-200 flex items-center border border-transparent px-3 py-[5px] text-sm leading-7 font-medium whitespace-nowrap capitalize transition-colors duration-500 hover:bg-zinc-100 hover:duration-500 lg:px-2.5 xl:px-4 xl:text-base xl:leading-8 2xl:px-5 dark:text-white',
                       pathname === menuItem.path ? 'active' : '',
                     )}>
                     {menuItem.title}
@@ -67,7 +64,7 @@ const SecondaryNavbar = () => {
                     <Link
                       href="#"
                       className={cn(
-                        'group rounded-large font-Inter text-paragraph dark:hover:bg-dark-200 flex items-center border border-transparent px-5 py-[5px] text-base leading-8 font-medium transition-colors duration-500 hover:bg-zinc-100 hover:duration-500 lg:px-4 xl:px-5 dark:text-white',
+                        'group rounded-large font-Inter text-paragraph dark:hover:bg-dark-200 flex items-center border border-transparent px-3 py-[5px] text-sm leading-7 font-medium whitespace-nowrap transition-colors duration-500 hover:bg-zinc-100 hover:duration-500 lg:px-2.5 xl:px-4 xl:text-base xl:leading-8 2xl:px-5 dark:text-white',
                         menuItem.title === 'page' ? 'active' : '',
                       )}>
                       {menuItem.title}
@@ -108,7 +105,7 @@ const SecondaryNavbar = () => {
                     <Link
                       href="#"
                       className={cn(
-                        'rounded-large font-Inter text-paragraph dark:hover:bg-dark-200 flex items-center border border-transparent px-5 py-[5px] text-base leading-8 font-medium capitalize transition-colors duration-500 hover:bg-zinc-100 hover:duration-500 lg:px-4 xl:px-5 dark:text-white',
+                        'rounded-large font-Inter text-paragraph dark:hover:bg-dark-200 flex items-center border border-transparent px-3 py-[5px] text-sm leading-7 font-medium whitespace-nowrap capitalize transition-colors duration-500 hover:bg-zinc-100 hover:duration-500 lg:px-2.5 xl:px-4 xl:text-base xl:leading-8 2xl:px-5 dark:text-white',
                         menuItem.title === 'home' ? 'active' : '',
                       )}>
                       {menuItem.title}
@@ -132,24 +129,8 @@ const SecondaryNavbar = () => {
           </ul>
 
           <ul className="ml-auto flex items-center [&>*:not(:last-child)]:me-2.5">
-            <li className="flex items-center">
-              <button
-                onClick={() => setShowSearch(!showSearch)}
-                className="dark:bg-dark-200 rounded-full bg-white p-2.5"
-                id="open-btn">
-                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path
-                    fillRule="evenodd"
-                    clipRule="evenodd"
-                    d="M9.11278 0C14.1369 0 18.2245 4.08758 18.2245 9.11278C18.2245 11.2861 17.4592 13.5472 16.1845 14.8512L20 18.6667L18.6667 20L14.8512 16.1856C13.5667 17.4603 11.2861 18.2245 9.11278 18.2245C4.08758 18.2245 0 14.1369 0 9.11278C0 4.08758 4.08758 0 9.11278 0ZM9.11278 16.3395C13.0974 16.3395 16.3395 13.0974 16.3395 9.11278C16.3395 5.12818 13.0974 1.88608 9.11278 1.88608C5.12709 1.88608 1.88499 5.12818 1.88499 9.11278C1.88499 13.0974 5.12709 16.3395 9.11278 16.3395Z"
-                    fill=""
-                    className="fill-paragraph dark:fill-white"
-                  />
-                </svg>
-              </button>
-            </li>
             <li className="flex items-center max-lg:hidden">
-              <Link href="/request-demo" className="btn btn-navbar btn-sm">
+              <Link href="/request-demo" className="btn btn-navbar btn-sm text-sm whitespace-nowrap xl:text-base">
                 Échanger avec un expert
               </Link>
             </li>
@@ -274,7 +255,6 @@ const SecondaryNavbar = () => {
           </div>
         </nav>
       </div>
-      {showSearch && createPortal(<SearchOption onClose={() => setShowSearch(false)} />, document.body)}
     </header>
   )
 }
