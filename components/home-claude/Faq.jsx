@@ -39,22 +39,18 @@ const FaqItem = ({ question, answer, isOpen, onClick }) => {
     <div
       className={`group rounded-2xl transition-colors duration-200 ${
         isOpen
-          ? 'dark:bg-dark-200 bg-white shadow-[0_1px_3px_rgba(16,24,40,0.04),0_8px_24px_rgba(16,24,40,0.06)]'
-          : 'dark:bg-dark-200/60 dark:hover:bg-dark-200 bg-[#f6f7f4] hover:bg-[#f1f3ee]'
+          ? 'bg-white shadow-[0_1px_3px_rgba(16,24,40,0.04),0_8px_24px_rgba(16,24,40,0.06)]'
+          : 'bg-[#f6f7f4] hover:bg-[#f1f3ee]'
       }`}>
       <button
         type="button"
         className="flex w-full cursor-pointer items-center justify-between gap-6 px-7 py-5 text-left max-md:gap-4 max-md:px-5 max-md:py-4"
         onClick={onClick}
         aria-expanded={isOpen}>
-        <span className="text-paragraph text-[1.0625rem] leading-snug font-semibold dark:text-white/90">
-          {question}
-        </span>
+        <span className="text-paragraph text-[1.0625rem] leading-snug font-semibold">{question}</span>
         <span
           className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full transition-all duration-300 ${
-            isOpen
-              ? 'bg-accent text-white'
-              : 'text-paragraph dark:bg-dark-300 bg-white group-hover:bg-white dark:text-white/70'
+            isOpen ? 'bg-accent text-white' : 'text-paragraph bg-white group-hover:bg-white'
           }`}
           style={{ transform: isOpen ? 'rotate(45deg)' : 'rotate(0deg)' }}
           aria-hidden>
@@ -72,7 +68,7 @@ const FaqItem = ({ question, answer, isOpen, onClick }) => {
         ref={bodyRef}
         className="overflow-hidden transition-[height] duration-300 ease-in-out"
         style={{ height: isOpen ? bodyRef.current?.scrollHeight : 0 }}>
-        <p className="text-paragraph-light px-7 pb-6 text-[0.95rem] leading-relaxed max-md:px-5 max-md:pb-5 dark:text-white/65">
+        <p className="text-paragraph-light px-7 pb-6 text-[0.95rem] leading-relaxed max-md:px-5 max-md:pb-5">
           {answer}
         </p>
       </div>
@@ -85,7 +81,7 @@ const Faq = ({ anchorId }) => {
   const toggle = (i) => setActiveIndex((prev) => (prev === i ? null : i))
 
   return (
-    <section id={anchorId} className="dark:bg-dark-300 my-32 scroll-mt-32 bg-white max-md:my-20">
+    <section id={anchorId} className="my-32 scroll-mt-32 bg-white max-md:my-20">
       <div className="container">
         <div className="mx-auto max-w-[760px]">
           <div className="mb-14 text-center max-md:mb-10">
@@ -93,7 +89,7 @@ const Faq = ({ anchorId }) => {
             <h2 className="mb-4">
               Questions <span className="text-accent">fréquentes</span>
             </h2>
-            <p className="text-paragraph-light mx-auto max-w-md text-base leading-relaxed dark:text-white/60">
+            <p className="text-paragraph-light mx-auto max-w-md text-base leading-relaxed">
               Tout ce que vous voulez savoir avant de démarrer votre transformation IA.
             </p>
           </div>

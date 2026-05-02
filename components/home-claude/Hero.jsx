@@ -20,7 +20,7 @@ const axes = [
 
 const Hero = () => {
   return (
-    <section className="dark:bg-dark-300 relative flex min-h-dvh flex-col overflow-hidden bg-white">
+    <section className="relative flex min-h-dvh flex-col overflow-hidden bg-white">
       <div className="bg-accent/10 absolute -top-40 left-1/2 -z-10 hidden h-[600px] w-[1100px] -translate-x-1/2 rounded-full blur-[120px] motion-safe:absolute md:block" />
       <div className="container mb-6 flex flex-1 flex-col justify-center pt-24 md:pt-32 xl:pt-[160px]">
         <div className="mx-auto w-full max-w-[1200px] text-center">
@@ -29,7 +29,7 @@ const Hero = () => {
               <span className="text-accent">Démultipliez la productivité</span> de votre cabinet d&apos;architecte avec
               Claude Cowork
             </h1>
-            <p className="text-paragraph mx-auto max-w-[640px] text-[15px] leading-relaxed md:text-lg dark:text-white/80">
+            <p className="text-paragraph mx-auto max-w-[640px] text-[15px] leading-relaxed md:text-lg">
               Équipez vos collaborateurs du meilleur assistant IA du marché et accélerez chaque phase de projet, de
               l&apos;esquisse à la réalisation.
             </p>
@@ -55,11 +55,11 @@ const Hero = () => {
                       <span className="text-accent font-jakarta shrink-0 text-[28px] leading-none font-bold tabular-nums md:col-start-1 md:row-span-2 md:row-start-1 md:flex md:items-center md:justify-start md:self-stretch md:text-6xl lg:text-7xl">
                         {i + 1}
                       </span>
-                      <p className="font-jakarta text-paragraph text-base leading-snug font-bold md:col-start-2 md:row-start-1 md:text-[1.05rem] lg:text-[1.1rem] dark:text-white">
+                      <p className="font-jakarta text-paragraph text-base leading-snug font-bold md:col-start-2 md:row-start-1 md:text-[1.05rem] lg:text-[1.1rem]">
                         {axe.title}
                       </p>
                     </div>
-                    <p className="text-paragraph-light text-sm leading-relaxed md:col-start-2 md:row-start-2 md:text-[0.9rem] dark:text-white/80">
+                    <p className="text-paragraph-light text-sm leading-relaxed md:col-start-2 md:row-start-2 md:text-[0.9rem]">
                       {axe.desc}
                     </p>
                   </li>

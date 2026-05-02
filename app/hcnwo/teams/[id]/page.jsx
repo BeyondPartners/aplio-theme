@@ -120,7 +120,7 @@ const TeamSingle = async (props) => {
 
                 <Link href={`tel:${data.phone.split(' ').join('')}`}> {data.phone} </Link>
               </div>
-              <ul className="border-gray-200 dark:border-gray-600 flex items-center gap-x-2.5 border-t border-dashed pt-12">
+              <ul className="flex items-center gap-x-2.5 border-t border-dashed border-gray-200 pt-12 dark:border-gray-600">
                 <li>
                   <Link
                     href={data.linkedInLink}

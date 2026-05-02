@@ -6,7 +6,7 @@ import ReactMarkdown from 'react-markdown'
 const BlogItems = ({ slug, blogData, content, column }) => {
   return column ? (
     <article className="rounded-medium shadow-nav dark:bg-dark-200 bg-white p-2.5">
-      <div className="dark:border-gray-600 rounded border border-dashed border-gray-100 p-6 max-md:px-4">
+      <div className="rounded border border-dashed border-gray-100 p-6 max-md:px-4 dark:border-gray-600">
         <div className="grid grid-cols-2 items-center gap-12 max-lg:grid-cols-1">
           <div className="w-ful mb-6 h-full">
             <Image
@@ -40,7 +40,7 @@ const BlogItems = ({ slug, blogData, content, column }) => {
     </article>
   ) : (
     <article className="rounded-medium shadow-nav dark:bg-dark-200 bg-white p-2.5">
-      <div className="dark:border-gray-600 rounded border border-dashed border-gray-100 p-6 max-md:p-4">
+      <div className="rounded border border-dashed border-gray-100 p-6 max-md:p-4 dark:border-gray-600">
         <Image
           src={blogData.thumbnail}
           alt="service logo"

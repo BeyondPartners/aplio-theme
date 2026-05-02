@@ -30,10 +30,8 @@ const Members = () => {
       }`}>
       {teamData.map((member, i) => (
         <FadeUpOneByOneAnimation i={i} className="h-full" key={member.id}>
-          <article className="shadow-box rounded-medium dark:bg-dark-200 flex h-full w-full max-w-[450px] flex-col items-stretch bg-white p-2.5 max-xl:mx-auto">
-            <Link
-              href={`/teams/${member.id}`}
-              className="rounded-medium bg-primary dark:bg-dark-300 overflow-hidden rounded-b-none">
+          <article className="shadow-box rounded-medium flex h-full w-full max-w-[450px] flex-col items-stretch bg-white p-2.5 max-xl:mx-auto">
+            <Link href={`/teams/${member.id}`} className="rounded-medium bg-primary overflow-hidden rounded-b-none">
               <Image
                 src={member.image}
                 alt={member.name}
@@ -44,7 +42,7 @@ const Members = () => {
               />
             </Link>
 
-            <div className="dark:bg-dark-200 flex w-full flex-col items-start gap-2 rounded rounded-t-none border border-t-0 border-dashed border-gray-100 bg-white p-4 sm:gap-3 dark:border-gray-600">
+            <div className="flex w-full flex-col items-start gap-2 rounded rounded-t-none border border-t-0 border-dashed border-gray-100 bg-white p-4 sm:gap-3">
               <div className="w-full">
                 <Link href={`/teams/${member.id}`}>
                   <h3 className="text-xl font-medium sm:text-2xl">{member.name}</h3>

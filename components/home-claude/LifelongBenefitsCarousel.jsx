@@ -103,13 +103,13 @@ const LifelongBenefitsCarousel = () => {
               role="group"
               aria-roledescription="slide"
               aria-label={`${i + 1} sur ${lifelongBenefits.length}`}
-              className="dark:bg-dark-200 rounded-medium w-[min(88vw,380px)] min-w-0 shrink-0 snap-start border border-[#f1f1f1] bg-white p-2.5 dark:border-gray-600">
-              <div className="flex h-full flex-col rounded border border-dashed border-gray-100 p-6 dark:border-gray-600">
+              className="rounded-medium w-[min(88vw,380px)] min-w-0 shrink-0 snap-start border border-[#f1f1f1] bg-white p-2.5">
+              <div className="flex h-full flex-col rounded border border-dashed border-gray-100 p-6">
                 <span className="bg-secondary/10 text-secondary mb-5 flex h-10 w-10 items-center justify-center rounded-full">
                   <Icon />
                 </span>
                 <p className="mb-2 leading-snug font-semibold">{benefit.title}</p>
-                <p className="text-paragraph-light text-sm leading-relaxed dark:text-white/60">{benefit.description}</p>
+                <p className="text-paragraph-light text-sm leading-relaxed">{benefit.description}</p>
               </div>
             </li>
           )
@@ -123,7 +123,7 @@ const LifelongBenefitsCarousel = () => {
             aria-label={`Afficher la carte ${i + 1}`}
             onClick={() => scrollToSlide(i)}
             className={`h-2 cursor-pointer rounded-full transition-all ${
-              activeIndex === i ? 'bg-accent w-6' : 'w-2 bg-gray-200 dark:bg-gray-600'
+              activeIndex === i ? 'bg-accent w-6' : 'w-2 bg-gray-200'
             }`}
           />
         ))}

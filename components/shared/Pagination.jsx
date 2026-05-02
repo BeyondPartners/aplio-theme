@@ -13,7 +13,7 @@ const Pagination = ({ paginateFunction }) => {
             onClick={() => {
               goToPreviousPage()
             }}
-            className={`group border-gray-200 dark:border-gray-600 flex h-10 w-10 items-center justify-center rounded-full border text-sm font-medium duration-300 ${
+            className={`group flex h-10 w-10 items-center justify-center rounded-full border border-gray-200 text-sm font-medium duration-300 dark:border-gray-600 ${
               currentPage === 1 ? 'cursor-not-allowed disabled:opacity-7' : 'hover:bg-primary cursor-pointer'
             }`}
             disabled={currentPage === 1}>
@@ -35,7 +35,7 @@ const Pagination = ({ paginateFunction }) => {
             onClick={() => {
               goToNextPage()
             }}
-            className={`group border-gray-200 dark:border-gray-600 flex h-10 w-10 items-center justify-center rounded-full border text-sm font-medium duration-300 ${
+            className={`group flex h-10 w-10 items-center justify-center rounded-full border border-gray-200 text-sm font-medium duration-300 dark:border-gray-600 ${
               currentPage === totalPage ? 'cursor-not-allowed disabled:opacity-7' : 'hover:bg-primary cursor-pointer'
             }`}
             disabled={currentPage === totalPage}>

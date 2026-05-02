@@ -3,14 +3,13 @@ import { cn } from '@/utils/cn'
 import Image from 'next/image'
 import Link from 'next/link'
 import Marquee from 'react-fast-marquee'
-import clientBorderDark from '../../public/images/clients/client-border-dark.svg'
 import clientBorder from '../../public/images/clients/client-border.svg'
 
 const Clients = ({
   sectionTitle = true,
   sectionDetails = true,
   border = true,
-  className = 'pt-[140px] pb-[145px] max-lg:py-20 bg-white dark:bg-dark-300 ',
+  className = 'pt-[140px] pb-[145px] max-lg:py-20 bg-white ',
   marqueeClassName,
   /** When set, replaces default clientData (e.g. Trust Bar partner logos). */
   items,
@@ -33,25 +32,12 @@ const Clients = ({
 
         <div
           className={cn(
-            'dark:before:from-dark-gradient dark:after:from-dark-gradient relative overflow-hidden py-8 before:pointer-events-none before:absolute before:inset-y-0 before:-right-0.5 before:z-10 before:w-[120px] before:bg-gradient-to-l before:from-white before:from-[37.5%] after:pointer-events-none after:absolute after:inset-y-0 after:-left-0.5 after:z-10 after:w-[120px] after:bg-gradient-to-r after:from-white after:from-[37.5%]',
+            'relative overflow-hidden py-8 before:pointer-events-none before:absolute before:inset-y-0 before:-right-0.5 before:z-10 before:w-[120px] before:bg-gradient-to-l before:from-white before:from-[37.5%] after:pointer-events-none after:absolute after:inset-y-0 after:-left-0.5 after:z-10 after:w-[120px] after:bg-gradient-to-r after:from-white after:from-[37.5%]',
             marqueeClassName,
           )}>
           {border && (
             <div className="pointer-events-none absolute top-1/2 left-0 z-0 h-full w-full -translate-y-1/2">
-              <Image
-                src={clientBorder}
-                alt=""
-                width={1288}
-                height={102}
-                className="h-full w-full object-fill dark:hidden"
-              />
-              <Image
-                src={clientBorderDark}
-                alt=""
-                width={1288}
-                height={102}
-                className="hidden h-full w-full object-fill dark:inline-block"
-              />
+              <Image src={clientBorder} alt="" width={1288} height={102} className="h-full w-full object-fill" />
             </div>
           )}
 
@@ -77,17 +63,7 @@ const Clients = ({
                         src={clients.imageLight}
                         alt={clients.alt ?? 'Partner logo'}
                         className={cn(
-                          'h-full max-h-full w-full max-w-full object-contain grayscale dark:hidden',
-                          clients.logoClassName,
-                        )}
-                        width={200}
-                        height={64}
-                      />
-                      <Image
-                        src={clients.imageDark}
-                        alt={clients.alt ?? 'Partner logo'}
-                        className={cn(
-                          'hidden h-full max-h-full w-full max-w-full object-contain grayscale dark:inline-block',
+                          'h-full max-h-full w-full max-w-full object-contain grayscale',
                           clients.logoClassName,
                         )}
                         width={200}
@@ -99,14 +75,7 @@ const Clients = ({
                       <Image
                         src={clients.imageLight}
                         alt={clients.alt ?? 'Partner logo'}
-                        className="inline-block h-auto w-auto dark:hidden"
-                        width={120}
-                        height={22}
-                      />
-                      <Image
-                        src={clients.imageDark}
-                        alt={clients.alt ?? 'Partner logo'}
-                        className="hidden h-auto w-auto dark:inline-block"
+                        className="inline-block h-auto w-auto"
                         width={120}
                         height={22}
                       />

@@ -97,7 +97,7 @@ const ArrowIcon = () => (
 
 const ImagePlaceholder = ({ label, src, alt = '' }) => (
   <div
-    className={`bg-gray dark:bg-dark-200 relative flex aspect-video w-full items-center justify-center overflow-hidden rounded-md border border-gray-100 dark:border-gray-600 ${src ? '' : 'border-dashed'}`}>
+    className={`bg-gray relative flex aspect-video w-full items-center justify-center overflow-hidden rounded-md border border-gray-100 ${src ? '' : 'border-dashed'}`}>
     {src ? (
       <>
         <Image src={src} alt={alt} fill className="z-0 object-cover" sizes="(max-width: 768px) 100vw, 800px" />
@@ -115,12 +115,12 @@ const ImagePlaceholder = ({ label, src, alt = '' }) => (
 
 const Offer = () => {
   return (
-    <section className="dark:bg-dark-300 relative mb-16 scroll-mt-28 bg-white min-[800px]:mb-150 md:mb-24 md:scroll-mt-32">
+    <section className="relative mb-16 scroll-mt-28 bg-white min-[800px]:mb-150 md:mb-24 md:scroll-mt-32">
       <div className="container">
         <FadeUpAnimation className="mx-auto mb-16 max-w-[940px] text-center max-md:mb-12">
           <span className="bg-accent/25 my-10 inline-block h-[2px] w-16 rounded-full md:my-12" aria-hidden />
           <p
-            className="font-jakarta mx-auto mb-16 max-w-[940px] text-center text-[26px] leading-[1.38] font-medium text-[#30343a] max-[799px]:max-w-[42ch] max-md:text-[23px] md:mb-28 md:text-[32px] dark:text-white/90"
+            className="font-jakarta mx-auto mb-16 max-w-[940px] text-center text-[26px] leading-[1.38] font-medium text-[#30343a] max-[799px]:max-w-[42ch] max-md:text-[23px] md:mb-28 md:text-[32px]"
             id="approche">
             Nous accompagnons les bureaux d&apos;architectes ambitieux qui savent que l&apos;IA va transformer en
             profondeur les façons de travailler — et qui veulent prendre une longueur d&apos;avance.
@@ -130,11 +130,11 @@ const Offer = () => {
           <div className="col-span-15 max-[799px]:order-1 min-[800px]:col-span-7">
             <FadeUpAnimation className="min-[800px]:sticky min-[800px]:top-52">
               <h2 className="mb-6 max-md:text-[28px]">Enclenchez votre stratégie IA en 4 semaines</h2>
-              <p className="text-paragraph mb-3 dark:text-white/80">
+              <p className="text-paragraph mb-3">
                 L&apos;objectif : maîtriser Claude Cowork et rendre vos équipes autonomes pour porter cette
                 transformation IA durablement.
               </p>
-              <p className="text-paragraph-light mb-10 dark:text-white/60">
+              <p className="text-paragraph-light mb-10">
                 À l&apos;issue des 4 semaines, vous disposez d&apos;une équipe formée, de process augmentés par
                 l&apos;IA et d&apos;une feuille de route construite avec votre équipe.
               </p>
@@ -148,8 +148,8 @@ const Offer = () => {
           <div className="col-span-15 max-[799px]:order-2 min-[800px]:col-span-8">
             <div className="space-y-18 max-md:space-y-15">
               {programBlocks.map((block) => (
-                <FadeUpAnimation className="rounded-medium shadow-box dark:bg-dark-200 bg-white p-2.5" key={block.id}>
-                  <article className="rounded border border-dashed border-gray-100 p-6 dark:border-gray-600">
+                <FadeUpAnimation className="rounded-medium shadow-box bg-white p-2.5" key={block.id}>
+                  <article className="rounded border border-dashed border-gray-100 p-6">
                     <div className="mb-6">
                       <div className="mb-5 flex items-start justify-between gap-3 max-[799px]:flex-col max-[799px]:items-start">
                         <span className="bg-accent/10 text-accent inline-flex min-h-10 shrink-0 items-center justify-center rounded-full px-4 text-sm leading-none font-semibold whitespace-nowrap">
@@ -157,7 +157,7 @@ const Offer = () => {
                           {block.id}
                         </span>
                         {block.timeframe && (
-                          <span className="text-paragraph-light inline-flex items-center rounded-full border border-gray-200 px-4 py-1.5 text-sm whitespace-nowrap dark:border-gray-600">
+                          <span className="text-paragraph-light inline-flex items-center rounded-full border border-gray-200 px-4 py-1.5 text-sm whitespace-nowrap">
                             {block.timeframe}
                           </span>
                         )}
@@ -167,7 +167,7 @@ const Offer = () => {
                       <div className="mb-6 flex flex-wrap gap-2.5">
                         {block.pills.map((pill) => (
                           <span
-                            className="dark:border-secondary/35 dark:bg-secondary/15 dark:text-secondary border-secondary/25 bg-secondary/10 text-secondary inline-flex items-center rounded-full border px-3.5 py-1.5 text-sm font-medium"
+                            className="border-secondary/25 bg-secondary/10 text-secondary inline-flex items-center rounded-full border px-3.5 py-1.5 text-sm font-medium"
                             key={pill}>
                             {pill}
                           </span>
@@ -181,10 +181,10 @@ const Offer = () => {
                         />
                       </div>
                     </div>
-                    <div className="mt-6 flex min-h-11 items-center border-t border-gray-200 pt-5 dark:border-gray-600">
+                    <div className="mt-6 flex min-h-11 items-center border-t border-gray-200 pt-5">
                       <Link
                         href="#"
-                        className="text-secondary hover:text-secondary/80 dark:text-secondary dark:hover:text-secondary/70 inline-flex items-center gap-2 text-sm font-semibold">
+                        className="text-secondary hover:text-secondary/80 inline-flex items-center gap-2 text-sm font-semibold">
                         {block.cta}
                         <ArrowIcon />
                       </Link>
@@ -193,8 +193,8 @@ const Offer = () => {
                 </FadeUpAnimation>
               ))}
 
-              <FadeUpAnimation className="rounded-medium shadow-box dark:bg-dark-200 bg-white p-2.5">
-                <article className="rounded border border-dashed border-gray-100 p-8 max-lg:p-6 dark:border-gray-600">
+              <FadeUpAnimation className="rounded-medium shadow-box bg-white p-2.5">
+                <article className="rounded border border-dashed border-gray-100 p-8 max-lg:p-6">
                   <div className="mb-5 flex items-center gap-4">
                     <span className="bg-accent/10 text-accent flex h-10 w-10 shrink-0 items-center justify-center rounded-full">
                       <CheckIcon />
@@ -204,10 +204,10 @@ const Offer = () => {
                     </p>
                   </div>
                   <h3 className="mb-3">Au-delà de la formation et des ateliers</h3>
-                  <p className="text-paragraph-light mb-6 dark:text-white/60">
+                  <p className="text-paragraph-light mb-6">
                     Vous bénéficiez d&apos;un accompagnement continu pour ancrer durablement les usages.
                   </p>
-                  <ul className="divide-y divide-dashed divide-gray-100 dark:divide-gray-600">
+                  <ul className="divide-y divide-dashed divide-gray-100">
                     {continuousSupport.map((item) => (
                       <li className="flex items-start gap-4 py-4 first:pt-0 last:pb-0" key={item.title}>
                         <span className="text-accent mt-1 shrink-0">
@@ -215,7 +215,7 @@ const Offer = () => {
                         </span>
                         <div>
                           <p className="leading-snug font-semibold">{item.title}</p>
-                          <p className="text-paragraph-light mt-1 text-sm dark:text-white/60">{item.description}</p>
+                          <p className="text-paragraph-light mt-1 text-sm">{item.description}</p>
                         </div>
                       </li>
                     ))}
@@ -235,10 +235,10 @@ const Offer = () => {
           </div>
         </div>
 
-        <FadeUpAnimation className="mt-20 border-t border-dashed border-gray-100 pt-16 max-md:mt-14 max-md:pt-12 dark:border-gray-600">
+        <FadeUpAnimation className="mt-20 border-t border-dashed border-gray-100 pt-16 max-md:mt-14 max-md:pt-12">
           <div className="mb-10 max-w-xl max-md:mb-8">
             <h2 className="mb-3">Et après ce programme ?</h2>
-            <p className="text-paragraph-light dark:text-white/60">
+            <p className="text-paragraph-light">
               Ce programme n&apos;est que le début de votre transformation IA. Nous restons à vos côtés comme partenaire
               IA de confiance.
             </p>
@@ -248,15 +248,13 @@ const Offer = () => {
             {lifelongBenefits.map((benefit) => {
               const Icon = LIFELONG_ICONS[benefit.id]
               return (
-                <div key={benefit.id} className="rounded-medium shadow-box dark:bg-dark-200 bg-white p-2.5">
-                  <div className="flex h-full flex-col rounded border border-dashed border-gray-100 p-6 dark:border-gray-600">
+                <div key={benefit.id} className="rounded-medium shadow-box bg-white p-2.5">
+                  <div className="flex h-full flex-col rounded border border-dashed border-gray-100 p-6">
                     <span className="bg-secondary/10 text-secondary mb-5 flex h-10 w-10 items-center justify-center rounded-full">
                       <Icon />
                     </span>
                     <p className="mb-2 leading-snug font-semibold">{benefit.title}</p>
-                    <p className="text-paragraph-light text-sm leading-relaxed dark:text-white/60">
-                      {benefit.description}
-                    </p>
+                    <p className="text-paragraph-light text-sm leading-relaxed">{benefit.description}</p>
                   </div>
                 </div>
               )

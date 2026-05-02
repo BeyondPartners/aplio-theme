@@ -8,7 +8,7 @@ const PricingCardV2 = ({ price, isAnnual }) => {
       <div className="rounded-medium shadow-box dark:bg-dark-200 bg-white p-2.5">
         <div
           className={cn(
-            'dark:border-gray-600 rounded border border-dashed border-gray-100 p-8 max-md:p-5',
+            'rounded border border-dashed border-gray-100 p-8 max-md:p-5 dark:border-gray-600',
             price.featured && 'lg:px-8 lg:pt-3 lg:pb-15',
           )}>
           {price.featured && (

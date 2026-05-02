@@ -55,7 +55,7 @@ const CryptoMarket = () => {
           {cryptoMarketItems.map((items) =>
             items.isFeatured ? (
               <div className="rounded-medium shadow-nav dark:bg-dark-200 col-span-12 bg-white p-2.5" key={items.id}>
-                <div className="dark:border-gray-600 rounded border border-dashed border-gray-100 p-10 max-lg:p-5">
+                <div className="rounded border border-dashed border-gray-100 p-10 max-lg:p-5 dark:border-gray-600">
                   <div className="grid grid-cols-12 gap-6">
                     <div className="1xl:col-span-7 1xl:pr-20 col-span-12 md:col-span-6">
                       <h3 className="mb-8 leading-8">{items.title}</h3>
@@ -87,7 +87,7 @@ const CryptoMarket = () => {
               <div
                 className="rounded-medium shadow-nav dark:bg-dark-200 col-span-12 bg-white p-2.5 sm:col-span-6 lg:col-span-4"
                 key={items.id}>
-                <div className="dark:border-gray-600 flex h-full flex-col rounded border border-dashed border-gray-100 p-10 max-lg:p-5">
+                <div className="flex h-full flex-col rounded border border-dashed border-gray-100 p-10 max-lg:p-5 dark:border-gray-600">
                   <div className="cryptoMarketItems-image">
                     <Image
                       src={items.imgLight}

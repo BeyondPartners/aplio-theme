@@ -19,7 +19,7 @@ const MembersCounter = ({ border = true }) => {
           <div className="py-5 max-md:col-span-full md:col-span-6 lg:col-span-3">
             <div className="flex items-center">
               <div className="shadow-nav dark:bg-dark-200 mr-6 h-[110px] w-[110px] rounded-full bg-white p-2.5">
-                <div className="dark:border-gray-600 flex h-[90px] w-[90px] items-center justify-center rounded-full border border-dashed border-gray-100">
+                <div className="flex h-[90px] w-[90px] items-center justify-center rounded-full border border-dashed border-gray-100 dark:border-gray-600">
                   <h3 className="text-primary dark:text-primary text-[28px] leading-none">
                     <span className="counterTrusted text-primary dark:text-primary text-[28px] leading-none">
                       <CounterAnimation number={95} />
@@ -37,7 +37,7 @@ const MembersCounter = ({ border = true }) => {
           <div className="py-5 max-md:col-span-full md:col-span-6 lg:col-span-3">
             <div className="flex items-center">
               <div className="shadow-nav dark:bg-dark-200 mr-6 h-[110px] w-[110px] rounded-full bg-white p-2.5">
-                <div className="dark:border-gray-600 flex h-[90px] w-[90px] items-center justify-center rounded-full border border-dashed border-gray-100">
+                <div className="flex h-[90px] w-[90px] items-center justify-center rounded-full border border-dashed border-gray-100 dark:border-gray-600">
                   <h3 className="text-primary dark:text-primary text-[28px] leading-none">
                     <span className="counterTrusted text-primary dark:text-primary text-[28px] leading-none">
                       <CounterAnimation number={85} />

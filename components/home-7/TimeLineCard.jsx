@@ -8,7 +8,7 @@ const TimeLineCard = ({ title, yearRange, item, i }) => {
         style={{ top: `calc(-5vh + ${i * 25}px)` }}>
         <div className="item-center relative flex shrink-0 justify-center">
           <div className="rounded-medium shadow-nav dark:bg-dark-200 max-xs:p-2 relative w-[240px] bg-white p-2.5 max-md:w-auto">
-            <div className="dark:border-gray-600 max-1xl:p-5 max-xs:p-2 1xl:p-10 flex w-full items-center justify-center rounded border border-dashed border-gray-100">
+            <div className="max-1xl:p-5 max-xs:p-2 1xl:p-10 flex w-full items-center justify-center rounded border border-dashed border-gray-100 dark:border-gray-600">
               <h3 className="max-md:text-base">{yearRange}</h3>
             </div>
           </div>
@@ -20,7 +20,7 @@ const TimeLineCard = ({ title, yearRange, item, i }) => {
         </div>
 
         <div className="rounded-medium shadow-nav dark:bg-dark-200 max-xs:p-2 1xl:w-[400px] w-[300px] bg-white p-2.5">
-          <div className="dark:border-gray-600 max-xs:p-2 1xl:p-8 flex h-full flex-col justify-center rounded border border-dashed border-gray-100 p-5">
+          <div className="max-xs:p-2 1xl:p-8 flex h-full flex-col justify-center rounded border border-dashed border-gray-100 p-5 dark:border-gray-600">
             <h3 className="mb-3 leading-8">{title}</h3>
 
             <ul className="lg:list-disc">

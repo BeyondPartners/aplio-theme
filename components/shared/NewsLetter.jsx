@@ -23,7 +23,7 @@ const NewsLetter = () => {
                   <input
                     type="text"
                     placeholder="Enter your email"
-                    className="placeholder:text-light text-light border-gray-200 focus:border-primary dark:bg-dark-200 dark:focus:border-primary h-full rounded-[60px] border bg-transparent bg-white ps-5 leading-[1.75] text-[#A1A49D] transition-all duration-300 outline-none focus:outline-none max-lg:col-span-full max-lg:py-3.5 lg:col-span-8 dark:border-[#31332F] dark:placeholder:text-[#A1A49D]"
+                    className="placeholder:text-light text-light focus:border-primary dark:bg-dark-200 dark:focus:border-primary h-full rounded-[60px] border border-gray-200 bg-transparent bg-white ps-5 leading-[1.75] text-[#A1A49D] transition-all duration-300 outline-none focus:outline-none max-lg:col-span-full max-lg:py-3.5 lg:col-span-8 dark:border-[#31332F] dark:placeholder:text-[#A1A49D]"
                   />
                   <button className="btn max-lg:col-span-full lg:col-span-4">Get Started</button>
                 </div>

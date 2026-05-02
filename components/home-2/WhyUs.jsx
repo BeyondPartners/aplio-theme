@@ -137,13 +137,13 @@ const WhyUs = () => {
               magazine.
             </p>
             <ul className="mb-14 max-w-[490px] [&>*:not(:last-child)]:mb-5">
-              <li className="dark:border-gray-600 flex items-center gap-x-5 rounded border border-dashed border-gray-100 p-2.5">
+              <li className="flex items-center gap-x-5 rounded border border-dashed border-gray-100 p-2.5 dark:border-gray-600">
                 <span className="shadow-icon dark:bg-dark-200 relative h-10 w-10 gap-6 rounded-full bg-[#F3F8E8]">
                   <FaCheck className="text-primary absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" />
                 </span>
                 <span className="font-jakarta font-semibold"> It’s scalable and secure </span>
               </li>
-              <li className="dark:border-gray-600 flex items-center gap-x-5 rounded border border-dashed border-gray-100 p-2.5">
+              <li className="flex items-center gap-x-5 rounded border border-dashed border-gray-100 p-2.5 dark:border-gray-600">
                 <span className="shadow-icon dark:bg-dark-200 relative h-10 w-10 gap-6 rounded-full bg-[#F3F8E8]">
                   <FaCheck className="text-primary absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" />
                 </span>

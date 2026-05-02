@@ -124,7 +124,7 @@ const PainPoints = () => {
   }
 
   return (
-    <section className="dark:bg-dark-300 relative mb-10 overflow-x-clip bg-white pt-16 md:mb-12 md:pt-20">
+    <section className="relative mb-10 overflow-x-clip bg-white pt-16 md:mb-12 md:pt-20">
       <div className="bg-accent/10 pointer-events-none absolute top-0 left-1/2 -z-10 h-[500px] w-[900px] -translate-x-1/2 -translate-y-1/2 rounded-full blur-[120px]" />
 
       <div className="container">
@@ -135,7 +135,7 @@ const PainPoints = () => {
           <h2 className="mb-4 max-xl:text-[26px] max-xl:leading-snug md:max-xl:text-[32px] md:max-xl:leading-snug">
             Vous vous <span className="text-accent">reconnaissez</span>&nbsp;?
           </h2>
-          <p className="text-paragraph-light max-xl:text-[15px] max-xl:leading-relaxed md:max-xl:text-base dark:text-white/60">
+          <p className="text-paragraph-light max-xl:text-[15px] max-xl:leading-relaxed md:max-xl:text-base">
             Ces blocages sont ceux que nous entendons dans chaque cabinet que nous accompagnons.
           </p>
         </div>
@@ -157,17 +157,15 @@ const PainPoints = () => {
                   role="group"
                   aria-roledescription="slide"
                   aria-label={`${i + 1} sur ${pains.length}`}
-                  className="dark:bg-dark-200 rounded-medium border-l-accent/40 min-w-0 shrink-0 basis-[88%] snap-start border border-l-[3px] border-[#f1f1f1] bg-white dark:border-gray-600">
+                  className="rounded-medium border-l-accent/40 min-w-0 shrink-0 basis-[88%] snap-start border border-l-[3px] border-[#f1f1f1] bg-white">
                   <div className="flex min-h-full flex-col gap-4 p-6">
                     <div className="bg-accent/10 text-accent flex h-10 w-10 shrink-0 items-center justify-center rounded-[10px]">
                       <Icon />
                     </div>
 
                     <div className="flex flex-col gap-2">
-                      <p className="font-jakarta text-paragraph text-base leading-snug font-bold dark:text-white">
-                        {pain.title}
-                      </p>
-                      <p className="text-paragraph-light text-sm leading-relaxed dark:text-white/80">{pain.desc}</p>
+                      <p className="font-jakarta text-paragraph text-base leading-snug font-bold">{pain.title}</p>
+                      <p className="text-paragraph-light text-sm leading-relaxed">{pain.desc}</p>
                     </div>
                   </div>
                 </li>
@@ -183,7 +181,7 @@ const PainPoints = () => {
                 aria-label={`Afficher le point ${i + 1}`}
                 onClick={() => scrollToSlide(i)}
                 className={`h-2 cursor-pointer rounded-full transition-all ${
-                  activeIndex === i ? 'bg-accent w-6' : 'w-2 bg-gray-200 dark:bg-gray-600'
+                  activeIndex === i ? 'bg-accent w-6' : 'w-2 bg-gray-200'
                 }`}
               />
             ))}
@@ -200,7 +198,7 @@ const PainPoints = () => {
             return (
               <li
                 key={pain.title}
-                className="dark:bg-dark-200 rounded-medium shadow-box flex min-h-0 min-w-0 border border-[#f1f1f1] bg-white dark:border-gray-600">
+                className="rounded-medium shadow-box flex min-h-0 min-w-0 border border-[#f1f1f1] bg-white">
                 <div className="flex h-full min-h-full flex-col gap-4 p-6 md:p-8">
                   <div className="flex items-center justify-between gap-2">
                     <div className="bg-accent/10 text-accent flex h-10 w-10 shrink-0 items-center justify-center rounded-[10px]">
@@ -212,12 +210,10 @@ const PainPoints = () => {
                   </div>
 
                   <div className="flex flex-col gap-2">
-                    <p className="font-jakarta text-paragraph text-base leading-snug font-bold md:text-[1.05rem] lg:text-[1.1rem] dark:text-white">
+                    <p className="font-jakarta text-paragraph text-base leading-snug font-bold md:text-[1.05rem] lg:text-[1.1rem]">
                       {pain.title}
                     </p>
-                    <p className="text-paragraph-light text-sm leading-relaxed md:text-[0.9rem] dark:text-white/80">
-                      {pain.desc}
-                    </p>
+                    <p className="text-paragraph-light text-sm leading-relaxed md:text-[0.9rem]">{pain.desc}</p>
                   </div>
                 </div>
               </li>

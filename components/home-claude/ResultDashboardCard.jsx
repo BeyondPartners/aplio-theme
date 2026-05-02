@@ -108,17 +108,17 @@ const ResultDashboardCard = () => {
   }
 
   return (
-    <article ref={sectionRef} className="rounded-medium shadow-box dark:bg-dark-200 bg-white p-2.5">
-      <div className="dark:border-gray-600 overflow-hidden rounded border border-dashed border-gray-100">
+    <article ref={sectionRef} className="rounded-medium shadow-box bg-white p-2.5">
+      <div className="overflow-hidden rounded border border-dashed border-gray-100">
         <div className="p-6 max-lg:p-5">
           <p className="bg-accent/10 text-accent mb-4 inline-flex rounded-full px-4 py-1.5 text-xs font-semibold tracking-[0.12em] uppercase">
             Résultat
           </p>
           <h3 className="mb-1.5">À l&apos;issue de ce programme</h3>
-          <p className="text-paragraph-light text-sm dark:text-white/60">Vous repartez avec :</p>
+          <p className="text-paragraph-light text-sm">Vous repartez avec :</p>
         </div>
 
-        <div className="dark:divide-gray-600 grid grid-cols-2 divide-x divide-y divide-gray-100">
+        <div className="grid grid-cols-2 divide-x divide-y divide-gray-100">
           {metrics.map((metric) => {
             const finalNumericLabel = `${metric.value}${metric.suffix ?? ''}${metric.unit ? ` ${metric.unit}` : ''}`
             return (
@@ -149,7 +149,7 @@ const ResultDashboardCard = () => {
                     </span>
                   )}
                 </div>
-                <p className="text-paragraph max-w-[260px] text-[13px] leading-snug font-medium max-[799px]:text-sm max-sm:max-w-none min-[800px]:text-sm dark:text-white/80">
+                <p className="text-paragraph max-w-[260px] text-[13px] leading-snug font-medium max-[799px]:text-sm max-sm:max-w-none min-[800px]:text-sm">
                   {metric.title}
                 </p>
                 {metric.micro && <p className="text-accent mt-0.5 text-xs font-medium">{metric.micro}</p>}
@@ -158,14 +158,14 @@ const ResultDashboardCard = () => {
           })}
         </div>
 
-        <div className="border-gray-200 dark:border-gray-600 bg-secondary/10 dark:bg-secondary/15 border-t px-5 py-7 max-lg:p-4">
+        <div className="bg-secondary/10 border-t border-gray-200 px-5 py-7 max-lg:p-4">
           <div className="flex items-start gap-3">
             <span
               className="bg-secondary mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-full text-base leading-none text-white max-[799px]:h-8 max-[799px]:w-8 min-[800px]:h-9 min-[800px]:w-9"
               aria-hidden>
               ★
             </span>
-            <p className="text-paragraph text-sm leading-snug font-semibold dark:text-white/90">
+            <p className="text-paragraph text-sm leading-snug font-semibold">
               Vos spécialistes IA internes sont autonomes pour porter cette transformation auprès des autres équipes.
             </p>
           </div>

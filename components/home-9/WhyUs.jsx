@@ -53,7 +53,7 @@ const WhyUs = () => {
     <section className="py-20 md:py-[90px] lg:py-[100px]" aria-label="Why choose Aplio">
       <div className="container">
         <div className="dark:bg-dark-200 rounded-medium shadow-nav relative bg-white p-2.5">
-          <div className="dark:border-gray-600 rounded border border-dashed border-gray-100 px-10 pt-10 pb-0 max-lg:px-5 max-lg:pt-5">
+          <div className="rounded border border-dashed border-gray-100 px-10 pt-10 pb-0 max-lg:px-5 max-lg:pt-5 dark:border-gray-600">
             <div className="space-y-[70px]">
               <FadeUpAnimation className="space-y-[20px] text-center md:text-left">
                 <p className="section-tagline">Why choose Aplio?</p>

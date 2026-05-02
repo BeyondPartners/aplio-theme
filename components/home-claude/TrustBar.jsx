@@ -61,13 +61,13 @@ const TrustBar = () => {
   }, [])
 
   return (
-    <section className="overflow-hidden bg-white dark:bg-white" aria-label="Entreprises accompagnées">
+    <section className="overflow-hidden bg-white" aria-label="Entreprises accompagnées">
       <FadeUpAnimation className="container overflow-hidden">
         <Clients
           sectionTitle={false}
           sectionDetails={false}
           border={true}
-          className="overflow-hidden bg-transparent py-0 dark:bg-transparent"
+          className="overflow-hidden bg-transparent py-0"
           marqueeClassName="overflow-hidden py-3 max-md:py-2"
           marqueeItemClassName="max-md:w-[190px] max-md:px-1"
           defaultLogoPaddingClassName="px-5 max-md:px-2"

@@ -54,9 +54,9 @@ const CareerSinglePage = async (props) => {
               </div>
               <div className="col-span-full self-start max-lg:order-1 lg:col-span-4">
                 <div className="rounded-medium shadow-nav dark:bg-dark-200 bg-white p-2.5">
-                  <div className="dark:border-gray-600 dark:bg-dark-200 rounded border border-dashed border-gray-100 bg-white px-8 py-10 max-md:p-5">
+                  <div className="dark:bg-dark-200 rounded border border-dashed border-gray-100 bg-white px-8 py-10 max-md:p-5 dark:border-gray-600">
                     <h3 className="mb-1">Job Overview</h3>
-                    <div className="[&>*:not(:last-child)]:border-gray-200 dark:[&>*:not(:last-child)]:border-gray-600 [&>*:not(:last-child)]:border-b [&>*:not(:last-child)]:border-dashed">
+                    <div className="[&>*:not(:last-child)]:border-b [&>*:not(:last-child)]:border-dashed [&>*:not(:last-child)]:border-gray-200 dark:[&>*:not(:last-child)]:border-gray-600">
                       {postParams.publishDate && (
                         <div className="py-5">
                           <h4 className="mb-2 text-lg font-medium">Date Posted</h4>
@@ -106,7 +106,7 @@ const CareerSinglePage = async (props) => {
                       <div className="flex w-full flex-wrap gap-3">
                         {postParams?.skills?.map((items, i) => (
                           <div key={i}>
-                            <span className="border-gray-200 text-paragraph-light dark:border-gray-600 inline-block w-full items-center justify-between rounded-[60px] border px-5 py-2 font-medium">
+                            <span className="text-paragraph-light inline-block w-full items-center justify-between rounded-[60px] border border-gray-200 px-5 py-2 font-medium dark:border-gray-600">
                               {items}
                             </span>
                           </div>

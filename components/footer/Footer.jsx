@@ -1,17 +1,15 @@
 import BeyondPartnersLogo from '@/components/shared/BeyondPartnersLogo'
 import { FooterData } from '@/data/footer'
 import footerSeperator from '@/public/images/footer-seperator.svg'
-import footerSeperatorDark from '@/public/images/footer-seperator-dark.svg'
 import Image from 'next/image'
 import Link from 'next/link'
 
 const Footer = () => {
   return (
-    <footer className="dark:bg-dark-300 relative bg-white">
+    <footer className="relative bg-white">
       <div className="container">
         <div className="seperator">
-          <Image src={footerSeperator} alt="" className="w-full object-cover max-md:h-px dark:hidden" />
-          <Image src={footerSeperatorDark} alt="" className="hidden w-full object-cover max-md:h-px dark:block" />
+          <Image src={footerSeperator} alt="" className="w-full object-cover max-md:h-px" />
         </div>
 
         <div className="flex items-center justify-between py-7 max-sm:flex-col max-sm:gap-5 max-sm:py-6">
@@ -22,12 +20,12 @@ const Footer = () => {
             <BeyondPartnersLogo className="text-base leading-none sm:text-lg" />
           </Link>
 
-          <p className="text-paragraph text-sm max-sm:order-last dark:text-white/50">{FooterData.copyright}</p>
+          <p className="text-paragraph text-sm max-sm:order-last">{FooterData.copyright}</p>
 
           <div className="flex items-center gap-6">
             <Link
               href="/mentions-legales"
-              className="text-paragraph hover:text-primary dark:hover:text-primary text-sm transition-colors duration-300 dark:text-white/70">
+              className="text-paragraph hover:text-primary text-sm transition-colors duration-300">
               Mentions Légales
             </Link>
             <ul className="social-link flex items-center">

@@ -29,7 +29,7 @@ const Hero = () => {
               Discover the next level of customer engagement with our intuitive AI-driven solution today.
             </p>
             <form>
-              <div className="border-gray-200 focus-within:border-primary dark:bg-dark-200 dark:focus-within:border-primary grid w-full max-w-[520px] grid-cols-12 items-center rounded-[60px] border bg-white pe-1 pt-1 pb-1 pl-4 transition-all duration-300 sm:pl-5 dark:border-[#31332F]">
+              <div className="focus-within:border-primary dark:bg-dark-200 dark:focus-within:border-primary grid w-full max-w-[520px] grid-cols-12 items-center rounded-[60px] border border-gray-200 bg-white pe-1 pt-1 pb-1 pl-4 transition-all duration-300 sm:pl-5 dark:border-[#31332F]">
                 <input
                   type="text"
                   placeholder="Enter your email"

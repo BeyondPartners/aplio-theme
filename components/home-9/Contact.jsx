@@ -90,7 +90,7 @@ const Contact = () => {
               <div className="bg-primary-200/20 -ml-[170px] h-[442px] w-[442px] rounded-full blur-[145px]"></div>
             </div>
             <FadeUpAnimation className="dark:bg-dark-200 rounded-medium shadow-nav bg-white p-2.5">
-              <div className="dark:bg-dark-200 dark:border-gray-600 rounded border border-dashed border-gray-100 bg-white p-12 max-md:p-5">
+              <div className="dark:bg-dark-200 rounded border border-dashed border-gray-100 bg-white p-12 max-md:p-5 dark:border-gray-600">
                 <form action="/index.html" method="post">
                   <fieldset className="mb-8 flex w-full flex-col items-start justify-start gap-2">
                     <label
@@ -104,7 +104,7 @@ const Contact = () => {
                       id="fullName"
                       required
                       placeholder="Enter your name"
-                      className="border-gray-200 dark:border-gray-600 text-paragraph-light placeholder:text-paragraph-light dark:placeholder:text-paragraph-light dark:bg-dark-200 focus:border-primary dark:focus:border-primary block w-full rounded-[48px] border bg-white px-5 py-2.5 text-sm outline-hidden transition-all duration-300"
+                      className="text-paragraph-light placeholder:text-paragraph-light dark:placeholder:text-paragraph-light dark:bg-dark-200 focus:border-primary dark:focus:border-primary block w-full rounded-[48px] border border-gray-200 bg-white px-5 py-2.5 text-sm outline-hidden transition-all duration-300 dark:border-gray-600"
                       aria-required="true"
                     />
                   </fieldset>
@@ -121,7 +121,7 @@ const Contact = () => {
                       name="emailAddress"
                       id="emailAddress"
                       placeholder="Enter your email"
-                      className="border-gray-200 dark:border-gray-600 text-paragraph-light placeholder:text-paragraph-light dark:placeholder:text-paragraph-light dark:bg-dark-200 focus:border-primary dark:focus:border-primary block w-full rounded-[48px] border bg-white px-5 py-2.5 text-sm outline-hidden transition-all duration-300"
+                      className="text-paragraph-light placeholder:text-paragraph-light dark:placeholder:text-paragraph-light dark:bg-dark-200 focus:border-primary dark:focus:border-primary block w-full rounded-[48px] border border-gray-200 bg-white px-5 py-2.5 text-sm outline-hidden transition-all duration-300 dark:border-gray-600"
                       aria-required="true"
                     />
                   </fieldset>
@@ -138,14 +138,14 @@ const Contact = () => {
                       required
                       placeholder="Enter your message"
                       rows="5"
-                      className="border-gray-200 dark:border-gray-600 text-paragraph-light placeholder:text-paragraph-light dark:bg-dark-200 focus:border-primary dark:focus:border-primary block w-full resize-none rounded border bg-white px-5 py-2.5 text-sm outline-hidden transition-all duration-300"
+                      className="text-paragraph-light placeholder:text-paragraph-light dark:bg-dark-200 focus:border-primary dark:focus:border-primary block w-full resize-none rounded border border-gray-200 bg-white px-5 py-2.5 text-sm outline-hidden transition-all duration-300 dark:border-gray-600"
                       aria-required="true"></textarea>
                   </fieldset>
 
                   <fieldset className="mb-4 flex items-center gap-2">
                     <label htmlFor="agree-terms" className="flex items-center gap-x-3">
                       <input id="agree-terms" type="checkbox" className="peer sr-only" required />
-                      <span className="border-gray-200 dark:border-gray-600 after:bg-primary-200 peer-checked:border-primary-200 relative size-4 cursor-pointer rounded-full border after:absolute after:top-1/2 after:left-1/2 after:size-2.5 after:-translate-x-1/2 after:-translate-y-1/2 after:rounded-full after:opacity-0 peer-checked:after:opacity-100"></span>
+                      <span className="after:bg-primary-200 peer-checked:border-primary-200 relative size-4 cursor-pointer rounded-full border border-gray-200 after:absolute after:top-1/2 after:left-1/2 after:size-2.5 after:-translate-x-1/2 after:-translate-y-1/2 after:rounded-full after:opacity-0 peer-checked:after:opacity-100 dark:border-gray-600"></span>
                     </label>
                     <label
                       htmlFor="agree-terms"

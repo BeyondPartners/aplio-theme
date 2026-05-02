@@ -65,7 +65,7 @@ const GetStart = () => {
           {aiStartData?.map((items) =>
             items.isFeatured ? (
               <div className="rounded-medium shadow-nav dark:bg-dark-200 col-span-12 bg-white p-2.5" key={items.id}>
-                <div className="dark:border-gray-600 rounded border border-dashed border-gray-100 p-10 max-lg:p-5">
+                <div className="rounded border border-dashed border-gray-100 p-10 max-lg:p-5 dark:border-gray-600">
                   <div className="grid grid-cols-12 items-center gap-6">
                     <div className="1xl:pr-20 col-span-12 md:col-span-6">
                       <h3 className="mb-8 leading-8">{items.title}</h3>
@@ -75,7 +75,7 @@ const GetStart = () => {
                       <ul className="">
                         {items.listItem.map((item, index) => (
                           <li
-                            className="dark:border-gray-600 mb-5 flex items-center gap-3.5 rounded-lg border border-dashed border-gray-100 p-2.5 last:mb-0"
+                            className="mb-5 flex items-center gap-3.5 rounded-lg border border-dashed border-gray-100 p-2.5 last:mb-0 dark:border-gray-600"
                             key={index}>
                             <div className="bg-primary-100 dark:bg-dark-300 flex h-10 w-10 flex-shrink-0 items-center justify-center rounded">
                               <FaCheck className="text-primary dark:text-primary" />
@@ -93,7 +93,7 @@ const GetStart = () => {
               <div
                 className="rounded-medium shadow-nav dark:bg-dark-200 col-span-12 bg-white p-2.5 sm:col-span-6"
                 key={items.id}>
-                <div className="dark:border-gray-600 rounded border border-dashed border-gray-100 p-10 max-lg:p-5">
+                <div className="rounded border border-dashed border-gray-100 p-10 max-lg:p-5 dark:border-gray-600">
                   <div className="mb-6 text-center">
                     <h3 className="mb-2.5 leading-8">{items.title}</h3>
                     <p className="mb-6">{items.description}</p>

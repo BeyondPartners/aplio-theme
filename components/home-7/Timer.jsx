@@ -44,7 +44,7 @@ const Timer = () => {
   return (
     <div className="col-span-12 mx-auto md:-mt-150">
       <div className="shadow-box dark:bg-dark-200 relative z-50 mb-8 inline-block rounded-[230px] bg-white p-2.5">
-        <div className="dark:border-gray-600 relative flex h-full w-[630px] items-center justify-center rounded-[210px] border border-dashed border-gray-100 py-2.5 text-center max-md:w-full">
+        <div className="relative flex h-full w-[630px] items-center justify-center rounded-[210px] border border-dashed border-gray-100 py-2.5 text-center max-md:w-full dark:border-gray-600">
           <div className="bg-primary-200/40 dark:bg-primary-200/10 absolute top-1/2 left-1/2 h-20 w-[300px] -translate-x-1/2 -translate-y-1/2 rounded-full blur-[145px]"></div>
           <h2 className="text-[64px] max-md:px-2.5 max-md:text-[24px]">
             {timeLeft.days}:{timeLeft.hours}:{timeLeft.minutes}:{timeLeft.seconds}

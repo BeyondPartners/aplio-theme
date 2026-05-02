@@ -28,7 +28,7 @@ const ContactForm = () => {
             <div className="bg-primary-200/20 -ml-[170px] h-[442px] w-[442px] rounded-full blur-[145px]"></div>
           </div>
           <div className="rounded-medium shadow-nav dark:bg-dark-200 bg-white p-2.5">
-            <div className="dark:border-gray-600 dark:bg-dark-200 rounded border border-dashed border-gray-100 bg-white p-12 max-md:p-5">
+            <div className="dark:bg-dark-200 rounded border border-dashed border-gray-100 bg-white p-12 max-md:p-5 dark:border-gray-600">
               <form>
                 <div className="grid grid-cols-12 max-md:gap-y-10 md:gap-8 md:gap-x-12">
                   <div className="max-md:col-span-full md:col-span-6">
@@ -42,7 +42,7 @@ const ContactForm = () => {
                       name="first-name"
                       id="username"
                       placeholder="Name"
-                      className="border-gray-200 text-paragraph-light placeholder:text-paragraph-light focus:border-primary dark:border-gray-600 dark:bg-dark-200 dark:placeholder:text-paragraph-light dark:focus:border-primary block w-full rounded-[48px] border bg-white px-5 py-2.5 text-sm transition-all duration-300 outline-none"
+                      className="text-paragraph-light placeholder:text-paragraph-light focus:border-primary dark:bg-dark-200 dark:placeholder:text-paragraph-light dark:focus:border-primary block w-full rounded-[48px] border border-gray-200 bg-white px-5 py-2.5 text-sm transition-all duration-300 outline-none dark:border-gray-600"
                     />
                   </div>
                   <div className="max-md:col-span-full md:col-span-6">
@@ -56,7 +56,7 @@ const ContactForm = () => {
                       name="first-name"
                       id="email"
                       placeholder="Email"
-                      className="border-gray-200 text-paragraph-light placeholder:text-paragraph-light focus:border-primary dark:border-gray-600 dark:bg-dark-200 dark:focus:border-primary block w-full rounded-[48px] border bg-white px-5 py-2.5 text-sm transition-all duration-300 outline-none"
+                      className="text-paragraph-light placeholder:text-paragraph-light focus:border-primary dark:bg-dark-200 dark:focus:border-primary block w-full rounded-[48px] border border-gray-200 bg-white px-5 py-2.5 text-sm transition-all duration-300 outline-none dark:border-gray-600"
                     />
                   </div>
                   <div className="col-span-full">
@@ -69,7 +69,7 @@ const ContactForm = () => {
                       name="first-name"
                       id="message"
                       rows="10"
-                      className="border-gray-200 text-paragraph-light placeholder:text-paragraph-light focus:border-primary dark:border-gray-600 dark:bg-dark-200 dark:focus:border-primary block w-full resize-none rounded border bg-white px-5 py-2.5 text-sm transition-all duration-300 outline-none"></textarea>
+                      className="text-paragraph-light placeholder:text-paragraph-light focus:border-primary dark:bg-dark-200 dark:focus:border-primary block w-full resize-none rounded border border-gray-200 bg-white px-5 py-2.5 text-sm transition-all duration-300 outline-none dark:border-gray-600"></textarea>
                   </div>
                   <div className="col-span-full mx-auto text-center">
                     <button className="btn">Contact Now</button>

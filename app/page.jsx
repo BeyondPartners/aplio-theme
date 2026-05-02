@@ -15,7 +15,7 @@ export const metadata = {
 
 export default function Home() {
   return (
-    <>
+    <div className="min-h-screen bg-white">
       <PrimaryNavbar />
       <main id="home" className="scroll-mt-32">
         <section id="notre-accompagnement" className="scroll-mt-32">
@@ -28,6 +28,6 @@ export default function Home() {
         <TeamMembers anchorId="a-propos-de-nous" />
       </main>
       <Footer />
-    </>
+    </div>
   )
 }

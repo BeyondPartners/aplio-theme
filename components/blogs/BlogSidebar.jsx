@@ -35,7 +35,7 @@ const BlogSidebar = ({ blogSidebarData, setActive, search, setSearch }) => {
   return (
     <div className="self-start max-lg:col-span-5 max-md:order-1 max-md:col-span-full lg:col-span-4">
       <div className="rounded-medium shadow-nav dark:bg-dark-200 bg-white p-2.5">
-        <div className="dark:border-gray-600 dark:bg-dark-200 rounded border border-dashed border-gray-100 bg-white px-8 py-12 max-md:px-4">
+        <div className="dark:bg-dark-200 rounded border border-dashed border-gray-100 bg-white px-8 py-12 max-md:px-4 dark:border-gray-600">
           <div className="mb-12">
             <h3 className="mb-8">Search</h3>
             <label className="relative block">
@@ -52,7 +52,7 @@ const BlogSidebar = ({ blogSidebarData, setActive, search, setSearch }) => {
                 </svg>
               </span>
               <input
-                className="border-gray-200 font-jakartaeholder:font-jakarta placer:text-paragraph-light focus:border-primary dark:border-gray-600 dark:text-paragraph-light dark:focus:border-primary w-full rounded-[60px] border py-5 pr-5 pl-12 transition-all duration-300 focus:outline-none dark:bg-transparent"
+                className="font-jakartaeholder:font-jakarta placer:text-paragraph-light focus:border-primary dark:text-paragraph-light dark:focus:border-primary w-full rounded-[60px] border border-gray-200 py-5 pr-5 pl-12 transition-all duration-300 focus:outline-none dark:border-gray-600 dark:bg-transparent"
                 placeholder="Search..."
                 type="text"
                 value={search}
@@ -63,7 +63,7 @@ const BlogSidebar = ({ blogSidebarData, setActive, search, setSearch }) => {
           </div>
           <div className="mb-12">
             <h3 className="mb-3">Categories</h3>
-            <div className="[&>*:not(:last-child)]:border-gray-200 dark:[&>*:not(:last-child)]:border-gray-600 [&>*:not(:last-child)]:border-b [&>*:not(:last-child)]:border-dashed">
+            <div className="[&>*:not(:last-child)]:border-b [&>*:not(:last-child)]:border-dashed [&>*:not(:last-child)]:border-gray-200 dark:[&>*:not(:last-child)]:border-gray-600">
               {uniqueCategories.map((category) => (
                 <Link
                   href={`/categories/${category.data.categories}`}

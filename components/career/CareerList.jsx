@@ -21,7 +21,7 @@ const CareerList = () => {
             <div
               className="rounded-medium shadow-nav dark:bg-dark-200 mx-auto max-w-[1050px] bg-white p-2.5"
               key={carerItem.slug}>
-              <div className="dark:border-gray-600 dark:bg-dark-200 rounded border border-dashed border-gray-100 bg-white px-5 py-6 xl:px-8">
+              <div className="dark:bg-dark-200 rounded border border-dashed border-gray-100 bg-white px-5 py-6 xl:px-8 dark:border-gray-600">
                 <div className="grid grid-cols-12 items-center max-md:gap-y-5">
                   <div className="col-span-full lg:col-span-4">
                     <h3 className="text-xl">{carerItem.data.title}</h3>

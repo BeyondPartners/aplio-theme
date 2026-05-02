@@ -17,7 +17,7 @@ function ChevronRightIcon() {
 }
 
 const testimonialArrowBtnClass =
-  'border-zinc-200 text-paragraph hover:bg-zinc-50 dark:border-zinc-600 dark:bg-dark-200 dark:hover:bg-dark-300 flex size-11 shrink-0 cursor-pointer items-center justify-center rounded-full border bg-white shadow-sm transition dark:text-white outline-none focus-visible:outline-none focus-visible:ring-0 focus-visible:ring-offset-0 disabled:cursor-default'
+  'border-zinc-200 text-paragraph hover:bg-zinc-50 flex size-11 shrink-0 cursor-pointer items-center justify-center rounded-full border bg-white shadow-sm transition outline-none focus-visible:outline-none focus-visible:ring-0 focus-visible:ring-offset-0 disabled:cursor-default'
 
 function useViewportWidth() {
   return useSyncExternalStore(
@@ -86,9 +86,7 @@ const Testimonial = ({ anchorId }) => {
   }, [step, swiper, syncNavState, isMobileSwiperLayout, swiperSlidesOffsetBefore, swiperSlidesOffsetAfter])
 
   return (
-    <section
-      id={anchorId}
-      className="dark:bg-dark-300 relative my-32 min-w-0 scroll-mt-32 overflow-x-clip bg-[#fdf5f0]">
+    <section id={anchorId} className="relative my-32 min-w-0 scroll-mt-32 overflow-x-clip bg-[#fdf5f0]">
       <div className="relative container">
         <div className="mx-auto mb-8 pt-14 text-center md:mb-0">
           <p className="section-tagline text-accent">Témoignages</p>
@@ -149,9 +147,9 @@ const Testimonial = ({ anchorId }) => {
           onSlideChange={syncNavState}>
           {TestimonialData.map((testimonial) => (
             <SwiperSlide key={testimonial.id} className="h-auto!">
-              <article className="testimonial-slide-inner rounded-medium dark:bg-dark-200 flex min-h-[305px] w-full flex-col border border-zinc-200 bg-white dark:border-zinc-600/55">
+              <article className="testimonial-slide-inner rounded-medium flex min-h-[305px] w-full flex-col border border-zinc-200 bg-white">
                 <div className="flex min-h-0 min-w-0 flex-1 flex-col p-8 md:p-11">
-                  <blockquote className="mb-0 min-h-0 min-w-0 flex-1 pb-10 text-left text-[15px] leading-[1.62] font-normal wrap-break-word text-[#202132] md:text-base dark:text-white/90">
+                  <blockquote className="mb-0 min-h-0 min-w-0 flex-1 pb-10 text-left text-[15px] leading-[1.62] font-normal wrap-break-word text-[#202132] md:text-base">
                     &ldquo;{testimonial.testimonial}&rdquo;
                   </blockquote>
 
@@ -159,9 +157,7 @@ const Testimonial = ({ anchorId }) => {
                     <div className="flex min-w-0 flex-1 items-center gap-4">
                       <TestimonialAuthorAvatar image={testimonial.author.image} name={testimonial.author.name} />
                       <div className="min-w-0">
-                        <p className="text-[17px] leading-snug font-normal text-[#202132] dark:text-white">
-                          {testimonial.author.name}
-                        </p>
+                        <p className="text-[17px] leading-snug font-normal text-[#202132]">{testimonial.author.name}</p>
                       </div>
                     </div>
                     {testimonial.logoLight ? (
@@ -174,7 +170,7 @@ const Testimonial = ({ anchorId }) => {
                         loading="lazy"
                       />
                     ) : (
-                      <p className="text-paragraph-light max-w-[130px] shrink-0 text-right text-sm leading-snug font-normal max-xl:text-left dark:text-white/60">
+                      <p className="text-paragraph-light max-w-[130px] shrink-0 text-right text-sm leading-snug font-normal max-xl:text-left">
                         {testimonial.author.designation}
                       </p>
                     )}
@@ -206,7 +202,7 @@ const Testimonial = ({ anchorId }) => {
                 key={index}
                 aria-hidden
                 className={`h-2 rounded-full transition-all ${
-                  activeSlide === index ? 'bg-accent w-6' : 'w-2 bg-zinc-300 dark:bg-zinc-600'
+                  activeSlide === index ? 'bg-accent w-6' : 'w-2 bg-zinc-300'
                 }`}
               />
             ))}

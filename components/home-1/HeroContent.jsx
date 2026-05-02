@@ -26,7 +26,7 @@ const HeroContent = () => {
           though it looks like it
         </p>
         <form>
-          <div className="border-gray-200 dark:bg-dark-200 grid w-full max-w-[520px] grid-cols-12 items-center rounded-[60px] border bg-white pe-1 pt-1 pb-1 pl-4 sm:pl-5 dark:border-[#31332F]">
+          <div className="dark:bg-dark-200 grid w-full max-w-[520px] grid-cols-12 items-center rounded-[60px] border border-gray-200 bg-white pe-1 pt-1 pb-1 pl-4 sm:pl-5 dark:border-[#31332F]">
             <input
               type="text"
               placeholder="Enter your email"
