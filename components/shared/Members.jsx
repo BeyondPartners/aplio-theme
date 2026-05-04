@@ -14,7 +14,7 @@ const getMemberSummary = (member) => {
     .trim()
 
   if (!plainText) return ''
-  return plainText.length > 150 ? `${plainText.slice(0, 147)}...` : plainText
+  return plainText
 }
 
 const Members = () => {
@@ -42,14 +42,14 @@ const Members = () => {
               />
             </div>
 
-            <div className="flex w-full flex-col items-start gap-2 rounded rounded-t-none border border-t-0 border-dashed border-gray-100 bg-white p-4 sm:gap-3">
+            <div className="flex w-full flex-1 flex-col items-start gap-2 rounded rounded-t-none border border-t-0 border-dashed border-gray-100 bg-white p-4 sm:gap-3">
               <div className="w-full">
                 <h3 className="text-xl font-medium sm:text-2xl">{member.name}</h3>
               </div>
 
               <p className="text-sm leading-relaxed text-gray-700 sm:text-base">{getMemberSummary(member)}</p>
 
-              <div className="mt-1 w-full">
+              <div className="mt-auto w-full pt-1">
                 <Link
                   href={member.linkedInLink}
                   target="_blank"

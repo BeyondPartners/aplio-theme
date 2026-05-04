@@ -14,7 +14,7 @@ function homeSectionHref(href) {
 }
 
 const PrimaryNavbar = () => {
-  const { menuData } = NavbarItem
+  const { menuData, bookingCalendlyUrl } = NavbarItem
   const [showMobileMenu, setShowMobileMenu] = useState(false)
   const [sticky, setSticky] = useState(false)
 
@@ -138,7 +138,9 @@ const PrimaryNavbar = () => {
           <ul className="ml-auto flex shrink-0 items-center [&>*:not(:last-child)]:me-2.5">
             <li className="flex items-center max-lg:hidden">
               <Link
-                href={homeSectionHref(menuData.btnLlink)}
+                href={bookingCalendlyUrl}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="btn btn-navbar btn-sm text-sm whitespace-nowrap xl:text-base">
                 Nous Contacter
               </Link>
@@ -258,16 +260,11 @@ const PrimaryNavbar = () => {
 
               <li>
                 <Link
-                  href={homeSectionHref(menuData.btnLlink)}
+                  href={bookingCalendlyUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="btn btn-navbar btn-sm"
-                  onClick={(e) => {
-                    if (menuData.btnLlink.startsWith('#')) {
-                      e.preventDefault()
-                      closeMobileMenuAndScrollToHash(menuData.btnLlink)
-                    } else {
-                      setShowMobileMenu(false)
-                    }
-                  }}>
+                  onClick={() => setShowMobileMenu(false)}>
                   Nous contacter
                 </Link>
               </li>

@@ -10,10 +10,10 @@ const programBlocks = [
   {
     id: 'Phase 1',
     title: '1 journée de formation avec vos équipes',
-    timeframe: 'Semaine 1',
+    timeframe: '',
     description:
       'À la fin de la journée, vos collaborateurs maîtrisent Claude Cowork et savent l’intégrer immédiatement dans leur quotidien.',
-    pills: ['2 demi-journées'],
+    pills: ['2 demi-journées', 'Formateur dans vos locaux'],
     cta: 'Voir le détail de la formation',
     imageSrc: '/images/photo_formation_6.jpg',
     imageAlt: 'Session de formation en présentiel avec une équipe en salle',
@@ -24,8 +24,8 @@ const programBlocks = [
       '4 ateliers pratiques pour intégrer Claude Cowork dans vos process et construire la feuille de route de votre transformation IA',
     timeframe: '',
     description:
-      'Des collaborateurs désignés travaillent avec nos formateurs pour intégrer Claude Cowork dans vos 3 process les plus chronophages, établissent une feuille de route à 90 jours — et deviennent ainsi les moteurs de votre transformation IA.',
-    pills: ['4 demi-journées', '1 par semaine'],
+      'Des collaborateurs désignés travaillent avec nos formateurs pour intégrer Claude Cowork dans vos 3 process les plus chronophages, établissent une feuille de route à 90 jours — Ils deviennent ainsi les moteurs de votre transformation IA.',
+    pills: ['4 demi-journées', 'Formateur dans vos locaux'],
     cta: 'Voir le détail des ateliers',
     imageSrc: '/images/photo_formation_7.jpg',
     imageAlt: 'Session de formation en présentiel avec une équipe en salle',
@@ -34,9 +34,9 @@ const programBlocks = [
 
 const continuousSupport = [
   {
-    title: 'Support prioritaire en moins de 24h',
+    title: "Des réponses à vos questions dans l'heure",
     description:
-      'Une question ou un blocage avec Claude Cowork ? Nos formateurs vous apporte une réponse sous 24 heures.',
+      "Une question ou un blocage avec Claude Cowork ? Nous vous garantissons une réponse en moins d'une heure.",
   },
   {
     title: 'Accès aux bonnes pratiques',

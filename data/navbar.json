@@ -3,7 +3,6 @@
   "menuData": {
     "logoLight": "/images/logo.svg",
     "logoDark": "/images/logo-light.svg",
-    "btnLlink": "#a-propos-de-nous",
     "menuContent": [
       {
         "id": 1,

@@ -14,8 +14,8 @@ const metrics = [
   {
     id: 'process',
     value: 3,
-    suffix: '',
-    title: 'de vos process les plus chronophages bénéficient de Claude Cowork',
+    suffix: 'de vos process',
+    title: 'les plus chronophages bénéficient de Claude Cowork',
     micro: '',
     animate: true,
   },
@@ -31,8 +31,8 @@ const metrics = [
   {
     id: 'partner',
     value: 1,
-    suffix: '',
-    title: 'partenaire IA de confiance dans la durée',
+    suffix: 'partenaire IA',
+    title: 'de confiance qui vous accompagne dans la durée',
     micro: '',
     animate: true,
   },

@@ -3,7 +3,7 @@
 import { useCallback, useEffect, useRef, useState } from 'react'
 
 const iconProps = {
-  className: 'h-[18px] w-[18px] shrink-0 text-accent',
+  className: 'h-[18px] w-[18px] shrink-0 text-secondary',
   fill: 'none',
   stroke: 'currentColor',
   strokeWidth: 1.5,
@@ -159,7 +159,7 @@ const PainPoints = () => {
                   aria-label={`${i + 1} sur ${pains.length}`}
                   className="rounded-medium border-l-accent/40 min-w-0 shrink-0 basis-[88%] snap-start border border-l-[3px] border-[#f1f1f1] bg-white">
                   <div className="flex min-h-full flex-col gap-4 p-6">
-                    <div className="bg-accent/10 text-accent flex h-10 w-10 shrink-0 items-center justify-center rounded-[10px]">
+                    <div className="bg-secondary/10 text-secondary flex h-10 w-10 shrink-0 items-center justify-center rounded-[10px]">
                       <Icon />
                     </div>
 
@@ -201,10 +201,10 @@ const PainPoints = () => {
                 className="rounded-medium shadow-box flex min-h-0 min-w-0 border border-[#f1f1f1] bg-white">
                 <div className="flex h-full min-h-full flex-col gap-4 p-6 md:p-8">
                   <div className="flex items-center justify-between gap-2">
-                    <div className="bg-accent/10 text-accent flex h-10 w-10 shrink-0 items-center justify-center rounded-[10px]">
+                    <div className="bg-secondary/10 text-secondary flex h-10 w-10 shrink-0 items-center justify-center rounded-[10px]">
                       <Icon />
                     </div>
-                    <span className="bg-accent/10 text-accent inline-flex rounded-full px-3 py-1 text-xs font-medium">
+                    <span className="bg-secondary/10 text-secondary inline-flex rounded-full px-3 py-1 text-xs font-medium">
                       {pain.tag}
                     </span>
                   </div>
