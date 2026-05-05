@@ -2,6 +2,7 @@ import teamMembers from '@/data/team'
 
 import Image from 'next/image'
 import Link from 'next/link'
+import PropTypes from 'prop-types'
 import FadeUpOneByOneAnimation from '../animations/FadeUpOneByOneAnimation'
 
 const getMemberSummary = (member) => {
@@ -17,8 +18,8 @@ const getMemberSummary = (member) => {
   return plainText
 }
 
-const Members = () => {
-  const { teamData } = teamMembers
+const Members = ({ teamData: propTeamData }) => {
+  const teamData = propTeamData ?? teamMembers.teamData
   const isTwoMembers = teamData.length === 2
 
   return (
@@ -72,6 +73,10 @@ const Members = () => {
       ))}
     </div>
   )
+}
+
+Members.propTypes = {
+  teamData: PropTypes.array,
 }
 
 export default Members

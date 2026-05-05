@@ -9,8 +9,7 @@ export const lifelongBenefits = [
   {
     id: 'skills',
     title: 'Base de skills Claude mise à jour en continu',
-    description:
-      'Vos équipes retrouvent toujours les bonnes pratiques actuelles — jamais des méthodes déjà obsolètes.',
+    description: 'Vos équipes retrouvent toujours les bonnes pratiques actuelles — jamais des méthodes déjà obsolètes.',
   },
   {
     id: 'access',

@@ -1,24 +1,12 @@
-import NavbarItem from '@/data/navbar'
 import Link from 'next/link'
+import PropTypes from 'prop-types'
 import FadeUpAnimation from '../animations/FadeUpAnimation'
 import TrustBar from './TrustBar'
 
-const axes = [
-  {
-    title: 'Formation complète des équipes',
-    desc: 'Pour une maîtrise de Claude Cowork au quotidien.',
-  },
-  {
-    title: 'Intégration dans vos process clés',
-    desc: 'Claude Cowork est intégré à vos 3 process les plus chronophages.',
-  },
-  {
-    title: 'Définition de la stratégie et conduite du changement',
-    desc: 'De 30 à 90 jours et portée par vos équipes, pour une transformation durable.',
-  },
-]
+const Hero = ({ dict }) => {
+  const { axes, h1Lead, h1Rest, sub, cta } = dict.hero
+  const bookingCalendlyUrl = dict.common.bookingCalendlyUrl
 
-const Hero = () => {
   return (
     <section className="relative flex min-h-dvh flex-col overflow-hidden bg-white">
       <div className="bg-accent/10 absolute -top-40 left-1/2 -z-10 hidden h-[600px] w-[1100px] -translate-x-1/2 rounded-full blur-[120px] motion-safe:absolute md:block" />
@@ -26,23 +14,19 @@ const Hero = () => {
         <div className="mx-auto w-full max-w-[1200px] text-center">
           <FadeUpAnimation className="space-y-5 md:space-y-6 lg:space-y-8">
             <h1 className="text-[32px]! leading-[1.15]! tracking-tight sm:text-[36px]! md:text-[40px]! xl:text-[52px]!">
-              <span className="text-accent">Démultipliez la productivité</span> de votre cabinet d&apos;architecte avec
-              Claude Cowork
+              <span className="text-accent">{h1Lead}</span> {h1Rest}
             </h1>
-            <p className="text-paragraph mx-auto max-w-[640px] text-[15px] leading-relaxed md:text-lg">
-              Équipez vos collaborateurs du meilleur assistant IA du marché et accélerez chaque phase de projet, de
-              l&apos;esquisse à la réalisation.
-            </p>
+            <p className="text-paragraph mx-auto max-w-[640px] text-[15px] leading-relaxed md:text-lg">{sub}</p>
             <div className="flex flex-col items-center justify-center gap-3 sm:flex-row sm:flex-wrap sm:gap-4">
-              <Link href={NavbarItem.bookingCalendlyUrl} target="_blank" rel="noopener noreferrer" className="btn">
-                Échanger avec un expert
+              <Link href={bookingCalendlyUrl} target="_blank" rel="noopener noreferrer" className="btn">
+                {cta}
               </Link>
             </div>
           </FadeUpAnimation>
         </div>
       </div>
       <div className="shrink-0">
-        <TrustBar />
+        <TrustBar ariaLabel={dict.trustBar.ariaLabel} />
         <div className="bg-[#ffefea] py-8 md:py-10">
           <div className="container">
             <FadeUpAnimation>
@@ -71,6 +55,10 @@ const Hero = () => {
       </div>
     </section>
   )
+}
+
+Hero.propTypes = {
+  dict: PropTypes.object.isRequired,
 }
 
 export default Hero

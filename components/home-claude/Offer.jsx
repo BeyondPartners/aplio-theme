@@ -1,87 +1,15 @@
-import NavbarItem from '@/data/navbar'
-import { lifelongBenefits } from '@/data/lifelongBenefits'
 import Image from 'next/image'
 import Link from 'next/link'
+import PropTypes from 'prop-types'
 import FadeUpAnimation from '../animations/FadeUpAnimation'
 import LifelongBenefitsCarousel from './LifelongBenefitsCarousel'
 import ResultDashboardCard from './ResultDashboardCard'
-
-const programBlocks = [
-  {
-    id: 'Phase 1',
-    title: '1 journée de formation avec vos équipes',
-    timeframe: '',
-    description:
-      'À la fin de la journée, vos collaborateurs maîtrisent Claude Cowork et savent l’intégrer immédiatement dans leur quotidien.',
-    pills: ['2 demi-journées'],
-    cta: 'Voir le détail de la formation',
-    imageSrc: '/images/photo_formation_6.jpg',
-    imageAlt: 'Session de formation en présentiel avec une équipe en salle',
-  },
-  {
-    id: 'Phase 2',
-    title:
-      '4 ateliers pratiques pour intégrer Claude Cowork dans vos process et construire la feuille de route de votre transformation IA',
-    timeframe: '',
-    description:
-      'Des collaborateurs désignés travaillent avec nos formateurs pour intégrer Claude Cowork dans vos 3 process les plus chronophages, établissent une feuille de route à 90 jours — Ils deviennent ainsi les moteurs de votre transformation IA.',
-    pills: ['4 demi-journées'],
-    cta: 'Voir le détail des ateliers',
-    imageSrc: '/images/photo_formation_7.jpg',
-    imageAlt: 'Session de formation en présentiel avec une équipe en salle',
-  },
-]
-
-const continuousSupport = [
-  {
-    title: 'Des réponses à vos questions en moins de 24 heures',
-    description:
-      'Une question ou un blocage avec Claude Cowork ? Nous vous garantissons une réponse des les 24 heures.',
-  },
-  {
-    title: 'Accès aux bonnes pratiques',
-    description:
-      'Nos retours d’expériences issus de nombreuses entreprises accompagnées sont mis à disposition de vos équipes.',
-  },
-]
 
 const CheckIcon = () => (
   <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
     <path d="M3 9L7 13L15 5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
   </svg>
 )
-
-const NewsletterIcon = () => (
-  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <rect x="1" y="3.5" width="14" height="10" rx="2" stroke="currentColor" strokeWidth="1.6" />
-    <path d="M1 6l7 4.5L15 6" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
-  </svg>
-)
-
-const RefreshIcon = () => (
-  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M13.5 2.5A6.5 6.5 0 1 1 3 5.5" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
-    <path d="M1 3l2 2.5 2.5-2" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
-  </svg>
-)
-
-const ShieldIcon = () => (
-  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path
-      d="M8 1.5L2 4v4c0 3.3 2.5 5.6 6 6.5 3.5-.9 6-3.2 6-6.5V4L8 1.5z"
-      stroke="currentColor"
-      strokeWidth="1.6"
-      strokeLinejoin="round"
-    />
-    <path d="M5.5 8l1.5 1.5 3-3" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
-  </svg>
-)
-
-const LIFELONG_ICONS = {
-  brief: NewsletterIcon,
-  skills: RefreshIcon,
-  access: ShieldIcon,
-}
 
 const ArrowIcon = () => (
   <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -113,7 +41,17 @@ const ImagePlaceholder = ({ label, src, alt = '' }) => (
   </div>
 )
 
-const Offer = () => {
+ImagePlaceholder.propTypes = {
+  label: PropTypes.string.isRequired,
+  src: PropTypes.string,
+  alt: PropTypes.string,
+}
+
+const Offer = ({ dict }) => {
+  const bookingCalendlyUrl = dict.common.bookingCalendlyUrl
+  const { intro, sticky, programBlocks, continuous, afterProgram, lifelongBenefits } = dict.offer
+  const approachId = dict.sections.approach
+
   return (
     <section className="relative mb-16 scroll-mt-28 bg-white min-[800px]:mb-150 md:mb-24 md:scroll-mt-32">
       <div className="container">
@@ -121,29 +59,22 @@ const Offer = () => {
           <span className="bg-accent/25 my-10 inline-block h-[2px] w-16 rounded-full md:my-12" aria-hidden />
           <p
             className="font-jakarta mx-auto mb-16 max-w-[940px] text-center text-[26px] leading-[1.38] font-medium text-[#30343a] max-[799px]:max-w-[42ch] max-md:text-[23px] md:mb-28 md:text-[32px]"
-            id="approche">
-            Nous accompagnons les bureaux d&apos;architectes ambitieux qui savent que l&apos;IA va transformer en
-            profondeur les façons de travailler — et qui veulent prendre une longueur d&apos;avance.
+            id={approachId}>
+            {intro}
           </p>
         </FadeUpAnimation>
         <div className="grid grid-cols-15 gap-x-0 gap-y-12 min-[800px]:gap-x-12 lg:gap-x-20">
           <div className="col-span-15 max-[799px]:order-1 min-[800px]:col-span-7">
             <FadeUpAnimation className="min-[800px]:sticky min-[800px]:top-52">
               <h2 className="mb-6 max-md:text-[28px]">
-                Activez votre stratégie IA en <span className="whitespace-nowrap">4 semaines</span>
+                {sticky.h2Before}
+                <span className="whitespace-nowrap">{sticky.h2Nowrap}</span>
               </h2>
-              <p className="text-paragraph mb-3">
-                L&apos;objectif : maîtriser Claude Cowork et rendre vos équipes autonomes pour porter cette
-                transformation IA durablement.
-              </p>
-              <p className="text-paragraph-light mb-10">
-                À l&apos;issue des 4 semaines, vous disposez d&apos;une équipe formée, de process augmentés par
-                l&apos;IA et d&apos;une feuille de route construite avec votre équipe.
-              </p>
-              <Link href={NavbarItem.bookingCalendlyUrl} target="_blank" rel="noopener noreferrer" className="btn">
-                Échanger avec un expert
+              <p className="text-paragraph mb-3">{sticky.p1}</p>
+              <p className="text-paragraph-light mb-10">{sticky.p2}</p>
+              <Link href={bookingCalendlyUrl} target="_blank" rel="noopener noreferrer" className="btn">
+                {sticky.cta}
               </Link>
-              {/* <p className="text-paragraph-light mt-4 text-sm">Audit 30 minutes · Sans engagement</p> */}
             </FadeUpAnimation>
           </div>
 
@@ -177,7 +108,7 @@ const Offer = () => {
                       </div>
                       <div className="max-[799px]:hidden">
                         <ImagePlaceholder
-                          label={`Visuel ${block.id} · à venir`}
+                          label={`${block.id} ${dict.offer.imagePlaceholderSuffix}`}
                           src={block.imageSrc}
                           alt={block.imageAlt ?? ''}
                         />
@@ -202,15 +133,13 @@ const Offer = () => {
                       <CheckIcon />
                     </span>
                     <p className="text-paragraph-light text-xs font-medium tracking-wider uppercase">
-                      Accompagnement continu pendant 4 semaines
+                      {continuous.kicker}
                     </p>
                   </div>
-                  <h3 className="mb-3">Au-delà de la formation et des ateliers</h3>
-                  <p className="text-paragraph-light mb-6">
-                    Vous bénéficiez d&apos;un accompagnement continu pour ancrer durablement les usages.
-                  </p>
+                  <h3 className="mb-3">{continuous.h3}</h3>
+                  <p className="text-paragraph-light mb-6">{continuous.p}</p>
                   <ul className="divide-y divide-dashed divide-gray-100">
-                    {continuousSupport.map((item) => (
+                    {continuous.items.map((item) => (
                       <li className="flex items-start gap-4 py-4 first:pt-0 last:pb-0" key={item.title}>
                         <span className="text-accent mt-1 shrink-0">
                           <CheckIcon />
@@ -226,10 +155,10 @@ const Offer = () => {
               </FadeUpAnimation>
 
               <FadeUpAnimation className="space-y-6">
-                <ResultDashboardCard />
+                <ResultDashboardCard copy={dict.resultDashboard} />
                 <div className="flex justify-center min-[800px]:hidden">
-                  <Link href={NavbarItem.bookingCalendlyUrl} target="_blank" rel="noopener noreferrer" className="btn">
-                    Échanger avec un expert
+                  <Link href={bookingCalendlyUrl} target="_blank" rel="noopener noreferrer" className="btn">
+                    {sticky.cta}
                   </Link>
                 </div>
               </FadeUpAnimation>
@@ -239,34 +168,84 @@ const Offer = () => {
 
         <FadeUpAnimation className="mt-20 border-t border-dashed border-gray-100 pt-16 max-md:mt-14 max-md:pt-12">
           <div className="mb-10 max-w-xl max-md:mb-8">
-            <h2 className="mb-3">Et après ce programme ?</h2>
-            <p className="text-paragraph-light">
-              Ce programme n&apos;est que le début de votre transformation IA. Nous restons à vos côtés comme partenaire
-              IA de confiance.
-            </p>
+            <h2 className="mb-3">{afterProgram.h2}</h2>
+            <p className="text-paragraph-light">{afterProgram.p}</p>
           </div>
 
           <div className="hidden md:grid md:grid-cols-3 md:gap-6">
-            {lifelongBenefits.map((benefit) => {
-              const Icon = LIFELONG_ICONS[benefit.id]
-              return (
-                <div key={benefit.id} className="rounded-medium shadow-box bg-white p-2.5">
-                  <div className="flex h-full flex-col rounded border border-dashed border-gray-100 p-6">
-                    <span className="bg-secondary/10 text-secondary mb-5 flex h-10 w-10 items-center justify-center rounded-full">
-                      <Icon />
-                    </span>
-                    <p className="mb-2 leading-snug font-semibold">{benefit.title}</p>
-                    <p className="text-paragraph-light text-sm leading-relaxed">{benefit.description}</p>
-                  </div>
-                </div>
-              )
-            })}
+            <LifelongBenefitsGrid items={lifelongBenefits} />
           </div>
-          <LifelongBenefitsCarousel />
+          <LifelongBenefitsCarousel items={lifelongBenefits} labels={dict.offer.lifelongCarousel} />
         </FadeUpAnimation>
       </div>
     </section>
   )
+}
+
+function LifelongBenefitsGrid({ items }) {
+  const NewsletterIcon = () => (
+    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect x="1" y="3.5" width="14" height="10" rx="2" stroke="currentColor" strokeWidth="1.6" />
+      <path d="M1 6l7 4.5L15 6" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  )
+  const RefreshIcon = () => (
+    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M13.5 2.5A6.5 6.5 0 1 1 3 5.5" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
+      <path d="M1 3l2 2.5 2.5-2" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  )
+  const ShieldIcon = () => (
+    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M8 1.5L2 4v4c0 3.3 2.5 5.6 6 6.5 3.5-.9 6-3.2 6-6.5V4L8 1.5z"
+        stroke="currentColor"
+        strokeWidth="1.6"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M5.5 8l1.5 1.5 3-3"
+        stroke="currentColor"
+        strokeWidth="1.6"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  )
+  const ICONS = { brief: NewsletterIcon, skills: RefreshIcon, access: ShieldIcon }
+
+  return (
+    <>
+      {items.map((benefit) => {
+        const Icon = ICONS[benefit.id]
+        return (
+          <div key={benefit.id} className="rounded-medium shadow-box bg-white p-2.5">
+            <div className="flex h-full flex-col rounded border border-dashed border-gray-100 p-6">
+              <span className="bg-secondary/10 text-secondary mb-5 flex h-10 w-10 items-center justify-center rounded-full">
+                <Icon />
+              </span>
+              <p className="mb-2 leading-snug font-semibold">{benefit.title}</p>
+              <p className="text-paragraph-light text-sm leading-relaxed">{benefit.description}</p>
+            </div>
+          </div>
+        )
+      })}
+    </>
+  )
+}
+
+LifelongBenefitsGrid.propTypes = {
+  items: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string.isRequired,
+      title: PropTypes.string.isRequired,
+      description: PropTypes.string.isRequired,
+    }),
+  ).isRequired,
+}
+
+Offer.propTypes = {
+  dict: PropTypes.object.isRequired,
 }
 
 export default Offer

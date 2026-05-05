@@ -1,5 +1,7 @@
 'use client'
 
+import Link from 'next/link'
+import PropTypes from 'prop-types'
 import { useCallback, useEffect, useRef, useState } from 'react'
 
 const iconProps = {
@@ -11,7 +13,6 @@ const iconProps = {
   strokeLinejoin: 'round',
 }
 
-/** Tâches administratives / faible valeur ajoutée */
 const ClipboardTasksIcon = () => (
   <svg viewBox="0 0 24 24" aria-hidden {...iconProps}>
     <path d="M9 5h6a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H9a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2Z" />
@@ -19,7 +20,6 @@ const ClipboardTasksIcon = () => (
   </svg>
 )
 
-/** Structure / plafond de verre sur la croissance */
 const GlassCeilingIcon = () => (
   <svg viewBox="0 0 24 24" aria-hidden {...iconProps}>
     <path d="M4 10h16M4 10v9a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-9" />
@@ -28,7 +28,6 @@ const GlassCeilingIcon = () => (
   </svg>
 )
 
-/** IA repérée mais application encore floue */
 const AiBlurIcon = () => (
   <svg viewBox="0 0 24 24" aria-hidden {...iconProps}>
     <path d="M12 3v2M12 19v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M3 12h2M19 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41" />
@@ -37,7 +36,6 @@ const AiBlurIcon = () => (
   </svg>
 )
 
-/** Initiatives dispersées, pas de capitalisation */
 const DispersedNodesIcon = () => (
   <svg viewBox="0 0 24 24" aria-hidden {...iconProps}>
     <circle cx="6" cy="7" r="2.5" />
@@ -48,34 +46,18 @@ const DispersedNodesIcon = () => (
   </svg>
 )
 
-const pains = [
-  {
-    title: 'Productivité freinée par des tâches à faible valeur ajoutée',
-    desc: 'Les équipes travaillent beaucoup… mais pas toujours là où l’impact est maximal.',
-    tag: 'Productivité',
-    Icon: ClipboardTasksIcon,
-  },
-  {
-    title: 'Organisation qui limite la croissance',
-    desc: 'La structure actuelle fonctionne… mais crée un plafond de verre qui empêche l’évolution.',
-    tag: 'Structure',
-    Icon: GlassCeilingIcon,
-  },
-  {
-    title: 'Potentiel de l’IA identifié, mais qui reste flou',
-    desc: 'Le levier de l’intelligence artificielle est clair… son application concrète beaucoup moins.',
-    tag: 'Direction',
-    Icon: AiBlurIcon,
-  },
-  {
-    title: 'Usages de l’IA dispersés et non capitalisés',
-    desc: 'Des initiatives ponctuelles existent… mais sans cadre commun ni effet cumulé.',
-    tag: 'Utilisation',
-    Icon: DispersedNodesIcon,
-  },
-]
+const ICONS = {
+  clipboard: ClipboardTasksIcon,
+  glass: GlassCeilingIcon,
+  aiBlur: AiBlurIcon,
+  dispersed: DispersedNodesIcon,
+}
 
-const PainPoints = () => {
+const PainPoints = ({ locale, dict }) => {
+  const { headingBefore, headingHighlight, headingAfter, sub, carouselAriaLabel, cta, items } = dict.painPoints
+  const pains = items
+  const approachId = dict.sections.approach
+
   const scrollRef = useRef(null)
   const [activeIndex, setActiveIndex] = useState(0)
 
@@ -129,34 +111,30 @@ const PainPoints = () => {
 
       <div className="container">
         <div className="mx-auto mb-12 max-w-[640px] text-center max-md:mb-10 md:max-xl:mb-10">
-          {/* <p className="text-accent mb-4 text-xs font-semibold tracking-[0.15em] uppercase dark:text-white/90">
-            Ce que nous entendons chaque semaine
-          </p> */}
           <h2 className="mb-4 max-xl:text-[26px] max-xl:leading-snug md:max-xl:text-[32px] md:max-xl:leading-snug">
-            Vous vous <span className="text-accent">reconnaissez</span>&nbsp;?
+            {headingBefore}
+            <span className="text-accent">{headingHighlight}</span>
+            {headingAfter}
           </h2>
-          <p className="text-paragraph-light max-xl:text-[15px] max-xl:leading-relaxed md:max-xl:text-base">
-            Ces blocages sont ceux que nous entendons dans chaque cabinet que nous accompagnons.
-          </p>
+          <p className="text-paragraph-light max-xl:text-[15px] max-xl:leading-relaxed md:max-xl:text-base">{sub}</p>
         </div>
-        {/* Mobile: horizontal snap carousel — ~88% width so next card peeks; no page overflow */}
         <div className="md:hidden">
           <ul
             ref={scrollRef}
             role="region"
             aria-roledescription="carousel"
-            aria-label="Points de blocage"
+            aria-label={carouselAriaLabel}
             tabIndex={0}
             className="focus-visible:outline-accent flex snap-x snap-mandatory gap-4 overflow-x-auto overflow-y-hidden overscroll-x-contain pt-1 pb-3 [scrollbar-width:none] focus-visible:outline-2 focus-visible:outline-offset-2 motion-reduce:snap-none [&::-webkit-scrollbar]:hidden">
             {pains.map((pain, i) => {
-              const Icon = pain.Icon
+              const Icon = ICONS[pain.iconKey] || ClipboardTasksIcon
               return (
                 <li
                   key={pain.title}
                   data-pain-slide={i}
                   role="group"
                   aria-roledescription="slide"
-                  aria-label={`${i + 1} sur ${pains.length}`}
+                  aria-label={`${i + 1} ${dict.painPoints.slideAriaSeparator} ${pains.length}`}
                   className="rounded-medium border-l-accent/40 min-w-0 shrink-0 basis-[88%] snap-start border border-l-[3px] border-[#f1f1f1] bg-white">
                   <div className="flex min-h-full flex-col gap-4 p-6">
                     <div className="bg-secondary/10 text-secondary flex h-10 w-10 shrink-0 items-center justify-center rounded-[10px]">
@@ -178,7 +156,7 @@ const PainPoints = () => {
               <button
                 key={i}
                 type="button"
-                aria-label={`Afficher le point ${i + 1}`}
+                aria-label={`${dict.painPoints.dotAriaPrefix}${i + 1}`}
                 onClick={() => scrollToSlide(i)}
                 className={`h-2 cursor-pointer rounded-full transition-all ${
                   activeIndex === i ? 'bg-accent w-6' : 'w-2 bg-gray-200'
@@ -190,10 +168,9 @@ const PainPoints = () => {
             {activeIndex + 1} / {pains.length}
           </span>
         </div>
-        {/* Tablet + desktop: grid (4 cols from xl per audit / original) */}
         <ul className="hidden w-full md:grid md:auto-rows-fr md:grid-cols-2 md:gap-6 xl:grid-cols-4 xl:gap-4">
           {pains.map((pain) => {
-            const Icon = pain.Icon
+            const Icon = ICONS[pain.iconKey] || ClipboardTasksIcon
 
             return (
               <li
@@ -221,13 +198,18 @@ const PainPoints = () => {
           })}
         </ul>
         <div className="mx-auto mt-10 flex max-w-6xl justify-center max-md:mt-8">
-          <a href="#approche" className="btn max-w-full text-center">
-            Voici comment on peut vous aider
-          </a>
+          <Link href={`/${locale}#${approachId}`} className="btn max-w-full text-center">
+            {cta}
+          </Link>
         </div>
       </div>
     </section>
   )
+}
+
+PainPoints.propTypes = {
+  locale: PropTypes.oneOf(['fr', 'en']).isRequired,
+  dict: PropTypes.object.isRequired,
 }
 
 export default PainPoints

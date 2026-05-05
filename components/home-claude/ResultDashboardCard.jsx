@@ -1,46 +1,12 @@
 'use client'
 
+import PropTypes from 'prop-types'
 import { useEffect, useRef, useState } from 'react'
-
-const metrics = [
-  {
-    id: 'team',
-    value: 100,
-    suffix: '%',
-    title: 'Équipe formée et autonome',
-    micro: '',
-    animate: true,
-  },
-  {
-    id: 'process',
-    value: 3,
-    suffix: 'de vos process',
-    title: 'les plus chronophages bénéficient de Claude Cowork',
-    micro: '',
-    animate: true,
-  },
-  {
-    id: 'roadmap',
-    value: 90,
-    suffix: '',
-    unit: 'jours',
-    title: 'Feuille de route co-construite et prête à exécuter',
-    micro: '',
-    animate: true,
-  },
-  {
-    id: 'partner',
-    value: 1,
-    suffix: 'partenaire IA',
-    title: 'de confiance qui vous accompagne dans la durée',
-    micro: '',
-    animate: true,
-  },
-]
 
 const easeOutCubic = (t) => 1 - (1 - t) ** 3
 
-const ResultDashboardCard = () => {
+const ResultDashboardCard = ({ copy }) => {
+  const { badge, h3, sub, footer, metrics } = copy
   const sectionRef = useRef(null)
   const [isVisible, setIsVisible] = useState(false)
   const [progress, setProgress] = useState(0)
@@ -112,10 +78,10 @@ const ResultDashboardCard = () => {
       <div className="overflow-hidden rounded border border-dashed border-gray-100">
         <div className="p-6 max-lg:p-5">
           <p className="bg-accent/10 text-accent mb-4 inline-flex rounded-full px-4 py-1.5 text-xs font-semibold tracking-[0.12em] uppercase">
-            Résultat
+            {badge}
           </p>
-          <h3 className="mb-1.5">À l&apos;issue de ce programme</h3>
-          <p className="text-paragraph-light text-sm">Vous repartez avec :</p>
+          <h3 className="mb-1.5">{h3}</h3>
+          <p className="text-paragraph-light text-sm">{sub}</p>
         </div>
 
         <div className="grid grid-cols-2 divide-x divide-y divide-gray-100">
@@ -165,14 +131,22 @@ const ResultDashboardCard = () => {
               aria-hidden>
               ★
             </span>
-            <p className="text-paragraph text-sm leading-snug font-semibold">
-              Vos spécialistes IA internes sont autonomes pour porter cette transformation auprès des autres équipes.
-            </p>
+            <p className="text-paragraph text-sm leading-snug font-semibold">{footer}</p>
           </div>
         </div>
       </div>
     </article>
   )
+}
+
+ResultDashboardCard.propTypes = {
+  copy: PropTypes.shape({
+    badge: PropTypes.string.isRequired,
+    h3: PropTypes.string.isRequired,
+    sub: PropTypes.string.isRequired,
+    footer: PropTypes.string.isRequired,
+    metrics: PropTypes.arrayOf(PropTypes.object).isRequired,
+  }).isRequired,
 }
 
 export default ResultDashboardCard

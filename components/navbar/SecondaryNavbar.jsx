@@ -5,11 +5,24 @@ import { cn } from '@/utils/cn'
 import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
+import PropTypes from 'prop-types'
 import { useEffect, useState } from 'react'
 import { FaAngleDown, FaTimes } from 'react-icons/fa'
 
-const SecondaryNavbar = () => {
+function withLocale(locale, href) {
+  if (typeof href !== 'string') return href
+  if (href.startsWith('#')) return `/${locale}${href}`
+  if (href.startsWith('/')) return `/${locale}${href}`
+  return href
+}
+
+const SecondaryNavbar = ({ locale, dict }) => {
   const { menuData } = NavbarItem
+  const menu = dict?.nav?.menu ?? menuData.menuContent
+  const bookingCalendlyUrl = dict?.common?.bookingCalendlyUrl ?? '/request-demo'
+  const contactLabel = dict?.nav?.contact ?? 'Échanger avec un expert'
+  const homeHref = locale ? `/${locale}` : '/'
+  const logoAria = dict?.common?.brandHomeAria ?? 'BeyondPartners — accueil'
   const pathname = usePathname()
   const [innerMobileMenu, setInnerMobileMenu] = useState(false)
   const [sticky, setSticky] = useState(false)
@@ -39,23 +52,23 @@ const SecondaryNavbar = () => {
         <nav className="relative container flex items-center">
           <div className="nav-logo flex items-center">
             <Link
-              href="/"
-              aria-label="BeyondPartners — accueil"
+              href={homeHref}
+              aria-label={logoAria}
               className="inline-flex items-center leading-none focus-visible:rounded-sm focus-visible:ring-2 focus-visible:ring-[#612D3A]/35 focus-visible:outline-none">
               <BeyondPartnersLogo className="text-base leading-none sm:text-lg xl:text-xl" />
             </Link>
           </div>
           <ul className="nav-list rounded-large shadow-nav dark:bg-dark-200 hidden shrink-0 bg-white p-2.5 lg:ml-4 lg:flex xl:ml-10 2xl:ml-15 [&>*]:shrink-0 [&>*:not(:last-child)]:me-0 xl:[&>*:not(:last-child)]:me-1">
-            {menuData.menuContent.map((menuItem) => (
+            {menu.map((menuItem) => (
               <li
                 className={`${menuItem.megaMenu ? 'group' : !menuItem.path ? 'group relative' : ''}`}
                 key={menuItem.id}>
                 {menuItem.path ? (
                   <Link
-                    href={menuItem.path}
+                    href={withLocale(locale, menuItem.path)}
                     className={cn(
                       'rounded-large font-Inter text-paragraph dark:hover:bg-dark-200 flex items-center border border-transparent px-3 py-[5px] text-sm leading-7 font-medium whitespace-nowrap capitalize transition-colors duration-500 hover:bg-zinc-100 hover:duration-500 lg:px-2.5 xl:px-4 xl:text-base xl:leading-8 2xl:px-5 dark:text-white',
-                      pathname === menuItem.path ? 'active' : '',
+                      pathname === withLocale(locale, menuItem.path) ? 'active' : '',
                     )}>
                     {menuItem.title}
                   </Link>
@@ -130,8 +143,12 @@ const SecondaryNavbar = () => {
 
           <ul className="ml-auto flex items-center [&>*:not(:last-child)]:me-2.5">
             <li className="flex items-center max-lg:hidden">
-              <Link href="/request-demo" className="btn btn-navbar btn-sm text-sm whitespace-nowrap xl:text-base">
-                Échanger avec un expert
+              <Link
+                href={bookingCalendlyUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn btn-navbar btn-sm text-sm whitespace-nowrap xl:text-base">
+                {contactLabel}
               </Link>
             </li>
             <li className="flex items-center lg:hidden">
@@ -166,14 +183,14 @@ const SecondaryNavbar = () => {
               <FaTimes />
             </button>
             <ul className="nav-list mt-28 flex w-full max-w-full flex-col gap-5 landscape:h-full">
-              {menuData.menuContent.map((menuItem) => (
+              {menu.map((menuItem) => (
                 <li className={`${menuItem.path ? '' : 'group relative'}`} key={menuItem.id}>
                   {menuItem.path ? (
                     <Link
-                      href={menuItem.path}
+                      href={withLocale(locale, menuItem.path)}
                       className={cn(
                         'rounded-large font-Inter text-paragraph dark:hover:bg-dark-200 flex items-center border border-transparent px-5 py-[5px] text-base leading-8 font-medium transition-colors duration-500 hover:bg-zinc-100 hover:duration-500 lg:px-4 xl:px-5 dark:text-white',
-                        pathname === menuItem.path ? 'active' : '',
+                        pathname === withLocale(locale, menuItem.path) ? 'active' : '',
                       )}
                       onClick={() => setInnerMobileMenu(!innerMobileMenu)}>
                       {menuItem.title}
@@ -247,8 +264,12 @@ const SecondaryNavbar = () => {
               ))}
 
               <li>
-                <Link href="/request-demo" className="btn btn-navbar btn-sm">
-                  Échanger avec un expert
+                <Link
+                  href={bookingCalendlyUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn btn-navbar btn-sm">
+                  {contactLabel}
                 </Link>
               </li>
             </ul>
@@ -257,6 +278,11 @@ const SecondaryNavbar = () => {
       </div>
     </header>
   )
+}
+
+SecondaryNavbar.propTypes = {
+  locale: PropTypes.string,
+  dict: PropTypes.object,
 }
 
 export default SecondaryNavbar

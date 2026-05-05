@@ -1,15 +1,10 @@
 'use client'
 
 import { useEffect, useState } from 'react'
+import PropTypes from 'prop-types'
 import FadeUpAnimation from '../animations/FadeUpAnimation'
 import Clients from '../shared/Clients'
 
-/**
- * Trust bar logos. Per entry:
- * - `logoClassName` — Tailwind on the image (e.g. `scale-110`) to tweak size.
- * - `logoPaddingClassName` — padding inside the logo slot (e.g. `px-4`, `px-6 py-2`) to inset and visually shrink the mark.
- * On `<Clients />`, `defaultLogoPaddingClassName` applies the same padding to every custom logo unless an entry sets `logoPaddingClassName`.
- */
 const TRUST_BAR_LOGOS = [
   {
     id: 'fit-routine',
@@ -48,7 +43,7 @@ const TRUST_BAR_LOGOS = [
   },
 ]
 
-const TrustBar = () => {
+const TrustBar = ({ ariaLabel }) => {
   const [marqueePlay, setMarqueePlay] = useState(true)
 
   useEffect(() => {
@@ -61,7 +56,7 @@ const TrustBar = () => {
   }, [])
 
   return (
-    <section className="overflow-hidden bg-white" aria-label="Entreprises accompagnées">
+    <section className="overflow-hidden bg-white" aria-label={ariaLabel}>
       <FadeUpAnimation className="container overflow-hidden">
         <Clients
           sectionTitle={false}
@@ -77,6 +72,10 @@ const TrustBar = () => {
       </FadeUpAnimation>
     </section>
   )
+}
+
+TrustBar.propTypes = {
+  ariaLabel: PropTypes.string.isRequired,
 }
 
 export default TrustBar

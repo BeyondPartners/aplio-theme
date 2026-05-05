@@ -1,33 +1,38 @@
 'use client'
 import BeyondPartnersLogo from '@/components/shared/BeyondPartnersLogo'
-import NavbarItem from '@/data/navbar'
+import NavLanguageToggle from '@/components/navbar/NavLanguageToggle'
 import { cn } from '@/utils/cn'
 import Image from 'next/image'
 import Link from 'next/link'
+import PropTypes from 'prop-types'
 import { useCallback, useEffect, useState } from 'react'
 import { FaAngleDown, FaTimes } from 'react-icons/fa'
 
-/** Primary navbar is only used on `/`; hash targets home sections. Next.js Link needs `/#id`, not `#id`. */
-function homeSectionHref(href) {
+/** Hash targets home sections. Next.js Link needs `/{locale}#id`, not `#id`. */
+function homeSectionHref(locale, href) {
   if (typeof href !== 'string' || !href.startsWith('#')) return href
-  return `/${href}`
+  return `/${locale}${href}`
 }
 
-const PrimaryNavbar = () => {
-  const { menuData, bookingCalendlyUrl } = NavbarItem
+const PrimaryNavbar = ({ locale, dict }) => {
+  const { menu, contact, contactMobile } = dict.nav
+  const bookingCalendlyUrl = dict.common.bookingCalendlyUrl
   const [showMobileMenu, setShowMobileMenu] = useState(false)
   const [sticky, setSticky] = useState(false)
 
-  const closeMobileMenuAndScrollToHash = useCallback((hashPath) => {
-    const id = hashPath.replace(/^#/, '')
-    setShowMobileMenu(false)
-    requestAnimationFrame(() => {
+  const closeMobileMenuAndScrollToHash = useCallback(
+    (hashPath) => {
+      const id = hashPath.replace(/^#/, '')
+      setShowMobileMenu(false)
       requestAnimationFrame(() => {
-        document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' })
-        window.history.replaceState(null, '', `#${id}`)
+        requestAnimationFrame(() => {
+          document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+          window.history.replaceState(null, '', `/${locale}#${id}`)
+        })
       })
-    })
-  }, [])
+    },
+    [locale],
+  )
 
   const handleStickyNavbar = () => {
     if (window.scrollY >= 20) {
@@ -55,19 +60,19 @@ const PrimaryNavbar = () => {
         <nav className="relative container flex !max-w-[min(100%,1360px)] items-center lg:px-4 xl:px-6 2xl:max-w-[min(100%,1420px)]! 2xl:px-8">
           <div className="nav-logo flex shrink-0 items-center lg:min-w-[200px] xl:min-w-[220px] 2xl:min-w-[266px]">
             <Link
-              href="/"
-              aria-label="BeyondPartners — accueil"
+              href={`/${locale}`}
+              aria-label={dict.common.brandHomeAria}
               className="inline-flex items-center leading-none focus-visible:rounded-sm focus-visible:ring-2 focus-visible:ring-[#612D3A]/35 focus-visible:outline-none">
               <BeyondPartnersLogo className="text-base leading-none sm:text-lg xl:text-xl" />
             </Link>
           </div>
 
           <ul className="nav-list rounded-large shadow-nav mx-auto hidden shrink-0 bg-white p-2.5 lg:flex [&>*:not(:last-child)]:me-1">
-            {menuData.menuContent.map((menuItem) => (
+            {menu.map((menuItem) => (
               <li className={cn(menuItem.megaMenu ? 'group' : menuItem.path ? '' : 'group relative')} key={menuItem.id}>
                 {menuItem.path ? (
                   <Link
-                    href={homeSectionHref(menuItem.path)}
+                    href={homeSectionHref(locale, menuItem.path)}
                     className={cn(
                       'rounded-large font-Inter text-paragraph flex items-center border border-transparent px-3 py-[5px] text-sm leading-7 font-medium whitespace-nowrap capitalize transition-colors duration-500 hover:bg-zinc-100 hover:duration-500 lg:px-2 xl:px-3 xl:text-base xl:leading-8 2xl:px-5',
                     )}>
@@ -137,12 +142,15 @@ const PrimaryNavbar = () => {
 
           <ul className="ml-auto flex shrink-0 items-center [&>*:not(:last-child)]:me-2.5">
             <li className="flex items-center max-lg:hidden">
+              <NavLanguageToggle locale={locale} dict={dict} />
+            </li>
+            <li className="flex items-center max-lg:hidden">
               <Link
                 href={bookingCalendlyUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn btn-navbar btn-sm text-sm whitespace-nowrap xl:text-base">
-                Nous Contacter
+                {contact}
               </Link>
             </li>
             <li className="flex items-center lg:hidden">
@@ -179,11 +187,11 @@ const PrimaryNavbar = () => {
               <FaTimes />
             </button>
             <ul className="nav-list mt-28 flex w-full max-w-full flex-col gap-5 landscape:h-full">
-              {menuData.menuContent.map((menuItem) => (
+              {menu.map((menuItem) => (
                 <li className={cn(menuItem.path ? 'relative' : 'group relative')} key={menuItem.id}>
                   {menuItem.path ? (
                     <Link
-                      href={homeSectionHref(menuItem.path)}
+                      href={homeSectionHref(locale, menuItem.path)}
                       className={cn(
                         'rounded-large font-Inter text-paragraph flex items-center border border-transparent px-5 py-[5px] text-base leading-8 font-medium transition-colors duration-500 hover:bg-zinc-100 hover:duration-500 lg:px-4 xl:px-5',
                       )}
@@ -265,8 +273,11 @@ const PrimaryNavbar = () => {
                   rel="noopener noreferrer"
                   className="btn btn-navbar btn-sm"
                   onClick={() => setShowMobileMenu(false)}>
-                  Nous contacter
+                  {contactMobile}
                 </Link>
+              </li>
+              <li className="flex items-center px-5">
+                <NavLanguageToggle locale={locale} dict={dict} />
               </li>
             </ul>
           </div>
@@ -274,6 +285,11 @@ const PrimaryNavbar = () => {
       </header>
     </>
   )
+}
+
+PrimaryNavbar.propTypes = {
+  locale: PropTypes.oneOf(['fr', 'en']).isRequired,
+  dict: PropTypes.object.isRequired,
 }
 
 export default PrimaryNavbar

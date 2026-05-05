@@ -1,8 +1,9 @@
 'use client'
 
+import TestimonialAuthorAvatar from '@/components/shared/TestimonialAuthorAvatar'
 import TestimonialList from '@/data/testimonial'
 import Image from 'next/image'
-import TestimonialAuthorAvatar from '@/components/shared/TestimonialAuthorAvatar'
+import PropTypes from 'prop-types'
 import { useCallback, useEffect, useState, useSyncExternalStore } from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react'
 
@@ -31,7 +32,6 @@ function useViewportWidth() {
 }
 
 function getContainerLeftInset(viewportWidth) {
-  // Mirror styles/utilities.css `.container` breakpoints.
   if (viewportWidth < 576) return 16
   if (viewportWidth < 768) return 24
   if (viewportWidth < 992) return 32
@@ -40,8 +40,9 @@ function getContainerLeftInset(viewportWidth) {
   return Math.max((viewportWidth - 1400) / 2, 32)
 }
 
-const Testimonial = ({ anchorId }) => {
-  const { TestimonialData } = TestimonialList
+const Testimonial = ({ anchorId, dict }) => {
+  const { tagline, title, prev, next, pagination, items } = dict.testimonial
+  const TestimonialData = items ?? TestimonialList.TestimonialData
   const [swiper, setSwiper] = useState(null)
   const [activeSlide, setActiveSlide] = useState(0)
   const [isAtStart, setIsAtStart] = useState(true)
@@ -50,9 +51,7 @@ const Testimonial = ({ anchorId }) => {
   const isWideViewport = viewportWidth >= 1100
   const step = isWideViewport ? 2 : 1
   const slidesOffsetBefore = getContainerLeftInset(viewportWidth)
-  /** Viewport under 768px: centered card; tablet and up keep the existing strip + offsets. */
   const isMobileSwiperLayout = viewportWidth < 768
-  /** Enable finger swipe on mobile + tablet, keep desktop as arrow-driven navigation. */
   const isTouchSwipeViewport = viewportWidth < 1100
   const swiperSlidesOffsetBefore = isMobileSwiperLayout ? 0 : slidesOffsetBefore
   const swiperSlidesOffsetAfter = isMobileSwiperLayout ? 0 : 320
@@ -89,15 +88,15 @@ const Testimonial = ({ anchorId }) => {
     <section id={anchorId} className="relative my-32 min-w-0 scroll-mt-32 overflow-x-clip bg-[#fdf5f0]">
       <div className="relative container">
         <div className="mx-auto mb-8 pt-14 text-center md:mb-0">
-          <p className="section-tagline text-accent">Témoignages</p>
-          <h2>Ce que nos clients disent de nous</h2>
+          <p className="section-tagline text-accent">{tagline}</p>
+          <h2>{title}</h2>
         </div>
 
         <div className="relative z-10 mb-8 hidden items-center justify-end gap-4 md:flex">
           <button
             type="button"
             className={`${testimonialArrowBtnClass} ${isAtStart ? 'pointer-events-none invisible' : ''}`}
-            aria-label="Témoignage précédent"
+            aria-label={prev}
             aria-hidden={isAtStart}
             tabIndex={isAtStart ? -1 : 0}
             disabled={isAtStart}
@@ -109,7 +108,7 @@ const Testimonial = ({ anchorId }) => {
           <button
             type="button"
             className={`${testimonialArrowBtnClass} ${isAtEnd ? 'pointer-events-none invisible' : ''}`}
-            aria-label="Témoignage suivant"
+            aria-label={next}
             aria-hidden={isAtEnd}
             tabIndex={isAtEnd ? -1 : 0}
             disabled={isAtEnd}
@@ -119,7 +118,6 @@ const Testimonial = ({ anchorId }) => {
         </div>
       </div>
 
-      {/* Full width strip; horizontal inset on small screens so cards don’t hug the viewport edge */}
       <div className="relative w-full min-w-0 overflow-x-clip px-4 sm:px-6 md:px-0">
         <Swiper
           className="testimonials-swiper w-full max-w-full min-w-0"
@@ -187,7 +185,7 @@ const Testimonial = ({ anchorId }) => {
           <button
             type="button"
             className={`${testimonialArrowBtnClass} ${isAtStart ? 'pointer-events-none invisible' : ''}`}
-            aria-label="Témoignage précédent"
+            aria-label={prev}
             aria-hidden={isAtStart}
             tabIndex={isAtStart ? -1 : 0}
             disabled={isAtStart}
@@ -196,7 +194,7 @@ const Testimonial = ({ anchorId }) => {
               <ChevronRightIcon />
             </span>
           </button>
-          <div className="flex items-center gap-2" aria-label="Pagination des témoignages">
+          <div className="flex items-center gap-2" aria-label={pagination}>
             {Array.from({ length: TestimonialData.length }).map((_, index) => (
               <span
                 key={index}
@@ -210,7 +208,7 @@ const Testimonial = ({ anchorId }) => {
           <button
             type="button"
             className={`${testimonialArrowBtnClass} ${isAtEnd ? 'pointer-events-none invisible' : ''}`}
-            aria-label="Témoignage suivant"
+            aria-label={next}
             aria-hidden={isAtEnd}
             tabIndex={isAtEnd ? -1 : 0}
             disabled={isAtEnd}
@@ -224,6 +222,11 @@ const Testimonial = ({ anchorId }) => {
       </div>
     </section>
   )
+}
+
+Testimonial.propTypes = {
+  anchorId: PropTypes.string.isRequired,
+  dict: PropTypes.object.isRequired,
 }
 
 export default Testimonial

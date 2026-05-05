@@ -1,6 +1,7 @@
 'use client'
 
-import { lifelongBenefits } from '@/data/lifelongBenefits'
+import { lifelongBenefits as defaultBenefits } from '@/data/lifelongBenefits'
+import PropTypes from 'prop-types'
 import { useCallback, useEffect, useRef, useState } from 'react'
 
 const NewsletterIcon = () => (
@@ -37,9 +38,8 @@ const ICONS = {
 
 /**
  * Mobile / tablet horizontal snap carousel for lifelong-benefit cards (audit §4.3).
- * Grid layout from `md` (768px) in Offer.jsx — avoids a wide “peek” carousel near 800px when the scrollbar narrows the viewport.
  */
-const LifelongBenefitsCarousel = () => {
+const LifelongBenefitsCarousel = ({ items = defaultBenefits, labels }) => {
   const scrollRef = useRef(null)
   const [activeIndex, setActiveIndex] = useState(0)
 
@@ -75,7 +75,7 @@ const LifelongBenefitsCarousel = () => {
       el.removeEventListener('scroll', updateActiveFromScroll)
       window.removeEventListener('resize', updateActiveFromScroll)
     }
-  }, [updateActiveFromScroll])
+  }, [updateActiveFromScroll, items])
 
   const scrollToSlide = (index) => {
     scrollRef.current?.querySelector(`[data-benefit-slide="${index}"]`)?.scrollIntoView({
@@ -85,16 +85,20 @@ const LifelongBenefitsCarousel = () => {
     })
   }
 
+  const ariaRegion = labels?.ariaRegion ?? 'Après le programme'
+  const slideLabelSeparator = labels?.slideLabelSeparator ?? 'sur'
+  const dotLabelPrefix = labels?.dotLabelPrefix ?? 'Afficher la carte '
+
   return (
     <div className="md:hidden">
       <ul
         ref={scrollRef}
         role="region"
         aria-roledescription="carousel"
-        aria-label="Après le programme"
+        aria-label={ariaRegion}
         tabIndex={0}
         className="focus-visible:outline-accent flex snap-x snap-mandatory gap-4 overflow-x-auto overflow-y-hidden overscroll-x-contain pt-1 pb-3 [scrollbar-width:none] focus-visible:outline-2 focus-visible:outline-offset-2 motion-reduce:snap-none [&::-webkit-scrollbar]:hidden">
-        {lifelongBenefits.map((benefit, i) => {
+        {items.map((benefit, i) => {
           const Icon = ICONS[benefit.id]
           return (
             <li
@@ -102,7 +106,7 @@ const LifelongBenefitsCarousel = () => {
               data-benefit-slide={i}
               role="group"
               aria-roledescription="slide"
-              aria-label={`${i + 1} sur ${lifelongBenefits.length}`}
+              aria-label={`${i + 1} ${slideLabelSeparator} ${items.length}`}
               className="rounded-medium w-[min(88vw,380px)] min-w-0 shrink-0 snap-start border border-[#f1f1f1] bg-white p-2.5">
               <div className="flex h-full flex-col rounded border border-dashed border-gray-100 p-6">
                 <span className="bg-secondary/10 text-secondary mb-5 flex h-10 w-10 items-center justify-center rounded-full">
@@ -116,11 +120,11 @@ const LifelongBenefitsCarousel = () => {
         })}
       </ul>
       <div className="mt-3 flex justify-center gap-2">
-        {lifelongBenefits.map((_, i) => (
+        {items.map((_, i) => (
           <button
             key={i}
             type="button"
-            aria-label={`Afficher la carte ${i + 1}`}
+            aria-label={`${dotLabelPrefix}${i + 1}`}
             onClick={() => scrollToSlide(i)}
             className={`h-2 cursor-pointer rounded-full transition-all ${
               activeIndex === i ? 'bg-accent w-6' : 'w-2 bg-gray-200'
@@ -129,10 +133,19 @@ const LifelongBenefitsCarousel = () => {
         ))}
       </div>
       <span className="sr-only">
-        {activeIndex + 1} / {lifelongBenefits.length}
+        {activeIndex + 1} / {items.length}
       </span>
     </div>
   )
+}
+
+LifelongBenefitsCarousel.propTypes = {
+  items: PropTypes.array,
+  labels: PropTypes.shape({
+    ariaRegion: PropTypes.string.isRequired,
+    slideLabelSeparator: PropTypes.string.isRequired,
+    dotLabelPrefix: PropTypes.string.isRequired,
+  }),
 }
 
 export default LifelongBenefitsCarousel

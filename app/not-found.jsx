@@ -1,16 +1,19 @@
 import Link from 'next/link'
 import FadeUpAnimation from '@/components/animations/FadeUpAnimation'
-import SecondaryNavbar from '@/components/navbar/SecondaryNavbar'
 import Footer from '@/components/footer/Footer'
+import SecondaryNavbar from '@/components/navbar/SecondaryNavbar'
+import { getDictionary } from '@/lib/i18n/get-dictionary'
 
 export const metadata = {
   title: '404 || Not Found',
 }
 
 const NotFound = () => {
+  const dict = getDictionary('fr')
+
   return (
     <>
-      <SecondaryNavbar />
+      <SecondaryNavbar locale="fr" dict={dict} />
       <main className="mb-150 pt-[200px]">
         <FadeUpAnimation className="relative container">
           <div className="mx-auto max-w-[700px] text-center">
@@ -32,7 +35,7 @@ const NotFound = () => {
           </div>
         </FadeUpAnimation>
       </main>
-      <Footer />
+      <Footer locale="fr" dict={dict} />
     </>
   )
 }
