@@ -13,7 +13,7 @@ const programBlocks = [
     timeframe: '',
     description:
       'À la fin de la journée, vos collaborateurs maîtrisent Claude Cowork et savent l’intégrer immédiatement dans leur quotidien.',
-    pills: ['2 demi-journées', 'Formateur dans vos locaux'],
+    pills: ['2 demi-journées'],
     cta: 'Voir le détail de la formation',
     imageSrc: '/images/photo_formation_6.jpg',
     imageAlt: 'Session de formation en présentiel avec une équipe en salle',
@@ -25,7 +25,7 @@ const programBlocks = [
     timeframe: '',
     description:
       'Des collaborateurs désignés travaillent avec nos formateurs pour intégrer Claude Cowork dans vos 3 process les plus chronophages, établissent une feuille de route à 90 jours — Ils deviennent ainsi les moteurs de votre transformation IA.',
-    pills: ['4 demi-journées', 'Formateur dans vos locaux'],
+    pills: ['4 demi-journées'],
     cta: 'Voir le détail des ateliers',
     imageSrc: '/images/photo_formation_7.jpg',
     imageAlt: 'Session de formation en présentiel avec une équipe en salle',
@@ -34,9 +34,9 @@ const programBlocks = [
 
 const continuousSupport = [
   {
-    title: "Des réponses à vos questions dans l'heure",
+    title: 'Des réponses à vos questions en moins de 24 heures',
     description:
-      "Une question ou un blocage avec Claude Cowork ? Nous vous garantissons une réponse en moins d'une heure.",
+      'Une question ou un blocage avec Claude Cowork ? Nous vous garantissons une réponse des les 24 heures.',
   },
   {
     title: 'Accès aux bonnes pratiques',
