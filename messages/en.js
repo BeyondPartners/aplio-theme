@@ -6,7 +6,7 @@ const messages = {
   metadata: {
     home: { title: 'BeyondPartners' },
     legal: {
-      title: 'Legal notices',
+      title: 'Legal Notice',
       description: 'Terms, privacy policy and legal information — Beyond Partners, a brand of LS Fintech.',
     },
     banner: {
@@ -49,9 +49,9 @@ const messages = {
         desc: 'From 30 to 90 days, led by your teams, for lasting transformation.',
       },
     ],
-    h1Lead: 'Multiply productivity',
-    h1Rest: 'at your architecture firm with Claude Cowork',
-    sub: 'Equip your teams with the leading AI assistant and accelerate every project phase—from sketch to delivery.',
+    h1Lead: 'Boost the productivity',
+    h1Rest: 'of your architecture firm with Claude Cowork',
+    sub: 'Equip your teams with the leading AI assistant and accelerate every project phase, from sketch to delivery.',
     cta: 'Talk to an expert',
   },
   trustBar: {
