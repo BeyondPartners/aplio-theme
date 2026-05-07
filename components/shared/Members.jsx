@@ -37,6 +37,10 @@ const Members = ({ teamData: propTeamData }) => {
                 src={member.image}
                 alt={member.name}
                 className="h-full w-full object-cover transition-all duration-300 max-xl:aspect-4/3 xl:aspect-square"
+                style={{
+                  objectPosition: member.name === 'Justin Warambourg' ? '50% 30%' : undefined,
+                  transform: member.name === 'Yasmina Attiallah' ? 'scale(1.2)' : undefined,
+                }}
                 width={389}
                 height={389}
                 loading="lazy"
