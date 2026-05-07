@@ -51,7 +51,7 @@ const messages = {
     ],
     h1Lead: 'Démultipliez la productivité',
     h1Rest: "de votre cabinet d'architecte avec Claude Cowork",
-    sub: "Équipez vos collaborateurs du meilleur assistant IA du marché et accélerez chaque phase de projet, de l'esquisse à la réalisation.",
+    sub: "Équipez vos collaborateurs du meilleur assistant IA du marché et accélerez chaque phase de projet, de la réponse aux appels d'offres au suivi de chantier.",
     cta: 'Échanger avec un expert',
   },
   trustBar: {
