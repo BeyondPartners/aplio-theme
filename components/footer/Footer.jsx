@@ -1,7 +1,7 @@
-import BeyondPartnersLogo from '@/components/shared/BeyondPartnersLogo'
 import { DEFAULT_LOCALE } from '@/lib/i18n/config'
 import { getDictionary } from '@/lib/i18n/get-dictionary'
 import footerSeperator from '@/public/images/footer-seperator.svg'
+import footerLogo from '@/public/images/logo_beyond_partners.png'
 import Image from 'next/image'
 import Link from 'next/link'
 import PropTypes from 'prop-types'
@@ -23,7 +23,7 @@ const Footer = ({ locale = DEFAULT_LOCALE, dict: dictProp }) => {
             href={`/${locale}`}
             aria-label={dict.common.brandHomeAria}
             className="shrink-0 focus-visible:rounded-sm focus-visible:ring-2 focus-visible:ring-[#612D3A]/35 focus-visible:outline-none">
-            <BeyondPartnersLogo className="text-base leading-none sm:text-lg" />
+            <Image src={footerLogo} alt="Beyond Partners logo" className="xs:h-10 h-8 w-auto" priority={false} />
           </Link>
 
           <p className="text-paragraph order-last text-sm max-sm:order-last sm:order-none">{dict.footer.copyright}</p>

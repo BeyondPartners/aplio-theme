@@ -49,9 +49,10 @@ const messages = {
         desc: 'From 30 to 90 days, led by your teams, for lasting transformation.',
       },
     ],
-    h1Lead: 'Boost the productivity',
-    h1Rest: 'of your architecture firm with Claude Cowork',
-    sub: 'Equip your teams with the leading AI assistant and accelerate every project phase, from sketch to delivery.',
+    h1Start: 'AI has potential. We turn it into',
+    h1Accent: 'an operational advantage',
+    h1End: 'for your architecture firm.',
+    sub: 'Train and equip your teams with Claude Cowork, the best AI assistant on the market, and accelerate every project phase, from sketch to delivery.',
     cta: 'Talk to an expert',
   },
   trustBar: {

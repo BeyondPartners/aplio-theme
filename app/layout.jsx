@@ -22,7 +22,7 @@ const jakarta_sans = Plus_Jakarta_Sans({
   variable: '--font-jakarta',
 })
 const playfair = Playfair_Display({
-  weight: ['600'],
+  weight: ['500', '600', '700'],
   style: ['normal'],
   subsets: ['latin'],
   display: 'swap',
@@ -34,6 +34,11 @@ export const metadata = {
   title: {
     default: 'BeyondPartners',
     template: '%s | BeyondPartners',
+  },
+  icons: {
+    icon: '/images/favicon.ico',
+    shortcut: '/images/favicon.ico',
+    apple: '/images/favicon.ico',
   },
   description:
     "BeyondPartners accompagne les organisations dans l'adoption de l'intelligence artificielle : formation, intégration et stratégie.",

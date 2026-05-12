@@ -16,7 +16,7 @@ const HeroContent = () => {
         <p className="mb-8 font-medium uppercase max-lg:mb-4">50k+ Trusted Businesses</p>
         <h1 className="mb-12 max-md:mb-8">
           Make your {/*  */}
-          <span className="border-paragraph font-playfair inline-block rounded-[88px] border-2 bg-[#D9D9D900] px-5 pt-0.5 pb-2.5 leading-none italic dark:border-[#F0F3EA]">
+          <span className="border-paragraph inline-block rounded-[88px] border-2 bg-[#D9D9D900] px-5 pt-0.5 pb-2.5 leading-none italic dark:border-[#F0F3EA]">
             Finance
           </span>
           more efficient.

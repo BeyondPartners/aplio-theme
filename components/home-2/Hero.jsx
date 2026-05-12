@@ -15,7 +15,7 @@ const Hero = () => {
             <p className="mb-4 font-medium uppercase">Digital Payment Solution</p>
             <h1 className="mb-10">
               Smart
-              <span className="font-playfair inline-block px-5 pt-0.5 pb-2.5 leading-none italic"> Payment </span>
+              <span className="inline-block px-5 pt-0.5 pb-2.5 leading-none italic"> Payment </span>
               solution for your Business
             </h1>
             <p className="mb-12 max-w-[590px]">

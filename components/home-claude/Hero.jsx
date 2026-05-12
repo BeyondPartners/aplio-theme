@@ -4,7 +4,7 @@ import FadeUpAnimation from '../animations/FadeUpAnimation'
 import TrustBar from './TrustBar'
 
 const Hero = ({ dict }) => {
-  const { axes, h1Lead, h1Rest, sub, cta } = dict.hero
+  const { axes, h1Start, h1Accent, h1End, sub, cta } = dict.hero
   const bookingCalendlyUrl = dict.common.bookingCalendlyUrl
 
   return (
@@ -14,9 +14,13 @@ const Hero = ({ dict }) => {
         <div className="mx-auto w-full max-w-[1200px] text-center">
           <FadeUpAnimation className="space-y-5 md:space-y-6 lg:space-y-8">
             <h1 className="text-[32px]! leading-[1.15]! tracking-tight sm:text-[36px]! md:text-[40px]! xl:text-[52px]!">
-              <span className="text-accent">{h1Lead}</span> {h1Rest}
+              <span className="text-dark dark:text-white">{h1Start}</span>
+              {'\u00a0'}
+              <span className="text-accent">{h1Accent}</span>
+              {'\u00a0'}
+              <span className="text-dark dark:text-white">{h1End}</span>
             </h1>
-            <p className="text-paragraph mx-auto max-w-[640px] text-[15px] leading-relaxed md:text-lg">{sub}</p>
+            <p className="text-paragraph mx-auto max-w-[840px] text-[15px] leading-relaxed md:text-lg">{sub}</p>
             <div className="flex flex-col items-center justify-center gap-3 sm:flex-row sm:flex-wrap sm:gap-4">
               <Link href={bookingCalendlyUrl} target="_blank" rel="noopener noreferrer" className="btn">
                 {cta}

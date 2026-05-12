@@ -55,7 +55,7 @@ const SecondaryNavbar = ({ locale, dict }) => {
               href={homeHref}
               aria-label={logoAria}
               className="inline-flex items-center leading-none focus-visible:rounded-sm focus-visible:ring-2 focus-visible:ring-[#612D3A]/35 focus-visible:outline-none">
-              <BeyondPartnersLogo className="text-base leading-none sm:text-lg xl:text-xl" />
+              <BeyondPartnersLogo showIcon={false} className="text-base leading-none sm:text-lg xl:text-xl" />
             </Link>
           </div>
           <ul className="nav-list rounded-large shadow-nav dark:bg-dark-200 hidden shrink-0 bg-white p-2.5 lg:ml-4 lg:flex xl:ml-10 2xl:ml-15 [&>*]:shrink-0 [&>*:not(:last-child)]:me-0 xl:[&>*:not(:last-child)]:me-1">

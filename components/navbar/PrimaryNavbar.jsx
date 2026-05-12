@@ -63,7 +63,7 @@ const PrimaryNavbar = ({ locale, dict }) => {
               href={`/${locale}`}
               aria-label={dict.common.brandHomeAria}
               className="inline-flex items-center leading-none focus-visible:rounded-sm focus-visible:ring-2 focus-visible:ring-[#612D3A]/35 focus-visible:outline-none">
-              <BeyondPartnersLogo className="text-base leading-none sm:text-lg xl:text-xl" />
+              <BeyondPartnersLogo showIcon={false} className="text-base leading-none sm:text-lg xl:text-xl" />
             </Link>
           </div>
 

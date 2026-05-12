@@ -49,9 +49,10 @@ const messages = {
         desc: 'De 30 à 90 jours et portée par vos équipes, pour une transformation durable.',
       },
     ],
-    h1Lead: 'Démultipliez la productivité',
-    h1Rest: "de votre cabinet d'architecte avec Claude Cowork",
-    sub: "Équipez vos collaborateurs du meilleur assistant IA du marché et accélerez chaque phase de projet, de la réponse aux appels d'offres au suivi de chantier.",
+    h1Start: 'L’IA a du potentiel. Nous le transformons en',
+    h1Accent: 'avantage opérationnel',
+    h1End: 'pour votre cabinet d’architecte.',
+    sub: "Formez et outillez vos équipes avec Claude Cowork, le meilleur assistant IA du marché et accélérez chaque phase de projet, de la réponse aux appels d'offres à la réception du chantier.",
     cta: 'Échanger avec un expert',
   },
   trustBar: {
